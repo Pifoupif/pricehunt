@@ -1,0 +1,13 @@
+
+<style>
+  font-type: Helvetica;
+</style>
+
+<p>Hi <%= @user.first_name %>,</p>
+
+<p>Your price alert regarding the <%= @user.alerts.last.product.name %>has been set.</p>
+<p>We will be watching the price everyday and come back to you when the price goes below <%= @user.alerts.last.target_price %>.</p>
+
+<p>See ya!</p>
+<br>
+<p>Toto l'asticot, from PriceHunt</p>
