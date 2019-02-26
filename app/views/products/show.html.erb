@@ -1,1 +1,16 @@
-<%= @product.name %>
+
+
+<div class="product-banner">
+  <div class="product-photo">
+    <%= cl_image_tag @product.photo, :width=>150, :height=>150 %>
+  </div>
+  <div class="product-desc">
+    <%= @product.name %>
+    <%= @product.description %>
+  </div>
+  <div>
+    <button class='btn btn-primary'>Set an alert</button>
+  </div>
+</div>
+
+
