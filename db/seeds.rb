@@ -6,20 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 require 'faker'
 
-"Destroying existing db"
-Alert.destroy_all
-User.destroy_all
-Price.destroy_all
-Offer.destroy_all
-Product.destroy_all
-Category.destroy_all
-Retailer.destroy_all
+# User.destroy_all
+# Category.destroy_all
+# Product.destroy_all
+# Alert.destroy_all
+# Retailer.destroy_all
+# Offer.destroy_all
+# Price.destroy_all
 
-"Creating new db"
-10.times do
+count = 0
+2.times do
+  sleep(rand(2..4))
   user = User.new(
     email: Faker::Internet.email,
     password: 'azerty',
@@ -29,18 +28,47 @@ Retailer.destroy_all
     )
   user.save!
 
+count += 1
+require 'json'
+require 'open-uri'
+require 'nokogiri'
+
+keyword = "iphone"
+url_search = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{keyword}"
+search = open(url_search).read
+search_result = JSON.parse(search)
+url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
+
   category = Category.new(
-    name: Faker::Commerce.department
+    name: "#{search_result['message']['product']['items'][count]['category']['name']}"
     )
   category.save!
 
-  product = Product.new(
-    name: Faker::Commerce.product_name,
-    description: 'the description of the product',
+
+  photo = Nokogiri::HTML(open(url_vers_show))
+  thumb = []
+  photo.css('a.img140 img').each do |link|
+    thumb = link.values[0].strip
+  end
+
+    product = Product.new(
+    photo: "#{thumb}",
+    name: "#{search_result['message']['product']['items'][count]['name']}",
+    description: "#{search_result['message']['product']['items'][count]['price']['regular']}",
     category_id: category.id,
-    photo: "https://picsum.photos/200/300/?random",
     )
+
   product.save!
+
+  retailer = Retailer.new(
+    name: Faker::Company.name,
+    logo: '##',
+    rating: '4',
+    )
+  retailer.save!
+
+  puts "#{keyword}#{count} created"
+#**********************************************************
 
   alert = Alert.new(
     user_id: user.id,
@@ -49,13 +77,6 @@ Retailer.destroy_all
     )
   alert.save!
 
-  retailer = Retailer.new(
-    name: Faker::Company.name,
-    logo: "https://picsum.photos/30/30/?random",
-    rating: '4',
-    )
-  retailer.save!
-
   offer = Offer.new(
     product_id: product.id,
     retailer_id: retailer.id,
@@ -63,12 +84,10 @@ Retailer.destroy_all
   offer.save!
 
   price = Price.new(
-    price: rand(40..300),
-    url: '###',
+    price: "#{search_result['message']['product']['items'][count]['price']['regular']}",
+    url: url_vers_show,
     offer_id: offer.id,
     )
   price.save!
 
 end
-
-
