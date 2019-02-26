@@ -11,9 +11,8 @@
   padding: 10px;
   align-content: center;
   justify-content: center;
-  margin: 3px;
+  margin: 10px;
   border-bottom: 2px solid rgba(220,224,244,1);
-  /* Your turn to design a flexbox message */
 }
 
 
@@ -43,6 +42,8 @@
 .alert-image{
   width: 25%;
   text-align: center;
+  border: 1px dotted grey;
+  margin: 5px;
 }
 
 .alert-price {
@@ -57,4 +58,22 @@
 .alert-link{
   width: 25%;
   text-align: center;
+}
+
+.alert-picture {
+  height: 300px;
+  width: 400px;
+  border: 1px dotted grey;
+}
+
+.graph-price{
+ height: 300px;
+  width: 700px;
+  border: 1px dotted grey;
+  text-align:center;
+  margin: 20px;
+}
+
+.container-alert{
+  margin: 20px;
 }
