@@ -4,7 +4,7 @@ class AlertsController < ApplicationController
     @alert.user = current_user
     @alert.product_id = params[:product_id]
     if @alert.save
-      redirect_to alert_index_path
+      redirect_to product_path(params[:product_id])
     else
       raise
     end
