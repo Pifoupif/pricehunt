@@ -1,0 +1,60 @@
+.inbox {
+  padding: 10px 20px;
+  list-style: none;
+  border: 2px solid rgba(220,224,244,1);
+  margin: 4px;
+}
+
+.message {
+  position:relative;
+  display:flex;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+  margin: 3px;
+  border-bottom: 2px solid rgba(220,224,244,1);
+  /* Your turn to design a flexbox message */
+}
+
+
+.alert-price{
+  font-size: 15px;
+  width: 25%;
+}
+
+.inbox img {
+  justify-content: center;
+  align-content: center;
+}
+
+.picture{
+  display: flex;
+  align-items: center;
+  width: 130px;
+  size: fit;
+}
+
+.alert-product {
+  width: 25%;
+  font-size: 15px;
+
+}
+
+.alert-image{
+  width: 25%;
+  text-align: center;
+}
+
+.alert-price {
+  text-align: center;
+  justify-content:center;
+}
+
+.icon {
+  width: 130px;
+}
+
+.alert-link{
+  width: 25%;
+  text-align: center;
+}
