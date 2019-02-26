@@ -9,15 +9,16 @@
 
 require 'faker'
 
-# User.destroy_all
-# Category.destroy_all
-# Product.destroy_all
-# Alert.destroy_all
-# Retailer.destroy_all
-# Offer.destroy_all
-# Price.destroy_all
+"Destroying existing db"
+User.destroy_all
+Category.destroy_all
+Product.destroy_all
+Alert.destroy_all
+Retailer.destroy_all
+Offer.destroy_all
+Price.destroy_all
 
-
+"Creating new db"
 10.times do
   user = User.new(
     email: Faker::Internet.email,
@@ -37,7 +38,7 @@ require 'faker'
     name: Faker::Commerce.product_name,
     description: 'the description of the product',
     category_id: category.id,
-    photo: "https://picsum.photos/200/300/?random";
+    photo: "https://picsum.photos/200/300/?random",
     )
   product.save!
 
@@ -50,7 +51,7 @@ require 'faker'
 
   retailer = Retailer.new(
     name: Faker::Company.name,
-    logo: '##',
+    logo: "https://picsum.photos/30/30/?random",
     rating: '4',
     )
   retailer.save!
