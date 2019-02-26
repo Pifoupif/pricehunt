@@ -1,0 +1,83 @@
+.inbox {
+  padding: 10px 20px;
+  list-style: none;
+  border: 2px solid rgba(220,224,244,1);
+  margin: 4px;
+}
+
+.message {
+  position:relative;
+  display:flex;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+  margin: 10px;
+  border-bottom: 2px solid rgba(220,224,244,1);
+}
+
+
+.alert-price{
+  font-size: 15px;
+  width: 25%;
+}
+
+.inbox img {
+  justify-content: center;
+  align-content: center;
+}
+
+.picture{
+  display: flex;
+  align-items: center;
+  width: 130px;
+  size: fit;
+}
+
+.alert-product {
+  width: 25%;
+  font-size: 15px;
+
+}
+
+.alert-image{
+  width: 25%;
+  text-align: center;
+  border: 1px dotted grey;
+  margin: 5px;
+}
+
+.alert-price {
+  text-align: center;
+  justify-content:center;
+}
+
+.icon {
+  width: 130px;
+}
+
+.alert-link{
+  width: 25%;
+  text-align: center;
+}
+
+.alert-picture {
+  height: 300px;
+  width: 400px;
+  border: 1px dotted grey;
+}
+
+.graph-price{
+ height: 300px;
+  width: 700px;
+  border: 1px dotted grey;
+  text-align:center;
+  margin: 20px;
+}
+
+.container-alert{
+  margin: 20px;
+}
+
+.alert-back {
+  text-align: center;
+}

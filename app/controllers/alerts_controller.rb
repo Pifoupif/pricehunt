@@ -18,7 +18,7 @@ class AlertsController < ApplicationController
   end
 
   def index
-    @user_alerts = Alert.joins(:product).where(:products => {:user => current_user })
+    @user_alerts = Alert.where(user: current_user)
   end
 
   def update
