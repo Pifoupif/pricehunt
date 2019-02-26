@@ -1,1 +1,23 @@
-show.html.erb
+<div class="container">
+  <div class="row container-alert">
+    <div class="col-xs-6">
+      <div class="alert-picture">
+        <%#= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
+        <p>Image</p>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h1><%= @alert.product.name %></h1>
+      <p>Target price: €<%= @alert.target_price %> </p>
+      <p>Current price <%= @alert.product.description %></p>
+    </div>
+  </div>
+  <div class="graph-price">
+    <%#= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
+    <p>Graph price evolution</p>
+  </div>
+
+  <div class="alert-back">
+    <%= link_to 'Back to all my alerts', alerts_path, class:"btn btn-success no-decoration see-detail" %>
+  </div>
+</div>

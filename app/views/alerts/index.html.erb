@@ -1,7 +1,30 @@
-<% @alerts.each do |alert| %>
-<li>
+<div class="container">
+  <h1>Your alerts</h1>
+  <div class="tabs">
+    <a href="#" class="tab-active">Current alerts</a>
+    <a href="#" class="tab">Past alerts</a>
+  </div>
   <ul>
-    <%= alert.product.name %>
-    <%= alert.product.target_price %>
-  </ul>
-</li>
+    <div class="inbox">
+      <% @user_alerts.each do |alert| %>
+      <li class="message">
+        <div class="alert-image">
+          <%#= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
+          <p>Image</p>
+        </div>
+        <div class="alert-product">
+        <p>Product: <%= alert.product.name %> </p>
+        </div>
+        <div class="alert-price">
+         <p>Target price: €<%= alert.target_price %> </p>
+         <p>Current price <%= alert.product.description %></p>
+        </div>
+          <div class="alert-link">
+          <%= link_to 'More details', alert_path(alert), class:"btn btn-success no-decoration see-detail" %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
