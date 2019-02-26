@@ -30,7 +30,7 @@
 
 <div class="product-banner">
   <div class="product-photo">
-
+    <img src="https://picsum.photos/120/100" alt="">
   </div>
   <div class="product-desc">
     <%= @product.name %>
@@ -44,8 +44,17 @@
 <div class="container">
   <% @offers.each do |offer| %>
     <div class="offers">
-      <div><%= offer.retailer.logo %></div>
-      <div><%= offer.retailer.rating %> * <i class="fas fa-star gold"></i></div>
+      <img src="https://picsum.photos/40/40" alt="" class="logo">
+
+      <div>
+        <% offer.retailer.rating.floor.times do %>
+          <i class="fas fa-star gold"></i>
+        <% end %>
+                <% (5 - offer.retailer.rating.floor).times do %>
+          <i class="fas fa-star white"></i>
+        <% end %>
+      </div>
+
       <div><%= offer.prices.last.price %>€</div>
       <div><button class='btn btn-primary'>>Buy</button></div>
     </div>

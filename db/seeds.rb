@@ -10,13 +10,13 @@
 require 'faker'
 
 "Destroying existing db"
-User.destroy_all
-Category.destroy_all
-Product.destroy_all
 Alert.destroy_all
-Retailer.destroy_all
-Offer.destroy_all
+User.destroy_all
 Price.destroy_all
+Offer.destroy_all
+Product.destroy_all
+Category.destroy_all
+Retailer.destroy_all
 
 "Creating new db"
 10.times do
