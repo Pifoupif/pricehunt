@@ -1,14 +1,12 @@
 class AlertsController < ApplicationController
-
   def create
     @alert = Alert.new(alert_params)
-    @product = Product.find(params[:id])
     @alert.user = current_user
-    @alert.product = @product
+    @alert.product_id = params[:product_id]
     if @alert.save
-      redirect_to alert_index_path
+      redirect_to product_path(params[:product_id])
     else
-      render 'new'
+      raise
     end
   end
 
@@ -32,7 +30,7 @@ class AlertsController < ApplicationController
 private
 
   def alert_params
-    params.require[:alert].permit(:target_price)
+    params.require(:alert).permit(:target_price)
   end
 
 end
