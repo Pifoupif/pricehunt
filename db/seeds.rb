@@ -17,8 +17,10 @@ require 'faker'
 # Offer.destroy_all
 # Price.destroy_all
 
+count = 0
 
-10.times do
+2.times do
+  sleep(rand(2..4))
   user = User.new(
     email: Faker::Internet.email,
     password: 'azerty',
@@ -28,24 +30,36 @@ require 'faker'
     )
   user.save!
 
+count += 1
+require 'json'
+require 'open-uri'
+require 'nokogiri'
+
+keyword = "iphone"
+url_search = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{keyword}"
+search = open(url_search).read
+search_result = JSON.parse(search)
+url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
+
   category = Category.new(
-    name: Faker::Commerce.department
+    name: "#{search_result['message']['product']['items'][count]['category']['name']}"
     )
   category.save!
 
-  product = Product.new(
-    name: Faker::Commerce.product_name,
-    description: 'the description of the product',
-    category_id: category.id
-    )
-  product.save!
+  photo = Nokogiri::HTML(open(url_vers_show))
+  thumb = []
+  photo.css('a.img140 img').each do |link|
+    thumb = link.values[0].strip
+  end
 
-  alert = Alert.new(
-    user_id: user.id,
-    product_id: product.id,
-    target_price: Faker::Number.decimal(1),
+    product = Product.new(
+    photo: "#{thumb}",
+    name: "#{search_result['message']['product']['items'][count]['name']}",
+    description: "#{search_result['message']['product']['items'][count]['price']['regular']}",
+    category_id: category.id,
     )
-  alert.save!
+
+  product.save!
 
   retailer = Retailer.new(
     name: Faker::Company.name,
@@ -54,6 +68,17 @@ require 'faker'
     )
   retailer.save!
 
+  puts "#{keyword}#{count} created"
+#**********************************************************
+
+  alert = Alert.new(
+    user_id: user.id,
+    product_id: product.id,
+    target_price: Faker::Number.decimal(1),
+    )
+  alert.save!
+
+
   offer = Offer.new(
     product_id: product.id,
     retailer_id: retailer.id,
@@ -61,12 +86,10 @@ require 'faker'
   offer.save!
 
   price = Price.new(
-    price: rand(40..300),
-    url: '###',
+    price: "#{search_result['message']['product']['items'][count]['price']['regular']}",
+    url: url_vers_show,
     offer_id: offer.id,
     )
   price.save!
 
 end
-
-
