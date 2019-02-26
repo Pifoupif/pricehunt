@@ -2,7 +2,6 @@ class AlertsController < ApplicationController
 
   def create
     @alert = Alert.new(alert_params)
-    @product = Product.find(params[:id])
     @alert.user = current_user
     @alert.product = @product
     if @alert.save
