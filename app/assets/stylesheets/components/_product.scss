@@ -1,10 +1,11 @@
 .product-banner {
   display: flex;
-  background-color: rgb(200,200,200);
+  background-color: rgb(180,180,180);
   width: 100vw;
-  height: 100px;
+  height: 130px;
   justify-content: space-around;
   align-items: center;
+  margin-top: 10px;
 }
 
 .product-desc {
@@ -15,14 +16,29 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(230,230,230);
+  background-color: rgb(210,210,210);
   margin: 10px;
   padding: 5px;
-  height: 20vh;
+  height: 100px;
+  border-radius: 50px;
+  box-shadow: 8px 8px 0px rgb(230,230,230);
 }
 
 .btn-set-alert {
   border-radius: 50px;
   background-color: rgb(20,20,20);
   border-color: white;
+}
+
+.gold {
+  color: yellow;
+}
+
+.white {
+  color: white;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
 }

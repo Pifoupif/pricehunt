@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 require 'faker'
 
 # User.destroy_all
@@ -18,7 +17,6 @@ require 'faker'
 # Price.destroy_all
 
 count = 0
-
 2.times do
   sleep(rand(2..4))
   user = User.new(
@@ -45,6 +43,7 @@ url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
     name: "#{search_result['message']['product']['items'][count]['category']['name']}"
     )
   category.save!
+
 
   photo = Nokogiri::HTML(open(url_vers_show))
   thumb = []
@@ -77,7 +76,6 @@ url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
     target_price: Faker::Number.decimal(1),
     )
   alert.save!
-
 
   offer = Offer.new(
     product_id: product.id,
