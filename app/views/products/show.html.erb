@@ -45,8 +45,8 @@
   <% @offers.each do |offer| %>
     <div class="offers">
       <div><%= offer.retailer.logo %></div>
-      <div><%= offer.retailer.rating %></div>
-      <div><%= offer.prices.last.price %></div>
+      <div><%= offer.retailer.rating %> * <i class="fas fa-star gold"></i></div>
+      <div><%= offer.prices.last.price %>€</div>
       <div><button class='btn btn-primary'>>Buy</button></div>
     </div>
   <% end %>

@@ -36,7 +36,8 @@ require 'faker'
   product = Product.new(
     name: Faker::Commerce.product_name,
     description: 'the description of the product',
-    category_id: category.id
+    category_id: category.id,
+    photo: "https://picsum.photos/200/300/?random";
     )
   product.save!
 

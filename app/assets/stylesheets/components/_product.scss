@@ -5,6 +5,7 @@
   height: 100px;
   justify-content: space-around;
   align-items: center;
+  margin-top: 10px;
 }
 
 .product-desc {
@@ -25,4 +26,8 @@
   border-radius: 50px;
   background-color: rgb(20,20,20);
   border-color: white;
+}
+
+.gold {
+  color: yellow;
 }
