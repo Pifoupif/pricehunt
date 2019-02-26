@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :alert, only: [:new, :create]
   end
 
-  resources :alert, only: [:update, :edit, :destroy, :index, :show]
+  resources :alerts, only: [:update, :edit, :destroy, :index, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

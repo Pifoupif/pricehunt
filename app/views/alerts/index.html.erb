@@ -1,7 +1,8 @@
-<% @alerts.each do |alert| %>
-<li>
-  <ul>
+<ul>
+  <% @user_alerts.each do |alert| %>
+  <li>
     <%= alert.product.name %>
-    <%= alert.product.target_price %>
-  </ul>
-</li>
+    <%= alert.target_price %>
+  </li>
+  <% end %>
+</ul>
