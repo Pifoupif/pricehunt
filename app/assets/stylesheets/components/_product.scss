@@ -3,8 +3,26 @@
   background-color: rgb(200,200,200);
   width: 100vw;
   height: 100px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .product-desc {
+  align-items: center;
+}
 
+.offers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(230,230,230);
+  margin: 10px;
+  padding: 5px;
+  height: 20vh;
+}
+
+.btn-set-alert {
+  border-radius: 50px;
+  background-color: rgb(20,20,20);
+  border-color: white;
 }
