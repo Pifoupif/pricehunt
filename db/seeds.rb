@@ -17,10 +17,10 @@ require 'faker'
  Price.destroy_all
 
 count = 0
-2.times do
+3.times do
   sleep(rand(2..4))
   user = User.new(
-    email: Faker::Internet.email,
+    email: 'toto@toto.com',
     password: 'azerty',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
@@ -70,7 +70,6 @@ url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
   puts "#{keyword}#{count} created"
 #**********************************************************
 
-2.times do
   alert = Alert.new(
     user_id: user.id,
     product_id: product.id,
@@ -90,6 +89,5 @@ url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
     offer_id: offer.id,
     )
   price.save!
-end
 
 end
