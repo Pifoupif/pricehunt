@@ -68,6 +68,7 @@ url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
   retailer.save!
 
   puts "#{keyword}#{count} created"
+
 #**********************************************************
 
   alert = Alert.new(
