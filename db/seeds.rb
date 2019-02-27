@@ -64,9 +64,9 @@ count = 0
     product = Product.last
 
     if existing_retailer
-      offer = Offer.create!(retailer_id: existing_retailer.id, product: product, rating: 3, logo: "https://cdn.pji.nu/g/ftg_logos/store_18708.png")
+      offer = Offer.create!(retailer_id: existing_retailer.id, product: product)
     else
-      new_retailer = Retailer.create(name: retail_name)
+      new_retailer = Retailer.create(name: retail_name, rating: 3, logo: "https://cdn.pji.nu/g/ftg_logos/store_18708.png")
       offer = Offer.create!(retailer_id: new_retailer.id, product: product)
     end
     url_path = row.search('.js-ga-event-track').attr('href').value
