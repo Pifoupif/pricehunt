@@ -14,10 +14,10 @@ require 'pry'
 
 count = 0
 
-3.times do
-  sleep(rand(2..4))
+1.times do
+  sleep(rand(1..2))
   user = User.new(
-    email: "#{Faker::Name.name}@toto.com",
+    email: Faker::Internet.email,
     password: 'azerty',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
@@ -66,7 +66,7 @@ count = 0
     if existing_retailer
       offer = Offer.create!(retailer_id: existing_retailer.id, product: product)
     else
-      new_retailer = Retailer.create(name: retail_name)
+      new_retailer = Retailer.create(name: retail_name, rating: 3, logo: "https://cdn.pji.nu/g/ftg_logos/store_18708.png")
       offer = Offer.create!(retailer_id: new_retailer.id, product: product)
     end
     url_path = row.search('.js-ga-event-track').attr('href').value
@@ -77,11 +77,9 @@ count = 0
     end
 
     count += 1
-    puts "#{keyword}#{count} created"
+    puts "#{keyword}# #{count} created"
   end
 
 #**********************************************************
-
-
 
 end
