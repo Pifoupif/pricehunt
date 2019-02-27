@@ -3,17 +3,8 @@
     <div class="container">
       <h1>PriceHunt brings <strong>the best prices</strong> to <strong>selfish people</strong>!</h1>
       <p>Change your life and find the best prices for all the products around the world.</p>
-      <div class="form-home">
-       <label class= "label-home" for="keyword">What is your keyword?</label>
-       <%= form_tag root_path, method: :get do %>
-       <%= text_field_tag :query,
-       params[:query],
-       class: "form-control food-type",
-        placeholder: "Keyword"
-        %>
-        <br>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
+      <div>
+        <%= render 'shared/searchbar'  %>
       </div>
     </div>
   </div>

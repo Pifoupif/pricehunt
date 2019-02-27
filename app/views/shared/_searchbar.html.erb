@@ -1,0 +1,12 @@
+<div class="form-home">
+  <label class= "label-home" for="keyword">What is your keyword?</label>
+    <%= form_tag root_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control food-type",
+      placeholder: "Keyword"
+      %>
+      <br>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
