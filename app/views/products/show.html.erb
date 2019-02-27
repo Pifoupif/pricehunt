@@ -54,8 +54,8 @@
   </div>
 </div>
 
-<%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: 'btn btn-primary #{@criteria}' %>
-<%= link_to 'Filter by rating', product_path(@product), class: 'btn btn-success @criteria}' %>
+<%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: 'btn btn-primary sort_price' %>
+<%= link_to 'Filter by rating', product_path(@product), class: 'btn btn-success sort_rating' %>
 
 <div class="container">
   <% @offers.each do |offer| %>
