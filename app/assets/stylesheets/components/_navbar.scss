@@ -79,3 +79,10 @@
 .search-flex {
   display: flex;
 }
+
+.sticky-nav {
+  position: fixed;
+  top: 0px;
+  z-index: 3;
+  width: 100vw;
+}

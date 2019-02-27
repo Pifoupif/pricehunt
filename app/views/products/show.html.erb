@@ -1,23 +1,4 @@
-<div class="search-bar">
-  <%= render 'shared/searchbar'  %>
-</div>
-
 <h1>Best price for <%= @product.name %></h1>
-<!-- show -->
-
-<div class="product-banner">
-  <div class="product-photo">
-
-  </div>
-  <div class="product-desc">
-    <%= @product.name %>
-    <%= @product.description %>
-  </div>
-  <!-- Button trigger modal -->
-  <div>
-    <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation">Set an alert</button>
-  </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="alert-creation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
