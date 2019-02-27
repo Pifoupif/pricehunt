@@ -17,7 +17,7 @@ count = 0
 3.times do
   sleep(rand(2..4))
   user = User.new(
-    email: 'toto@toto.com',
+    email: "#{Faker::Name.name}@toto.com",
     password: 'azerty',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
@@ -82,11 +82,6 @@ count = 0
 
 #**********************************************************
 
-  alert = Alert.new(
-    user_id: user.id,
-    product_id: product.id,
-    target_price: Faker::Number.decimal(1),
-    )
-  alert.save!
+
 
 end
