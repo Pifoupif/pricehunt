@@ -1,3 +1,4 @@
+<h2>Information on <%= @product.name %></h1>
 <div class="search-bar">
   <%= render 'shared/searchbar'  %>
 </div>
@@ -58,6 +59,12 @@
   </div>
 </div>
 
+  <% css1_code = @filter ? "selected" : "" %>
+  <%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: "btn btn-primary filter_price #{css1_code}" %>
+
+  <% css2_code = !@filter ? "selected" : "" %>
+  <%= link_to 'Filter by rating', product_path(@product), class: "btn btn-primary sort_rating filter_rating #{css2_code}" %>
+
 <div class="container">
   <% @offers.each do |offer| %>
     <div class="offers">
@@ -70,7 +77,7 @@
           <i class="fas fa-star white"></i>
         <% end %>
       </div>
-      <div><%= offer.prices.last.price %>€</div>
+      <div><%= offer.prices.last&.price %>€</div>
       <div><button class='btn btn-primary'>>Buy</button></div>
     </div>
   <% end %>
