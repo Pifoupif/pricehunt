@@ -3,4 +3,8 @@ function refreshForm() {
   form.innerHTML = '<%= j render "shared/form-alert-creation", product: @product, alert: @alert %>';
 }
 
-refreshForm();
+<% if @alert.errors.any? %>
+  refreshForm();
+<% else %>
+  window.location = "<%= alerts_path %>"
+<% end %>

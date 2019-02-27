@@ -3,9 +3,10 @@ class AlertsController < ApplicationController
     @alert = Alert.new(alert_params)
     @alert.user = current_user
     @alert.product_id = params[:product_id]
+    @alert.user = current_user
     if @alert.save
       respond_to do |format|
-        format.html { redirect_to product_path(params[:product_id]) }
+        format.html { redirect_to alerts_path }
         format.js
       end
     else

@@ -6,15 +6,19 @@ class Alert < ApplicationRecord
   belongs_to :user
 
   validates :target_price, presence: true
-  validates :by_text_message, presence: true
-  validates :by_email, presence: true
-  #validates :by_email, inclusion: { in: [true],  unless: Proc.new { |a| a.by_text_message? }}
-  #validates :by_text_message, inclusion: { in: [true], unless: Proc.new { |a| a.by_email? }}
+  before_validation :by_email_or_by_text_message
 
   after_create :send_alert_email
 
 
   private
+
+  def by_email_or_by_text_message
+    unless self.by_email || self.by_text_message
+      errors.add(:by_email, "Please select a contact option")
+      errors.add(:by_text_message, "Please select a contact option")
+    end
+  end
 
   def send_alert_email
     UserMailer.alert_set(self.user).deliver_now
