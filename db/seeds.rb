@@ -8,13 +8,13 @@
 
 require 'faker'
 
-# User.destroy_all
-# Category.destroy_all
-# Product.destroy_all
-# Alert.destroy_all
-# Retailer.destroy_all
-# Offer.destroy_all
-# Price.destroy_all
+ User.destroy_all
+ Category.destroy_all
+ Product.destroy_all
+ Alert.destroy_all
+ Retailer.destroy_all
+ Offer.destroy_all
+ Price.destroy_all
 
 count = 0
 2.times do
@@ -70,6 +70,7 @@ url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
   puts "#{keyword}#{count} created"
 #**********************************************************
 
+2.times do
   alert = Alert.new(
     user_id: user.id,
     product_id: product.id,
@@ -89,5 +90,6 @@ url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"
     offer_id: offer.id,
     )
   price.save!
+end
 
 end
