@@ -1,4 +1,8 @@
-<h1>test</h1>
+<div class="search-bar">
+  <%= render 'shared/searchbar'  %>
+</div>
+
+<h1>Best price for <%= @product.name %></h1>
 <!-- show -->
 
 <div class="product-banner">
@@ -57,8 +61,7 @@
 <div class="container">
   <% @offers.each do |offer| %>
     <div class="offers">
-      <img src="https://picsum.photos/40/40" alt="" class="logo">
-
+      <div class=""><%= offer.retailer.logo %></div>
       <div>
         <% offer.retailer.rating.floor.times do %>
           <i class="fas fa-star gold"></i>
