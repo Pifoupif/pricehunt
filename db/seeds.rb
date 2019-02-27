@@ -20,7 +20,7 @@ count = 0
 3.times do
   sleep(rand(2..4))
   user = User.new(
-    email: 'toto@toto.com',
+    email: Faker::Internet.email,
     password: 'azerty',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
