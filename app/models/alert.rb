@@ -1,6 +1,6 @@
 class Alert < ApplicationRecord
-  include ActiveModel::Validations
-  validates_with AlertPresenceValidator
+  #include ActiveModel::Validations
+  #validates_with AlertPresenceValidator
 
   belongs_to :product
   belongs_to :user

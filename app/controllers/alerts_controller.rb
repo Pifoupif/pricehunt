@@ -3,7 +3,6 @@ class AlertsController < ApplicationController
     @alert = Alert.new(alert_params)
     @alert.user = current_user
     @alert.product_id = params[:product_id]
-    raise
     if @alert.save
       respond_to do |format|
         format.html { redirect_to product_path(params[:product_id]) }
@@ -13,8 +12,8 @@ class AlertsController < ApplicationController
       @product = Product.find(params[:product_id])
       @offers = @product.offers
       respond_to do |format|
-      format.html { render 'products/show' }
-      format.js
+        format.html { render 'products/show' }
+        format.js
       end
     end
   end

@@ -1,0 +1,6 @@
+function refreshForm() {
+  const form = document.getElementById('new_alert');
+  form.innerHTML = '<%= j render "shared/form-alert-creation", product: @product, alert: @alert %>';
+}
+
+refreshForm();
