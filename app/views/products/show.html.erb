@@ -45,6 +45,18 @@
 
 <!-- show -->
 
+<div class="product-banner">
+  <div class="product-photo">
+    <img src="https://picsum.photos/120/100" alt="">
+  </div>
+  <div class="product-desc">
+    <%= @product.name %>
+    <%= @product.description %>
+  </div>
+  <div>
+    <button class='btn btn-primary btn-set-alert'>Set an alert</button>
+  </div>
+</div>
 
 <div class="container">
   <% @offers.each do |offer| %>
