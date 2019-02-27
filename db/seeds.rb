@@ -59,7 +59,6 @@ count = 0
   results.search('.v-centered').each do |row|
     retail_name = row.search('.drg-sidebar img').last&.values&.last
     next if retail_name.nil?
-
     existing_retailer = Retailer.find_by(name: retail_name)
     product = Product.last
 
@@ -71,10 +70,10 @@ count = 0
     end
     url_path = row.search('.js-ga-event-track').attr('href').value
 
-  # Prices
-    results.css('a.price').each do |link|
-      Price.create!(price: link.content.split(',').join('.').to_f, url: url_path, offer: offer)
-    end
+    # Prices
+#    results.css('a.price').each do |link|
+      Price.create!(price: row.search('a.price').last.children.text.split(',').join('.').to_f, url: url_path, offer: offer)
+#    end
 
     count += 1
     puts "#{keyword}# #{count} created"
