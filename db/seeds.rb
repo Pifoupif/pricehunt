@@ -4,20 +4,20 @@ require 'nokogiri'
 require 'faker'
 require 'pry'
 
-# User.destroy_all
-# Category.destroy_all
-# Product.destroy_all
-# Alert.destroy_all
-# Retailer.destroy_all
-# Offer.destroy_all
-# Price.destroy_all
+ User.destroy_all
+ Category.destroy_all
+ Product.destroy_all
+ Alert.destroy_all
+ Retailer.destroy_all
+ Offer.destroy_all
+ Price.destroy_all
 
 count = 0
 
-1.times do
+3.times do
   sleep(rand(2..4))
   user = User.new(
-    email: Faker::Internet.email,
+    email: 'toto@toto.com',
     password: 'azerty',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
