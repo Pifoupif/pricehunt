@@ -54,6 +54,9 @@
   </div>
 </div>
 
+<%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: 'btn btn-primary #{@criteria}' %>
+<%= link_to 'Filter by rating', product_path(@product), class: 'btn btn-success @criteria}' %>
+
 <div class="container">
   <% @offers.each do |offer| %>
     <div class="offers">
@@ -67,7 +70,7 @@
           <i class="fas fa-star white"></i>
         <% end %>
       </div>
-      <div><%= offer.prices.last %>€</div>
+      <div><%= offer.prices.last&.price %>€</div>
       <div><button class='btn btn-primary'>>Buy</button></div>
     </div>
   <% end %>
