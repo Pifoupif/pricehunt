@@ -86,6 +86,7 @@ count = 0
     user_id: user.id,
     product_id: product.id,
     target_price: Faker::Number.decimal(1),
+    by_email: true,
     )
   alert.save!
 
