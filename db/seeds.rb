@@ -14,10 +14,10 @@ require 'pry'
 
 count = 0
 
-3.times do
-  sleep(rand(2..4))
+1.times do
+  sleep(rand(1..2))
   user = User.new(
-    email: 'toto@toto.com',
+    email: Faker::Internet.email,
     password: 'azerty',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
@@ -77,17 +77,9 @@ count = 0
     end
 
     count += 1
-    puts "#{keyword}#{count} created"
+    puts "#{keyword}# #{count} created"
   end
 
 #**********************************************************
-
-  alert = Alert.new(
-    user_id: user.id,
-    product_id: product.id,
-    target_price: Faker::Number.decimal(1),
-    by_email: true,
-    )
-  alert.save!
 
 end
