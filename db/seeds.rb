@@ -64,7 +64,7 @@ count = 0
     product = Product.last
 
     if existing_retailer
-      offer = Offer.create!(retailer_id: existing_retailer.id, product: product)
+      offer = Offer.create!(retailer_id: existing_retailer.id, product: product, rating: 4, logo: "https://cdn.pji.nu/g/ftg_logos/store_18708.png")
     else
       new_retailer = Retailer.create(name: retail_name)
       offer = Offer.create!(retailer_id: new_retailer.id, product: product)
