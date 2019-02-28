@@ -7,12 +7,7 @@
 
 .message {
   position:relative;
-  display:flex;
-  padding: 10px;
-  align-content: center;
-  justify-content: center;
-  margin: 10px;
-  border-bottom: 2px solid rgba(220,224,244,1);
+  display: flex;
 }
 
 
@@ -33,22 +28,31 @@
   size: fit;
 }
 
-.alert-product {
-  width: 25%;
-  font-size: 15px;
 
+.alert-product {
+  width: 20%;
+  font-size: 15px;
+  border: 1px dotted rgba(220,224,244,1);
+  justify-content: middle;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 40px;
 }
 
 .alert-image{
-  width: 25%;
+  width: 20%;
   text-align: center;
-  border: 1px dotted grey;
   margin: 5px;
+  border: 1px dotted rgba(220,224,244,1);
 }
 
 .alert-price {
   text-align: center;
+  width: 40%;
   justify-content:center;
+  border: 1px dotted rgba(220,224,244,1);
+  padding-top: 25px;
+
 }
 
 .icon {
@@ -56,14 +60,17 @@
 }
 
 .alert-link{
-  width: 25%;
+  width: 20%;
   text-align: center;
+  border: 1px dotted rgba(220,224,244,1);
+  padding-top: 40px;
+
 }
 
 .alert-picture {
   height: 300px;
   width: 400px;
-  border: 1px dotted grey;
+  text-align: center;
 }
 
 .graph-price{
@@ -80,4 +87,45 @@
 
 .alert-back {
   text-align: center;
+}
+
+
+.alert-infos-show{
+  text-align: left;
+  padding-left: 100px;
+}
+
+.alert-infos-show i {
+  font-size: 30px;
+}
+
+.alert-communication{
+  width: 30%;
+  font-size: 15px;
+  border: 1px dotted rgba(220,224,244,1);
+  padding-top: 20px;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+.alert-communication i{
+font-size: 30px;
+padding-right: 25px;
+}
+
+.alert-show{
+  display:flex;
+}
+
+.list-contact{
+  display:inline
+}
+
+.inline li{
+  margin: 0px;
+  padding: 0px;
+  width: 10px;
 }
