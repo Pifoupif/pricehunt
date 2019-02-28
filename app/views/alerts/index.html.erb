@@ -1,6 +1,7 @@
-<div class="container">
-  <h1>Your alerts</h1>
-
+<div class="container container-alerts">
+  <div class="my-alerts">
+    <h1>List of my alerts</h1>
+  </div>
     <div class="inbox">
       <% count = 0 %>
   <ul>
@@ -13,7 +14,8 @@
             <div class="back-white">
               <%= image_tag "back-white.png", alt: "white-back", class:"back-white-picture" %>
               <div class="alert-link">
-                <%= link_to '+', alert_path(alert), class:"btn btn-success no-decoration see-detail alert-link-format" %>
+                <%= link_to 'More details', alert_path(alert), class:"btn btn-success no-decoration see-detail alert-link-format" %>
+                <%= link_to 'Edit', alert_path(alert), class:"btn btn-success no-decoration see-detail alert-link-format" %>
               </div>
 
               <div class="alert-number">
