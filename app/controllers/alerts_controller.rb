@@ -28,6 +28,7 @@ class AlertsController < ApplicationController
 
   def index
     @user_alerts = Alert.where(user: current_user)
+    @product = Product.where("name ILIKE ?", "%#{params[:query]}%").first
   end
 
   def update

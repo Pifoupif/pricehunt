@@ -1,11 +1,13 @@
 <%= form_tag product_path(@product), method: :get do %>
-<div class="search-flex">
-  <%= text_field_tag :query,
-  params[:query],
-  class: "form-control food-type",
-  placeholder: "Keyword"
-  %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-</div>
+  <div class="search-flex">
+    <%= select_tag :query,
+    params[:query],
+    class: "form-control food-type select2 js-data-example-ajax" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+  </div>
 <% end %>
+
+
+
+
 

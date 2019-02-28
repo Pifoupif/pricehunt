@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @product = Product.where("name ILIKE ?", "%#{params[:query]}%").first
 
     if params[:query].present?
-      sql_query = "products.name @@ :query"
+      sql_query = "products.denich_id @@ :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       @products = Product.all
