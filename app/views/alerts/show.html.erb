@@ -1,11 +1,9 @@
 <div class="container container-alerts-show">
   <div class="back-white-show">
-    <%= image_tag "back-white.png", alt: "white-back", class:"back-white-picture" %>
-  </div>
-    <div class="row container-alert">
+    <%= image_tag "back-white.svg", alt: "white-back", class:"back-white-picture" %>
+    <div class="row container-alert container-alert-show">
       <div class="col-xs-6">
         <div class="alert-picture">
-          <%#= cl_image_tag booking.product.photo, crop: :fill, class: 'icon' %>
           <%= image_tag @alert.product.photo, crop: :fill, height: 300, width: 300 %>
         </div>
       </div>
@@ -28,6 +26,7 @@
             <li><i class="fas fa-sms"></i></li>
             <% end %>
           </ul>
+  </div>
         </div>
       </div>
     </div>
@@ -40,5 +39,4 @@
   <div class="alert-back">
     <%= link_to 'Back to all my alerts', alerts_path, class:"btn btn-success no-decoration see-detail" %>
   </div>
-</div>
 </div>
