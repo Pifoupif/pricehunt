@@ -11,8 +11,9 @@
 
 .distortion {
   transform: skew(0deg, -2.5deg);
-  // background: #3aebba linear-gradient(45deg,#4FB6FF,#3aebba);
-   padding: 140px;
+   //background: #3aebba linear-gradient(45deg,#4FB6FF,#3aebba);
+   padding: 40px;
+   display: flex;
 }
 
 #btn-successor {
@@ -32,4 +33,24 @@
   font-weight: bold;
   border: none;
   transition: all 0.2s ease-in;
+}
+
+.fas.fa-laptop {
+  color: white;
+font-size: 15em;
+text-align: right;
+}
+
+.fas.fa-mobile-alt {
+  color: white;
+font-size: 7em;
+text-align: right;
+}
+
+.fas.fa-headphones {
+  color: white;
+  font-size: 7em;
+  right: 15px;
+  top: -100px;
+  position: absolute;
 }
