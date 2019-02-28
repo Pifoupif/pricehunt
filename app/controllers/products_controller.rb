@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def show
     if params[:query]
-      @product = Product.where("name ILIKE ?", "%#{params[:query]}%").first
+      @product = Product.where("denich_id ILIKE ?", "%#{params[:query]}%").first
       redirect_to product_path(@product)
     else
       @product = Product.find(params[:id])
