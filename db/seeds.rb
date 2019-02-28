@@ -50,6 +50,7 @@ keyword.each do |word|
       photo: "#{thumb}",
       name: "#{search_result['message']['product']['items'][count]['name']}",
       description: "#{search_result['message']['product']['items'][count]['price']['regular']}",
+      denich_id: "#{search_result['message']['product']['items'][count]['id']}",
       category_id: category.id,
       )
 
