@@ -22,6 +22,3 @@ class ProductsController < ApplicationController
 
 end
 
-
-
-Product.where("name ILIKE ?", "%STAN%").first
