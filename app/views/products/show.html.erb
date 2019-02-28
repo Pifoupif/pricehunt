@@ -3,7 +3,7 @@
   <h2>Hunt the best price or set an alert</em></h2>
 </div>
 
-<!-- Modal -->
+<!-- Modal alert -->
 <div class="modal fade" id="alert-creation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -27,6 +27,21 @@
   </div>
 </div>
 
+<!-- Modal sign in-->
+<div class="modal fade" id="sign-in-modal-first" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Oups, you are not logged in, please log in first to set your alert</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'shared/form-sign-in' %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- show -->
 
 <div class="product-banner">
@@ -39,7 +54,11 @@
   </div>
   <!-- Button trigger modal -->
   <div>
-    <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation">Set an alert</button>
+    <% if user_signed_in? %>
+      <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation">Set an alert</button>
+    <% else %>
+      <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first">Set an alert</button>
+    <% end %>
   </div>
 </div>
 
