@@ -1,4 +1,7 @@
-<rouh1>Best price for <%= @product.name %></h1>
+
+<div class="title-product">
+  <h2>Best price for <em><%= @product.name %></em></h2>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="alert-creation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -28,14 +31,15 @@
 
 <div class="product-banner">
   <div class="product-photo">
-    <img src="https://picsum.photos/120/100" alt="">
+    <img src="<%= @product.photo %>" alt="">
   </div>
   <div class="product-desc">
     <%= @product.name %>
     <%= @product.description %>
   </div>
+  <!-- Button trigger modal -->
   <div>
-    <button class='btn btn-primary btn-set-alert'>Set an alert</button>
+    <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation">Set an alert</button>
   </div>
 </div>
 
