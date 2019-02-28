@@ -1,55 +1,55 @@
 <div class="container">
   <h1>Your alerts</h1>
-  <div class="tabs">
-    <a href="#" class="tab-active">Current alerts</a>
-    <a href="#" class="tab">Past alerts</a>
-  </div>
-  <ul>
+
     <div class="inbox">
       <% count = 0 %>
+  <ul>
       <% @user_alerts.each do |alert| %>
-    <div class="col-xs-12 col-md-6">
-      <div class="card-index">
-        <div class="card-body" style="background:#3aebba linear-gradient(45deg,#3c82ff,#3aebba)">
-          <div class="back-white">
-            <%= image_tag "back-white.png", alt: "white-back", class:"back-white-picture" %>
-            <div class="alert-link">
-              <%= link_to '+', alert_path(alert), class:"btn btn-success no-decoration see-detail alert-link-format" %>
-            </div>
+      <li>
 
-            <div class="alert-number">
-              <% count += 1 %>
-              <p><%= count %></p>
-            </div>
-            <div class="alert-avatar">
-              <%= image_tag alert.product.photo, :crop=>"thumb" %>
-            </div>
-            <div class="card-name">
-              <h2><strong><%= alert.product.name %> </strong>
+      <div class="col-xs-12 col-md-6">
+        <div class="card-index">
+          <div class="card-body" style="background:#3aebba linear-gradient(45deg,#3c82ff,#3aebba)">
+            <div class="back-white">
+              <%= image_tag "back-white.png", alt: "white-back", class:"back-white-picture" %>
+              <div class="alert-link">
+                <%= link_to '+', alert_path(alert), class:"btn btn-success no-decoration see-detail alert-link-format" %>
               </div>
-              <div class="card-header">
-                      <div class="alert-price">
-         <p>Target price: €<%= alert.target_price.to_i %> </p>
-         <p>Current price €<%= alert.product.description.to_i %></p>
-         <% target_price = alert.target_price %>
-         <% current_price = alert.product.description %>
-         <% difference = (current_price.to_i - target_price.to_i).to_i %>
-         <p>Difference €<%= difference %></p>
-       </div>
+
+              <div class="alert-number">
+                <% count += 1 %>
+                <p><%= count %></p>
               </div>
-                     <div class="alert-communication">
-        <ul>
-          <% if alert.by_email %>
-          <li><i class="fas fa-at"></i></li>
-          <% end %>
-          <% if alert.by_text_message %>
-          <li><i class="fas fa-sms"></i></li>
-          <% end %>
-        </ul>
-      </div>
+              <div class="alert-avatar">
+                <%= image_tag alert.product.photo, :crop=>"thumb" %>
+              </div>
+              <div class="card-name">
+                <h3><%= alert.product.name %></h3>
+                </div>
+                <div class="card-header">
+                  <div class="alert-price">
+                   <p>Target price: €<%= alert.target_price.to_i %> </p>
+                   <p>Current price €<%= alert.product.description.to_i %></p>
+                   <% target_price = alert.target_price %>
+                   <% current_price = alert.product.description %>
+                   <% difference = (current_price.to_i - target_price.to_i).to_i %>
+                   <p>Difference €<%= difference %></p>
+                 </div>
+               </div>
+               <div class="alert-communication">
+                <ul>
+                  <% if alert.by_email %>
+                  <li><i class="fas fa-at"></i></li>
+                  <% end %>
+                  <% if alert.by_text_message %>
+                  <li><i class="fas fa-sms"></i></li>
+                  <% end %>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+      </li>
         <% end %>
       </ul>
     </div>
