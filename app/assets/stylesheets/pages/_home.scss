@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+
+.banner {
+  // height: 60vh;
+  background:#3aebba linear-gradient(45deg,#3c82ff,#3aebba);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  transition: all 0.4s ease-in;
+  z-index: 0;
+}
+
+
+.distortion {
+  transform: skew(0deg, -2.5deg);
+   //background: #3aebba linear-gradient(45deg,#4FB6FF,#3aebba);
+   padding: 40px;
+   display: flex;
+}
+
+#btn-successor {
+  background-color:#3FCE8E;
+  border-radius: 3px;
+  padding: 0px 20px;
+  margin-left: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  border: none;
+  transition: all 0.2s ease-in;
+}
+#btn-successor:hover {
+  background-color:#4CF9AB;
+  border-radius: 3px;
+  padding: 0px 20px;
+  font-weight: bold;
+  border: none;
+  transition: all 0.2s ease-in;
+}
+
+.fas.fa-laptop {
+  color: white;
+font-size: 15em;
+text-align: right;
+}
+
+.fas.fa-mobile-alt {
+  color: white;
+font-size: 7em;
+text-align: right;
+}
+
+.fas.fa-headphones {
+  color: white;
+  font-size: 7em;
+  right: 15px;
+  top: -100px;
+  position: absolute;
+}
