@@ -1,14 +1,13 @@
-
 <div class="title-product">
   <h2>Hunt the best price or set an alert</em></h2>
 </div>
 
-<!-- Modal -->
+<!-- Modal alert -->
 <div class="modal fade" id="alert-creation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Please set your Price Alert below</h5>
+        <h4 class="modal-title" id="exampleModalLabel">Please set your Price Alert below</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -27,6 +26,21 @@
   </div>
 </div>
 
+<!-- Modal sign in-->
+<div class="modal fade" id="sign-in-modal-first" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Oups, you are not logged in, please log in first to set your alert</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'shared/form-sign-in' %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- show -->
 
 <div class="product-banner">
@@ -39,26 +53,30 @@
   </div>
   <!-- Button trigger modal -->
   <div>
-    <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation">Set an alert</button>
+    <% if user_signed_in? %>
+      <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
+    <% else %>
+      <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
+    <% end %>
   </div>
 </div>
 
-<div class="flex">
-  <div class ="offer-container">
-    <div class="filter-prod">
-      <div class="">
-        <% css1_code = @filter ? "selected" : "" %>
-        <%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: "btn btn-primary filter_price #{css1_code}" %>
-      </div>
-      <div>
-        <% css2_code = !@filter ? "selected" : "" %>
-        <%= link_to 'Filter by rating', product_path(@product), class: "btn btn-primary sort_rating filter_rating #{css2_code}" %>
-      </div>
+
+<div class ="offer-container">
+  <div class="filter-prod">
+    <div class="">
+      <% css1_code = @filter ? "selected" : "" %>
+      <%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: "btn btn-primary filter_price #{css1_code}" %>
     </div>
+    <div>
+      <% css2_code = !@filter ? "selected" : "" %>
+      <%= link_to 'Filter by rating', product_path(@product), class: "btn btn-primary sort_rating filter_rating #{css2_code}" %>
+    </div>
+  </div>
 
     <div>
       <% @offers.each do |offer| %>
-        <div class="offers">
+        <div class="offers col-md-6">
           <div class=""><img src="<%= offer.retailer.logo %>" alt=""></div>
           <div>
             <% offer.retailer.rating.floor.times do %>
@@ -77,3 +95,4 @@
     </div>
   </div>
 </div>
+
