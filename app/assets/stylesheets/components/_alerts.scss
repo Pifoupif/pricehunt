@@ -190,7 +190,14 @@ padding-right: 25px;
 
 .back-white img{
   border-radius-left: 10px;
+  z-index: 1;
+}
+
+.back-white-show img {
+  height: 400px;
   z-index: -3;
+  margin: -15px;
+  width: 500px;
 }
 
 .back-white-picture{
@@ -242,4 +249,14 @@ left: 5px;
   font-weight: lighter;
   text-align: center;
   border-bottom: 5px solid linear-gradient(45deg,#3c82ff,#3aebba);
+}
+
+.alert-picture {
+  position: absolute;
+  top: 10px;
+}
+
+.container-alerts-show{
+  background: linear-gradient(45deg,rgba(60,130,255,0.6),rgba(58,235,186,0.6));
+  position: relative;
 }
