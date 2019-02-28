@@ -12,8 +12,8 @@ require 'faker'
  Price.destroy_all
 
 #Configuration:
-keyword = ['stan','iphone','xbox','ps4','macbook']
-number_of_product = 10
+keyword = ['stan','macbook']
+number_of_product = 1
 
 #*********************************************************
 
@@ -79,7 +79,7 @@ keyword.each do |word|
       url_path = row.search('.js-ga-event-track').attr('href').value
 
       # Prices
-      Price.create!(price: row.search('a.price').last.children.text.split(',').join('.').to_f, url: "https://ledenicheur.fr#{url_path}", offer: offer)
+      Price.create!(price: row.search('a.price').last.children.text.gsub(/[^\d]/, '').to_f/100, url: "https://ledenicheur.fr#{url_path}", offer: offer)
 
     end
       count += 1
