@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'toto@pricehunt.live'
+  default from: 'contact@pricehunt.live'
   layout 'mailer'
 end
