@@ -12,8 +12,8 @@ require 'faker'
  Price.destroy_all
 
 #Configuration:
-keyword = ['stan','macbook']
-number_of_product = 1
+keyword = ['stan','macbook','iphone','dre']
+number_of_product = 3
 
 #*********************************************************
 
