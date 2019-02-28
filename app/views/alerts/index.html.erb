@@ -6,42 +6,55 @@
   </div>
   <ul>
     <div class="inbox">
+      <% count = 0 %>
       <% @user_alerts.each do |alert| %>
-      <li class="message">
-          <div class="alert-image">
-            <%= image_tag alert.product.photo, crop: :fill, class: 'icon' %>
-          </div>
-          <div class="alert-product">
-          <p>Product: <%= alert.product.name %> </p>
-          </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="card-index">
+        <div class="card-body" style="background:#3aebba linear-gradient(45deg,#3c82ff,#3aebba)">
+          <div class="back-white">
+            <%= image_tag "back-white.png", alt: "white-back", class:"back-white-picture" %>
+            <div class="alert-link">
+              <%= link_to '+', alert_path(alert), class:"btn btn-success no-decoration see-detail alert-link-format" %>
+            </div>
 
-
-        <div class="alert-price">
+            <div class="alert-number">
+              <% count += 1 %>
+              <p><%= count %></p>
+            </div>
+            <div class="alert-avatar">
+              <%= image_tag alert.product.photo, :crop=>"thumb" %>
+            </div>
+            <div class="card-name">
+              <h2><strong><%= alert.product.name %> </strong>
+              </div>
+              <div class="card-header">
+                      <div class="alert-price">
          <p>Target price: €<%= alert.target_price.to_i %> </p>
          <p>Current price €<%= alert.product.description.to_i %></p>
          <% target_price = alert.target_price %>
          <% current_price = alert.product.description %>
          <% difference = (current_price.to_i - target_price.to_i).to_i %>
          <p>Difference €<%= difference %></p>
-        </div>
-
-          <div class="alert-communication">
-            <p>Contact me by:</p>
-            <ul>
-              <% if alert.by_email %>
-                <li><i class="fas fa-at"></i></li>
-              <% end %>
-              <% if alert.by_text_message %>
-                <li><i class="fas fa-sms"></i></li>
-              <% end %>
-            </ul>
+       </div>
+              </div>
+                     <div class="alert-communication">
+        <ul>
+          <% if alert.by_email %>
+          <li><i class="fas fa-at"></i></li>
+          <% end %>
+          <% if alert.by_text_message %>
+          <li><i class="fas fa-sms"></i></li>
+          <% end %>
+        </ul>
+      </div>
+            </div>
           </div>
-        <div class="alert-link">
-          <%= link_to 'More details', alert_path(alert), class:"btn btn-success no-decoration see-detail" %>
         </div>
-      </li>
-      <% end %>
-    </ul>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
+
+
 
