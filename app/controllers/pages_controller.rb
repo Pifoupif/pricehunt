@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @home = ""
-    @product = Product.where("name ILIKE ?", params[:query])
+    @product = Product.where("denich_id ILIKE ?", params[:query])
     #@product = Product.find("denich_id ILIKE ?", "%#{params[:query]}%")
     if params[:query].present?
       sql_query = "products.denich_id @@ :query"
