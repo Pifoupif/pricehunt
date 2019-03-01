@@ -1,4 +1,46 @@
 // Specific CSS for your home-page
+@keyframes slideInFromLeft {
+  0% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInlaptop {
+  0% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+
+
+#lap {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 140s ease-out 0s 1 slideInlaptop;
+  // padding: 30px;
+}
+
+.fas.fa-mobile-alt, .fas.fa-headphones, .far.fa-keyboard, .fas.fa-gamepad, .fas.fa-tshirt {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 150s ease-out 0s 1 slideInFromLeft;
+  // padding: 30px;
+}
+
+.illustration-home {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 150s ease-out 0s 1 slideInFromLeft;
+  // padding: 30px;
+}
+
+
+
+
+
 
 .banner {
   // height: 60vh;
@@ -8,12 +50,21 @@
   z-index: 0;
 }
 
+// .fas.fa-laptop {
+//   transform: skew(0deg, -2.5deg);
+//   padding: 40px;
+//   display: flex;
+//   right: 1vh;
+//   top: 30vh;
+//   position: absolute;
+// }
+
 .illustration-home {
   transform: skew(0deg, -2.5deg);
-  padding: 40px;
+  padding: 10px;
   display: flex;
-  right: 1vh;
-  top: 30vh;
+  right: 20vh;
+  top: 25vh;
   position: absolute;
 }
 
@@ -26,7 +77,7 @@ text-align: right;
 .fas.fa-mobile-alt {
     color: white;
     font-size: 7em;
-    right: 88%;
+    right: 90%;
     top: 7%;
     position: absolute;
     transition: all 0.9s ease-in;
@@ -35,6 +86,37 @@ text-align: right;
     font-size: 7.9em;
   }
 }
+
+.fab.fa-android {
+  color: white;
+  font-size: 7em;
+  right: -35px;
+  top: 220px;
+  position: absolute;
+  transition: all 0.9s ease-in;
+    margin: none;
+    padding: none;
+  &:hover {
+  transform: rotate(-25deg);
+    font-size: 7.9em;
+  }
+}
+
+.fas.fa-camera-retro {
+    color: white;
+    font-size: 7em;
+    right: 120px;
+    top: 280px;
+    position: absolute;
+    margin: none;
+    padding: none;
+    transition: all 0.9s ease-in;
+  &:hover {
+    font-size: 7.9em;
+  }
+}
+
+
 
 .fas.fa-headphones {
   color: white;
@@ -52,8 +134,8 @@ text-align: right;
 .far.fa-keyboard {
     color: white;
     font-size: 3em;
-    right: 87%;
-    top: 50%;
+    right: 93%;
+    top: 80%;
     position: absolute;
     transition: all 0.9s ease-in;
    &:hover {
@@ -65,8 +147,8 @@ text-align: right;
 .fas.fa-gamepad {
   color: white;
   font-size: 6em;
-  right: 53%;
-  top: -20%;
+  right: 59%;
+  top: -23%;
   position: absolute;
   transition: all 0.99s ease-in;
    &:hover {
@@ -75,15 +157,18 @@ text-align: right;
   }
 }
 
-.shoes {
-  color: white;
-  right: 35%;
-  top: 25%;
-  width: 32%;
-  position: absolute;
-  transition: all 0.3s ease-in;
-  &:hover {
-    width: 33.2%;
+.fas.fa-tshirt {
+    font-size: 5em;
+    color: white;
+    right: -8%;
+    top: 30%;
+    position: absolute;
+    margin: none;
+    padding: none;
+    overflow: auto;
+    transition: all 0.3s ease-in;
+&:hover {
+  font-size: 5.3em;
   }
 }
 
@@ -108,7 +193,7 @@ text-align: right;
 
 .text-ban {
   width: 50%;
-  margin: 0px 10%;
+  margin: 0px 7%;
 }
 
 .select2{
@@ -118,4 +203,8 @@ text-align: right;
 
 #select2-query-container {
   font-size: 0.5em;
+}
+.container-home {
+  background-color:white;
+  height: 100vh;
 }
