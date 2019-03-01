@@ -30,7 +30,7 @@
   height: 70px;
   border-radius: 8px;
   transition: opacity 0.4s ease-in;
-  opacity: 0.6;
+  opacity: 0.7;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 background: linear-gradient(45deg,rgba(60,130,255,0.6),rgba(58,235,186,0.6));
 }
@@ -157,6 +157,7 @@ text-decoration: none !important;
 .button-shopping{
   border-radius: 20px;
   color: white;
+  border: none;
 }
 
 .button-shopping i{
@@ -167,4 +168,8 @@ text-decoration: none !important;
   text-decoration: none;
   color: white;
   margin-bottom: 2px;
+}
+
+.price-shopping {
+font-weight: bold;
 }
