@@ -8,7 +8,8 @@
   margin-top: 10px;
   position: fixed;
   border-radius: 8px;
-  margin-left: 10px;
+  margin-left: 80px;
+  padding-right: 10px;
 }
 
 .product-desc {
@@ -71,8 +72,8 @@
 .filter-prod {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
-  margin-right: 25px;
+  padding-top: 30px;
+  margin-right: 95px;
 
 }
 
@@ -97,7 +98,6 @@
   width: 55vw;
   position: absolute;
   right: 15px;
-  width: 55vw;
 }
 
 .bottom-prod {
@@ -114,3 +114,9 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.my-row {
+  margin-right: 35px;
+  padding-right: 20px;
+}
+
