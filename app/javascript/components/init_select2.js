@@ -17,7 +17,7 @@ const initSelect2 = () => {
       },
       processResults: function (data) {
       // Tranforms the top-level key of the response object from 'items' to 'results'
-      const products = data.message.product.items.map(product => product.name)
+      const products = data.message.product.items.map(product => product.id)
       console.log(products)
       return {
         results: $.map(data.message.product.items, function(item) {
