@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       @offers = @product.offers.joins(:retailer).order('retailers.rating DESC')
     end
+    filter
+  end
 
     # if params[:query]
     #   #@product = Product.find(denich_id: params[:query])
@@ -20,8 +22,16 @@ class ProductsController < ApplicationController
     #     @filter = true
     #   end
     # end
-  end
 
+private
+
+  def filter
+    @filter = false
+    if params[:sort_by_price]
+      @filter = true
+      @offers = @product.offers.joins(:prices).order('prices.price ASC')
+    end
+  end
   # def search_show
   #   @product = Product.where(name: params[:query]).first
   #   redirect_to product_path(@product)
@@ -29,3 +39,17 @@ class ProductsController < ApplicationController
 
 end
 
+  # def show
+  #   if params[:query]
+  #     @product = Product.where("denich_id ILIKE ?", "%#{params[:query]}%").first
+  #     redirect_to product_path(@product)
+  #   else
+  #     @product = Product.find(params[:id])
+  #     @offers = @product.offers.joins(:retailer).order('retailers.rating DESC')
+  #     @filter = false
+  #     if params[:sort_by_price]
+  #       @filter = true
+  #       @offers = @product.offers.joins(:prices).order('prices.price ASC')
+  #     end
+  #     @alert = Alert.new
+  #   end
