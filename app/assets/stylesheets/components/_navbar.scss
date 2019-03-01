@@ -76,9 +76,9 @@
   border-top: 1px solid #E6E6E6;
 }
 
-.search-flex {
-  display: flex;
-}
+// .search-flex {
+//   display: flex;
+// }
 
 .sticky-nav {
   position: fixed;
@@ -86,3 +86,9 @@
   z-index: 3;
   width: 100vw;
 }
+
+.search-bar {
+  width: 800px;
+}
+
+
