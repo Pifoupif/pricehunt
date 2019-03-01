@@ -1,11 +1,14 @@
 .product-banner {
   display: flex;
   background-color: white;
-  width: 100vw;
-  height: 200px;
+  width: 40vw;
+  height: 70vh;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   margin-top: 10px;
+  position: fixed;
+  border-radius: 8px;
+  margin-left: 10px;
 }
 
 .product-desc {
@@ -34,7 +37,7 @@
 }
 
 .btn-set-alert {
-  border-radius: 50px;
+  border-radius: 5px;
   background-color: rgb(20,20,20);
   border-color: white;
 }
@@ -68,12 +71,17 @@
 .filter-prod {
   display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 25px;
+
 }
 
 .offer-container {
   padding-top: 10px;
-  width: 80vw;
-  background-color: $yellow2;
+  width: 100vw;
+  margin-left: 20px;
+  margin-right: 20px;
+
 }
 
 .product-photo {
@@ -83,5 +91,26 @@
 
 .flex {
   display: flex;
-  justify-content: space-around;
+}
+
+.left-list {
+  width: 55vw;
+  position: absolute;
+  right: 15px;
+  width: 55vw;
+}
+
+.bottom-prod {
+  align-items: end;
+  margin-top: 50px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+
+.category {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
