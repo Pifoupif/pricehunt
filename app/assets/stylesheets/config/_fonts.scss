@@ -1,8 +1,8 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web');
 // Define fonts for body and headers
+$headers-font: 'Titillium Web', sans-serif;
 $body-font: 'Open Sans', sans-serif;
-$headers-font: 'PT Sans', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

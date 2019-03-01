@@ -8,12 +8,57 @@
   z-index: 0;
 }
 
-
-.distortion {
+.illustration-home {
   transform: skew(0deg, -2.5deg);
-   //background: #3aebba linear-gradient(45deg,#4FB6FF,#3aebba);
-   padding: 40px;
-   display: flex;
+  padding: 40px;
+  display: flex;
+  right: 1vh;
+  top: 30vh;
+  position: absolute;
+}
+
+.fas.fa-laptop {
+  color: white;
+font-size: 15em;
+text-align: right;
+}
+
+.fas.fa-mobile-alt {
+  color: white;
+font-size: 7em;
+text-align: right;
+}
+
+.fas.fa-headphones {
+  color: white;
+  font-size: 7em;
+  right: 15px;
+  top: -100px;
+  position: absolute;
+}
+.far.fa-keyboard {
+  color: white;
+  font-size: 3em;
+  right: 73%;
+  top: 51%;
+  position: absolute;
+}
+
+.fas.fa-gamepad {
+  color: white;
+  font-size: 6em;
+  right: 53%;
+  top: -20%;
+  position: absolute;
+}
+
+.shoes {
+  color: white;
+  font-size: 0em;
+  right: 29%;
+  top: 23%;
+  width: 29%;
+  position: absolute;
 }
 
 #btn-successor {
@@ -35,22 +80,7 @@
   transition: all 0.2s ease-in;
 }
 
-.fas.fa-laptop {
-  color: white;
-font-size: 15em;
-text-align: right;
-}
-
-.fas.fa-mobile-alt {
-  color: white;
-font-size: 7em;
-text-align: right;
-}
-
-.fas.fa-headphones {
-  color: white;
-  font-size: 7em;
-  right: 15px;
-  top: -100px;
-  position: absolute;
+.text-ban {
+  width: 50%;
+  margin: 0px 10%;
 }
