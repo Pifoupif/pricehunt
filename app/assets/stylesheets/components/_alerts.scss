@@ -12,6 +12,7 @@
 .container-alerts-show{
   background: linear-gradient(45deg,rgba(60,130,255,0.6),rgba(58,235,186,0.6));
   position: relative;
+  height: 900px;
 }
 
 .alert-price{
@@ -112,6 +113,9 @@ background-color: #3aebba;
 
 .alert-back {
   text-align: center;
+  position: absolute;
+  bottom: 60px;
+  left: 400px;
 }
 
 
@@ -170,15 +174,18 @@ padding-right: 25px;
   border-radius: 10px;
   position: relative;
   height: 300px;
-  box-shadow: 4px 4px rgba(0,0,0,0.2);
   margin: 20px;
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.5s ease-in;
+background:#3aebba linear-gradient(45deg,#3c82ff,#3aebba);
+color: grey;
 }
 
 .card-body:hover{
   opacity: 1;
-  box-shadow: 4px 4px rgba(0,0,0,0.4);
-  transition: opacity 0.3s ease-in;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.8);
+  transition: opacity 0.5s ease-in;
+  background: #3c82ff linear-gradient(45deg,#3aebba,#3c82ff);
+  color: black;
 }
 
 .card-name{
@@ -202,14 +209,25 @@ padding-right: 25px;
 .back-white-show img {
   height: 1200px;
   z-index: 1;
-  margin-top: -300px
+  margin-top: -300px;
 }
+
+.back-white-show-picture{
+  height: 1200px;
+  z-index: 1;
+  margin-top: -300px;
+  transform: rotate(90deg);
+transform: rotateY(360deg);
+margin-left: -30px;
+}
+
 
 .back-white-picture{
   width: 300px;
   height: 300px;
   margin-left: -80px;
 }
+
 
 .alert-avatar{
   position: absolute;
@@ -257,15 +275,16 @@ left: 5px;
   border-bottom: 5px solid linear-gradient(45deg,#3c82ff,#3aebba);
 }
 
+
 .alert-picture {
   position: absolute;
-  top: 10px;
+  top: -600px;
 }
 
 .alert-picture img{
   position: absolute;
-  top: -600px;
-  left: -150px;
+  top: 20px;
+  left: 20px;
   height: 300px;
 }
 
@@ -274,15 +293,50 @@ position: absolute;
 top: -900px;
 }
 
+.product-infos-alert p {
+  margin: 0px;
+  padding: 0px;
+}
+
 .graph-price{
 position: absolute;
 top: 400px;
+left: 180px;
 background-color: white;
 border: 5px solid red;
 padding-top: 120px;
 }
 
+.price-alert-infos{
+  display: flex;
+  width: 400px;
+justify-content: space-between;
+position: absolute;
+left: 20px;
+margin-bottom: 50px;
+}
 
+.arrow-alert-show i {
+  font-size: 80px;
+  position: absolute;
+  left: 175px;
+}
+
+.product-infos-alert h1{
+  margin-left: 50px;
+}
+
+.difference-price p {
+  margin-left: 60px;
+}
+
+.contact-alert{
+  margin-left: 60px;
+}
+
+.contact-alert li{
+  margin: 10px;
+}
 
 
 
