@@ -2,6 +2,8 @@ import $ from 'jquery';
 import 'select2';
 
 const initSelect2 = () => {
+  const search = document.querySelectorAll('.js-data-example-ajax');
+  console.log(search);
   $('.js-data-example-ajax').select2({
     minimumInputLength: 2,
     ajax: {
