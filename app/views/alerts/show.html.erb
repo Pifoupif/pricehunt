@@ -1,6 +1,6 @@
 <div class="container container-alerts-show">
   <div class="back-white-show">
-    <%= image_tag "back-white.svg", alt: "white-back", class:"back-white-picture" %>
+    <%= image_tag "back-white.svg", alt: "white-back", class:"back-white-show-picture" %>
     <div class="row container-alert container-alert-show">
       <div class="col-xs-6">
         <div class="alert-picture">
@@ -11,22 +11,37 @@
         <div class="product-infos-alert">
           <h1><%= @alert.product.name %></h1>
           <div class="alert-infos-show">
-           <p><i class="fas fa-bullseye"></i> Target price: €<%= @alert.target_price.to_i %> </p>
-           <p><i class="fas fa-dollar-sign"></i> Current price €<%= @alert.product.description.to_i %></p>
-           <% target_price = @alert.target_price %>
-           <% current_price = @alert.product.description %>
-           <% difference = (current_price.to_i - target_price.to_i).to_i %>
-           <p><i class="fas fa-hand-holding-usd"></i> Difference €<%= difference %></p>
-           <p>Contact me by:</p>
-           <ul class='inline'>
-            <% if @alert.by_email %>
-            <li><i class="fas fa-at"></i></li>
-            <% end %>
-            <% if @alert.by_text_message %>
-            <li><i class="fas fa-sms"></i></li>
-            <% end %>
-          </ul>
-  </div>
+            <div class="price-alert-infos">
+              <p></i> Target price: <strong>€<%= @alert.target_price.to_i %></strong>  </p>
+              <br>
+              <p></i> Current price: <strong>€<%= @alert.product.description.to_i %></strong> </p>
+            </div>
+            <br>
+            <% target_price = @alert.target_price %>
+            <% current_price = @alert.product.description %>
+            <% difference = (current_price.to_i - target_price.to_i).to_i %>            <div class="arrow-alert-show">
+              <i class="far fa-arrow-alt-circle-down arrow-alert"></i>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="difference-price">
+              <p></i> Difference: <strong>€<%= difference %></strong> </p>
+            </div>
+            <br>
+            <div class="contact-alert">
+              <p>Contact me by:</p>
+              <ul class='inline'>
+                <% if @alert.by_email %>
+                <li><i class="fas fa-at"></i></li>
+                <% end %>
+                <% if @alert.by_text_message %>
+                <li><i class="fas fa-sms"></i></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
