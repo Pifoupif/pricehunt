@@ -1,12 +1,19 @@
 <div class="container-home">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="banner">
+      <div class="distortion">
     <div class="container">
       <h1>PriceHunt brings <strong>the best prices</strong> to <strong>selfish people</strong>!</h1>
       <p>Change your life and find the best prices for all the products around the world.</p>
-      <div class="form-home">
-        <label class= "label-home" for="keyword">What is your keyword?</label>
-        <%= render 'shared/searchbar'  %>
+        <div class="form-home">
+          <label class= "label-home" for="keyword">What is your keyword?</label>
+          <p></p>
+          <%= render 'shared/searchbar'  %>
+          </div>
+        </div>
+        <i class="fas fa-mobile-alt"></i>
+        <i class="fas fa-laptop"></i>
+        <i class="fas fa-headphones"></i>
       </div>
     </div>
   </div>
-</div>
+
