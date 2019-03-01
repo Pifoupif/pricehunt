@@ -90,7 +90,7 @@ text-align: right;
 #btn-successor {
   background-color:#3FCE8E;
   border-radius: 3px;
-  padding: 0px 20px;
+  padding: 5px 20px;
   margin-left: 10px;
   font-size: 0.8em;
   font-weight: bold;
@@ -100,7 +100,7 @@ text-align: right;
 #btn-successor:hover {
   background-color:#4CF9AB;
   border-radius: 3px;
-  padding: 0px 20px;
+  padding: 5px 20px;
   font-weight: bold;
   border: none;
   transition: all 0.2s ease-in;
@@ -111,10 +111,19 @@ text-align: right;
   margin: 0px 10%;
 }
 
+
 #main-title {
   margin-bottom: 40px;
 }
 
 #sub-title {
   margin-bottom: 40px;
+
+.select2{
+  width:455px;
+  font-size: 1.5em;
+}
+
+#select2-query-container {
+  font-size: 0.5em;
 }
