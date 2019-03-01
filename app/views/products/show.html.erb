@@ -1,6 +1,4 @@
-<div class="title-product">
-  <h2>Hunt the best price or set an alert</em></h2>
-</div>
+
 
 <!-- Modal alert -->
 <div class="modal fade" id="alert-creation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,62 +41,62 @@
 
 <!-- show -->
 
-
-<div class="filter-prod">
-  <div>
-    <% css1_code = @filter ? "selected" : "" %>
-    <%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: "btn btn-primary filter_price #{css1_code}" %>
-  </div>
-  <div>
-    <% css2_code = !@filter ? "selected" : "" %>
-    <%= link_to 'Filter by rating', product_path(@product), class: "btn btn-primary sort_rating filter_rating #{css2_code}" %>
-  </div>
-</div>
-<div class="product-banner">
-  <div class="column">
-    <div class="category">
-      <p><em>Category:</em> <%= @product.category.name %></p>
+<div class="contenu">
+  <div class="filter-prod">
+    <div>
+      <% css1_code = @filter ? "selected" : "" %>
+      <%= link_to 'Filter by price', product_path(@product, sort_by_price:'yes'), class: "btn btn-primary filter_price #{css1_code}" %>
     </div>
-    <div class="product-desc">
-      <h4><%= @product.name %></h4>
-    </div>
-    <div class="product-photo">
-      <img src="<%= @product.photo %>" alt="" height="180" width="180">
-    </div>
-        <!-- Button trigger modal -->
-    <div class="bottom-prod">
-      <p>Not satisfied with these offers?</p>
-        <% if user_signed_in? %>
-          <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
-        <% else %>
-          <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
-        <% end %>
+    <div>
+      <% css2_code = !@filter ? "selected" : "" %>
+      <%= link_to 'Filter by rating', product_path(@product), class: "btn btn-primary sort_rating filter_rating #{css2_code}" %>
     </div>
   </div>
-</div>
-
-<div class ="container left-list">
-  <div class="row">
-    <% @offers.each do |offer| %>
-      <div class="offers">
-        <div class="">
-          <img src="<%= offer.retailer.logo %>" alt="">
-        </div>
-        <div>
-          <% offer.retailer.rating.floor.times do %>
-            <i class="fas fa-star gold"></i>
-          <% end %>
-          <% (5 - offer.retailer.rating.floor).times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-        </div>
-        <div>
-          <%= offer.prices.last.price %>€
-        </div>
-        <div>
-          <a href=<%= offer.prices.last.url %> target="_blank">See this offer</a>
-        </div>
+  <div class="product-banner">
+    <div class="column">
+      <div class="category">
+        <p><em>Category:</em> <%= @product.category.name %></p>
       </div>
-    <% end %>
+      <div class="product-desc">
+        <h4><%= @product.name %></h4>
+      </div>
+      <div class="product-photo">
+        <img src="<%= @product.photo %>" alt="" height="180" width="180">
+      </div>
+          <!-- Button trigger modal -->
+      <div class="bottom-prod">
+        <p>Not satisfied with these offers?</p>
+          <% if user_signed_in? %>
+            <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
+          <% else %>
+            <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class ="container left-list">
+    <div class="my-row">
+      <% @offers.each do |offer| %>
+        <div class="offers">
+          <div class="">
+            <img src="<%= offer.retailer.logo %>" alt="">
+          </div>
+          <div>
+            <% offer.retailer.rating.floor.times do %>
+              <i class="fas fa-star gold"></i>
+            <% end %>
+            <% (5 - offer.retailer.rating.floor).times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+          <div>
+            <%= offer.prices.last.price %>€
+          </div>
+          <div>
+            <a href=<%= offer.prices.last.url %> target="_blank">See this offer</a>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
