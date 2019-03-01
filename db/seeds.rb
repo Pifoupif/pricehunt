@@ -12,11 +12,7 @@ require 'faker'
  Price.destroy_all
 
 #Configuration:
-<<<<<<< HEAD
 keyword = ['eastpack','stan','macbook','iphone','dre']
-=======
-keyword = ['alienware']
->>>>>>> 8169f2c78632292dcaad9c9ed381efea966c03a7
 number_of_product = 3
 
 #*********************************************************
