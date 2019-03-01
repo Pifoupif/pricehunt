@@ -72,7 +72,7 @@ keyword.each do |word|
         puts "offer #(#{offer.id})"
       else
         puts "* Detect a new retailer! (#{retail_name})"
-        new_retailer = Retailer.create(name: retail_name, rating: 3, logo: row.children.children.search('img').attr('src').value)
+        new_retailer = Retailer.create(name: retail_name, rating: rand(1..5), logo: row.children.children.search('img').attr('src').value)
         offer = Offer.create!(retailer_id: new_retailer.id, product: product)
         puts "offer #(#{offer.id})"
       end
