@@ -8,7 +8,7 @@ class Alert < ApplicationRecord
   validates :target_price, presence: true
   before_validation :by_email_or_by_text_message
 
-  after_create :send_alert_email
+  #after_create :send_alert_email
 
 
   private
