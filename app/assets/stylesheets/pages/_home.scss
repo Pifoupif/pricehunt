@@ -24,9 +24,16 @@ text-align: right;
 }
 
 .fas.fa-mobile-alt {
-  color: white;
-font-size: 7em;
-text-align: right;
+    color: white;
+    font-size: 7em;
+    right: 88%;
+    top: 7%;
+    position: absolute;
+    transition: all 0.9s ease-in;
+ &:hover {
+  transform: rotate(-25deg);
+    font-size: 7.9em;
+  }
 }
 
 .fas.fa-headphones {
@@ -35,13 +42,24 @@ text-align: right;
   right: 15px;
   top: -100px;
   position: absolute;
+  transition: all 0.9s ease-in;
+   &:hover {
+    transform: rotate(25deg);
+    font-size: 8.3em;
+  }
 }
+
 .far.fa-keyboard {
-  color: white;
-  font-size: 3em;
-  right: 73%;
-  top: 51%;
-  position: absolute;
+    color: white;
+    font-size: 3em;
+    right: 87%;
+    top: 50%;
+    position: absolute;
+    transition: all 0.9s ease-in;
+   &:hover {
+    transform: rotate(-5deg);
+    font-size: 4.3em;
+  }
 }
 
 .fas.fa-gamepad {
@@ -50,15 +68,23 @@ text-align: right;
   right: 53%;
   top: -20%;
   position: absolute;
+  transition: all 0.99s ease-in;
+   &:hover {
+    transform: rotate(-5deg);
+   font-size: 7.3em;
+  }
 }
 
 .shoes {
   color: white;
-  font-size: 0em;
-  right: 29%;
-  top: 23%;
-  width: 29%;
+  right: 35%;
+  top: 25%;
+  width: 32%;
   position: absolute;
+  transition: all 0.3s ease-in;
+  &:hover {
+    width: 33.2%;
+  }
 }
 
 #btn-successor {
