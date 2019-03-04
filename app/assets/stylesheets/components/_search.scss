@@ -30,6 +30,14 @@
   padding-left: 10px;
 }
 
+.select2-container--default .select2-results > .select2-results__options {
+  max-height: 300px !important;
+}
+
+.select2-results {
+  height: 300px;
+}
+
 // .select2 {
 //   border-radius: 30px !important;
 //   height: 32px !important;

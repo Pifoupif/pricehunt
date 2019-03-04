@@ -3,7 +3,6 @@ import 'select2';
 
 const initSelect2 = () => {
   const search = document.querySelectorAll('.js-data-example-ajax');
-  //console.log(search);
   $('.js-data-example-ajax').select2({
     minimumInputLength: 2,
     ajax: {
@@ -28,8 +27,12 @@ const initSelect2 = () => {
     escapeMarkup: function (markup) { return markup; },
     minimumInputLength: 2,
     templateResult: formatProduct,
-    templateSelection: formatProductSelection
-  }); // (~ document.querySelectorAll)
+    templateSelection: formatProductSelection,
+  });
+
+  $('.js-data-example-ajax').on('select2:select', function () {
+    $("#btn-successor").trigger('click');
+  });
 };
 
 function formatProduct (product) {
