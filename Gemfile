@@ -19,6 +19,9 @@ gem 'devise'
 gem 'faker'
 gem "letter_opener", group: :development
 gem 'postmark-rails'
+gem "google-cloud-vision"
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
