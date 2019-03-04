@@ -18,12 +18,15 @@ class DailyOffersUpdateService
 
     results = Nokogiri::HTML(open(url_vers_show))
 
+    product = alert.product
+
     results.search('.v-centered').each do |row|
       retail_name = row.search('.drg-sidebar img').last&.values&.last
       next if retail_name.nil?
 
+      price = row.search('a.price').last.children.text.gsub(/[^\d]/, '').to_f / 100
+
       existing_retailer = Retailer.find_by(name: retail_name)
-      product = Product.last
 
       offer = if existing_retailer
                 Offer.find_or_create_by product: product, retailer: existing_retailer
@@ -36,24 +39,24 @@ class DailyOffersUpdateService
       puts "offer #(#{offer.id})"
 
       url_path = row.search('.js-ga-event-track').attr('href').value
-      create_offer_price(offer, url_path)
+      create_offer_price(offer, price, url_path)
     end
     count += 1
     puts "#{word}# #{count} created"
     puts "====================="
 
-    update_best_offer(alert, product)
+    update_alert_with_lowest_price(alert, product)
   end
 
-  def create_offer_price(offer, url_path)
+  def create_offer_price(offer, price, url_path)
     Price.create!(
-      price: row.search('a.price').last.children.text.gsub(/[^\d]/, '').to_f / 100,
+      price: price,
       url: "https://ledenicheur.fr#{url_path}",
       offer: offer
     )
   end
 
-  def update_best_price(alert, product)
+  def update_alert_with_lowest_price(alert, product)
     today_last_prices = []
     product.offers.each do |offer|
       next if offer_invalid?(offer)
@@ -72,8 +75,11 @@ class DailyOffersUpdateService
   end
 
   def add_lowest_price(alert, today_lowest_price)
-    return unless today_lowest_price
-
-    LowestPrice.create alert: alert, price: today_lowest_price
+    if today_lowest_price
+      alert.update offer_today: true
+      LowestPrice.create alert: alert, price: today_lowest_price
+    else
+      alert.update offer_today: false
+    end
   end
 end

@@ -4,12 +4,22 @@ class Alert < ApplicationRecord
 
   belongs_to :product
   belongs_to :user
+  has_many :lowest_prices, dependent: :destroy
+  has_many :prices, through: :lowest_prices
 
   validates :target_price, presence: true
   before_validation :by_email_or_by_text_message
 
   #after_create :send_alert_email
 
+  def lowest_price
+    prices.last
+  end
+
+  def lowest_price_retailer
+    # voir methode delegate
+    prices.last.offer.retailer
+  end
 
   private
 
