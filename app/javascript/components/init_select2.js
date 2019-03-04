@@ -27,14 +27,12 @@ const initSelect2 = () => {
     placeholder: 'Search for a product',
     escapeMarkup: function (markup) { return markup; },
     minimumInputLength: 2,
-    templateResult: formatProduct
-    // TESTSETS + virgule au dessus
+    templateResult: formatProduct,
+    templateSelection: formatProductSelection
   }); // (~ document.querySelectorAll)
 };
 
 function formatProduct (product) {
-  console.log(product);
-
   if (product.loading) {
     return product.name;
   }
@@ -47,7 +45,10 @@ function formatProduct (product) {
   return markup;
 }
 
+function formatProductSelection (product) {
+  return product.name;
+}
+
 export { initSelect2 };
 
 // espace markup et template results
-

@@ -1,8 +1,9 @@
 <%= form_tag search_products_path, method: :get do %>
   <div class="search-flex">
+
     <%= select_tag :query,
     options_for_select([params[:query]], params[:query]),
-    class: "form-control food-type select2 js-data-example-ajax" %>
+    class: "form-control select2 js-data-example-ajax" %>
       <%= submit_tag "HUNT", class: "btn btn-primary", id:"btn-successor" %>
   </div>
 <% end %>

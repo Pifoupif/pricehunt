@@ -19,8 +19,8 @@ class ScrapeProductService
     #***************************************************************************
 
     results = Nokogiri::HTML(open(url_vers_show))
-
-    thumb = results.css('a.img140 img').last.attribute("src").value
+    thumb_s = results.css('a.img140 img').last.attribute("src").value
+    thumb = thumb_s.gsub! '140', '280'
 
     product = Product.new(
       photo: thumb,
