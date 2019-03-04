@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   def show
     @alert = Alert.new
-    PricehuntJob.perform_now(params[:query])
     if params[:query]
       @product = Product.find_by(denich_id: params[:query])
-
-      @product ||= DECLENCHER SCRAPPER sur params[:query]
+      if @product
+        @product
+      else
+        @product = PricehuntJob.perform_now(params[:query])
+      end
     else
       @product = Product.find(params[:id])
     end

@@ -26,7 +26,7 @@ keyword.each do |word|
     user.save!
 
     url_search = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{word}"
-    sleep(rand(0.2..1.2))
+    #sleep(rand(0.2..1.2))
     search = open(url_search).read
     search_result = JSON.parse(search)
     url_vers_show = "#{search_result['message']['product']['items'][count]['url']}"

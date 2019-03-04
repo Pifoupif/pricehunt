@@ -29,7 +29,11 @@ const initSelect2 = () => {
         }
       }
     }
+    // TESTSETS + virgule au dessus
   }); // (~ document.querySelectorAll)
 };
 
 export { initSelect2 };
+
+
+// espace markup et template results
