@@ -10,8 +10,6 @@
           </div>
           <div id="sub-title">
             <p>Never overpay your online purchases. PriceHunt indexes all the offers for all the products you can ever need </p>
-            <p><%= @descriptions %></p>
-            <p><%= @url %></p>
 
           </div>
           <div class="form-home">
@@ -23,6 +21,25 @@
           </div>
         </div>
 
+      <%= simple_form_for(@product) do |f| %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Submit your photo", class: "btn btn-success", id:"btn-successor" %>
+      <% if @product.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @product.errors.full_messages.each do |message| %>
+          <li ><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+
+            <p><%= @descriptions.inspect %></p>
           <div class="illustration-home">
             <i class="fas fa-laptop" id="lap"></i>
             <i class="fas fa-mobile-alt"></i>
