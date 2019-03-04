@@ -19,35 +19,20 @@ const initSelect2 = () => {
       // Tranforms the top-level key of the response object from 'items' to 'results'
       //const products = data.message.product.items.map(product => product.id)
       //console.log(products)
-        return {
-          results: data.message.product.items
-        };
-      },
-    },
-    placeholder: 'Search for a product',
-    escapeMarkup: function (markup) { return markup; },
-    minimumInputLength: 2,
-    templateResult: formatProduct
+      return {
+        results: $.map(data.message.product.items, function(item) {
+          return {
+            text: item.name,
+            id: item.id
+          }
+        })
+        }
+      }
+    }
     // TESTSETS + virgule au dessus
   }); // (~ document.querySelectorAll)
 };
 
-function formatProduct (product) {
-  console.log(product);
-
-  if (product.loading) {
-    return product.name;
-  }
-
-  var markup = "<div class='select2-result-repository clearfix'>" +
-    "<div class='select2-result-repository__avatar'><img src='" + 'https://cdn.pji.nu/product/standard/35/' + product.id + '.jpg' + "' /></div>" +
-    "<div class='select2-result-repository__title'>" + product.name + "</div>" +
-    "</div>";
-
-  return markup;
-}
-
 export { initSelect2 };
 
 // espace markup et template results
-
