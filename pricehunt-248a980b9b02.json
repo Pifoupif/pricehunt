@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pricehunt",
+  "private_key_id": "248a980b9b02572017da60a0d7121bc8272c0b33",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDl/M4ZJs/4W1tM\nqkRlMc02M3RPiUmb3/9m1kWvnCRt6RJG3uMxxvbLUQnkcZtobOx2aUqC+RnvOV0b\nvEkzEowHlfrOy4OlOqQ6+dgZV+dunXHfXncaINnDHodmdw/I2kFYwAcynt71akeS\nwTOHQ1M+XS/p2aTTdSaV0S+CjZI5TjNedjGQ1cenqfSeqPjXPRkpLiBQ3NH9xrAY\nAbEfLVzp5JniXiEJ2JNx7BjfCzosyYXvTXZ6ZQC+W5MhDz9je+vevaIWp6jSc023\naxRkL1PIvVal3k8S4Fc6SOrRZv0fb3BJaFDPkzOE3/1u6l3euNC9iDh98i/50pcD\nuO9kk2tHAgMBAAECggEATpcb6nZb3PeC9Gi+pIHnKR1eIou8bpqV0RNpjr/hpvld\nOICTzH+79/BCXCECRSXri+8g+i6bUSceDQtDTEOLPFBg+2eKHd0zH8Aeu1JRkHgW\n4IiMVI5jO4zkIfyPlUgXynccPo0RjXV67cg9jnxQJuB7LgMkkunWfJ2WCZvNGu1b\nRPDUC74PcTmy+W9pXXyi/QqEL4kw6rCLXtEsoeknaIWkwLE38RU9PSILOpbuSKxy\nLWUWY7ww5chD4CVQRDz+Z/zf6OY2MCbvOHu3UlPuaAbPUScpzNsCahiq791nv1Lj\nULN4RtCrLaua3wTt5LRJH/g31tMJbepap6yow5IUoQKBgQDy1+Rm8oeX3jEPdCM6\n/M7+XE4H7cGvZ6TKHelD2kdfRVvKnicHYjzp1cY4kMaLIiPzPjtSDbRpHwYxuEAR\nYJavpUQ7xlKJMmb6y5oT5OEvPDXhy+dSWsuKzd4AlVypVJhm+G4NyrFyecDRF0HK\niUOEiuYhgHci9YR+PidsKTSrlwKBgQDycpwRdkLPgsTl/8ESSOCpduJ7VZcQ8CuL\np87W7RBodXXgZdt74+2TBI59XLQ3+sK2cEmkkcnh0naLzYD/YKCv1s8ZlzcsSWYZ\nhU2F/UvTRi31UJdsbH1Jjw2Ra4hh+0FFGxURaooZrS7rSsz+/w9Jy1lbEs0W0Fd2\nuUyZzkXz0QKBgQDQFDMODwQmGenZvv6s/Y/znW3zF0Mdo+YslUKZtD/xn0GOtMLm\nbcOZ7WWidFLbRs6dDxbPMRUD+eRZ1/F1sliLekWkHkP8cOaSQMDuCPD2g1X7+rZj\n945uigWOZGz4XpcTrAzI3oP7fd28i3wBKmpi+I1F6YiruMnlTiaDZC9QUwKBgGIG\n2Pdue4DvfLEKAYRlFwEt4lC/wH7GvLSQut7HpzS1GV4LkPy8oZgp5Xrmeq+Poh6l\ntADoOVonAGtyQc//v7iY/893BoXPf4qeDUQ5r+jSnU5ssWzTSKzvPCsp8VC8iB1q\n38/U5dWP4kKcUdpgQkwx/gUGywmIX3TPYxtk/X+hAoGBAKcKfrlp6oASL3vkfs82\n6W2uAkfO1Zzr4umX8/KDYJzmXqnPYjZzYhBQP1vh4S7NeG//Nzi2f9zBGxso/VdE\nBvsnRtdUtI8YTafUIfjRm81o0PgA8cEnpSeCulk5Vg6NgIu5bmeFFNou0PMpnwzp\nHnlwfQaIxwm4ONx8sOKpbo6t\n-----END PRIVATE KEY-----\n",
+  "client_email": "pricehunt@pricehunt.iam.gserviceaccount.com",
+  "client_id": "115430617177777809406",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pricehunt%40pricehunt.iam.gserviceaccount.com"
+}
