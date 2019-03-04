@@ -19,6 +19,8 @@ gem 'devise'
 gem 'faker'
 gem "letter_opener", group: :development
 gem 'postmark-rails'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 
 group :development do

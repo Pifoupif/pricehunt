@@ -1,25 +1,21 @@
 require 'json'
 require 'open-uri'
 require 'nokogiri'
-require 'faker'
 
- User.destroy_all
- Category.destroy_all
- Product.destroy_all
- Alert.destroy_all
- Retailer.destroy_all
- Offer.destroy_all
- Price.destroy_all
+class PricehuntJob < ApplicationJob
+  queue_as :default
 
+  def perform(query)
 #Configuration:
-keyword = ['stan','macbook','iphone','dre','ipad','xbox','eastp']
-number_of_product = 3
+keyword = []
+keyword << query
+#number_of_product = 3
 
 #*********************************************************
 
 keyword.each do |word|
   count = 0
-  number_of_product.times do
+  1.times do
     user = User.new(
       email: Faker::Internet.email,
       password: 'azerty',
@@ -86,7 +82,9 @@ keyword.each do |word|
       puts "#{word}# #{count} created"
       puts "====================="
   end
-return product
 end
 puts "FINISHED !"
 puts "Hmm.. let's drink vodka!!!!!!!"
+
+  end
+end
