@@ -10,6 +10,10 @@
   border-radius: 8px;
   margin-left: 80px;
   padding-right: 10px;
+  border: 1px solid rgb(60,130,255);
+  margin-right: 5px;
+  width: 35%;
+  box-shadow: 5px 5px 10px rgba(60,130,255,0.5);
 }
 
 .product-desc {
@@ -23,11 +27,12 @@
   background-color: $light-gray;
   margin: 10px;
   padding: 5px;
-  height: 100px;
+  height: 70px;
   border-radius: 8px;
   transition: opacity 0.4s ease-in;
-  opacity: 0.6;
+  opacity: 0.7;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+background: linear-gradient(45deg,rgba(60,130,255,0.6),rgba(58,235,186,0.6));
 }
 
 .offers:hover {
@@ -53,7 +58,8 @@
 }
 
 .selected {
-  background-color: $blue1;
+  background-color: #3c82ff;
+  color: white;
 }
 
 .search-bar {
@@ -73,7 +79,7 @@
   display: flex;
   justify-content: flex-end;
   padding-top: 30px;
-  margin-right: 95px;
+  margin-right: 300px;
 
 }
 
@@ -86,8 +92,12 @@
 }
 
 .product-photo {
-  height: 160px;
-  width: 160px;
+}
+
+.product-photo img {
+  height: 300px;
+  width: 300px;
+  margin-left: 100px;
 }
 
 .flex {
@@ -101,8 +111,12 @@
 }
 
 .bottom-prod {
-  align-items: end;
-  margin-top: 50px;
+margin-left: 106px;
+}
+
+.bottom-prod button {
+margin-left: 60px;
+background: rgb(60,130,255);
 }
 
 .column {
@@ -120,3 +134,42 @@
   padding-right: 20px;
 }
 
+
+.go-shopping a{
+text-decoration: none !important;
+  color: white;
+
+}
+
+.fa-arrow-circle-right:before {
+    content: "\f0a9";
+    font-size: 30px;
+    color: white;
+}
+
+.hunt-link{
+    text-decoration:none;
+    color: white;
+    margin-bottom: 2px;
+
+}
+
+.button-shopping{
+  border-radius: 20px;
+  color: white;
+  border: none;
+}
+
+.button-shopping i{
+  color: white;
+}
+
+.offers a:hover {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.price-shopping {
+font-weight: bold;
+}

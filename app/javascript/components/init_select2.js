@@ -3,7 +3,7 @@ import 'select2';
 
 const initSelect2 = () => {
   const search = document.querySelectorAll('.js-data-example-ajax');
-  console.log(search);
+  //console.log(search);
   $('.js-data-example-ajax').select2({
     minimumInputLength: 2,
     ajax: {
@@ -17,8 +17,8 @@ const initSelect2 = () => {
       },
       processResults: function (data) {
       // Tranforms the top-level key of the response object from 'items' to 'results'
-      const products = data.message.product.items.map(product => product.id)
-      console.log(products)
+      //const products = data.message.product.items.map(product => product.id)
+      //console.log(products)
       return {
         results: $.map(data.message.product.items, function(item) {
           return {
