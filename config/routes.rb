@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :products, only: [:show] do
     collection do
       post :search
+      get :search_results
     end
     resources :alerts, only: [:create]
   end
