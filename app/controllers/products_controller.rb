@@ -4,11 +4,12 @@ class ProductsController < ApplicationController
     PricehuntJob.perform_now(params[:query])
     if params[:query]
       @product = Product.find_by(denich_id: params[:query])
-      @offers = @product.offers.joins(:prices).order('prices.price ASC')
+
+      @product ||= DECLENCHER SCRAPPER sur params[:query]
     else
       @product = Product.find(params[:id])
-      @offers = @product.offers.joins(:retailer).order('retailers.rating DESC')
     end
+    @offers = @product.offers.joins(:prices).order('prices.price ASC')
     filter
   end
 
