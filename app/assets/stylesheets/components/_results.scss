@@ -1,10 +1,27 @@
 .result_product{
   display: inline-block;
   border: 1px solid grey;
-  padding: 20px;
-  margin: 10px;
+  padding: 10px;
+  margin: 40px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 5px 5px 10px grey;
+  box-shadow: 2px 2px 5px grey;
+  text-decoration: none;
+  font: black;
+  background: white;
+  width: 300px;
+  height: 300px;
+  font-size: 15px;
+}
 
+.result_product:hover{
+    box-shadow: 10px 10px 15px grey;
+}
+
+.result_product li{
+  text-decoration: none;
+}
+
+.container_results{
+  // background: linear-gradient(45deg,rgba(60,130,255,0.3),rgba(58,235,186,0.3));
 }
