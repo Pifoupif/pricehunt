@@ -215,9 +215,16 @@ text-align: right;
 
 #select2-query-container {
   font-size: 0.5em;
-
+  border-radius: 15px !important;
 }
+
 .container-home {
   background-color:white;
   height: 100vh;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 15px !important;
 }

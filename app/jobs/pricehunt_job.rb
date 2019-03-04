@@ -16,14 +16,6 @@ class PricehuntJob < ApplicationJob
   keyword.each do |word|
     count = 0
     1.times do
-      user = User.new(
-        email: Faker::Internet.email,
-        password: 'azerty',
-        first_name: Faker::Name.name,
-        last_name: Faker::Name.name,
-        mobile_phone: Faker::PhoneNumber.phone_number,
-        )
-      user.save!
 
       url_search = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{word}"
       # sleep(rand(0.1..0.2))
