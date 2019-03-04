@@ -64,6 +64,10 @@ private
       @filter = true
       @offers = @product.offers.joins(:prices).order('prices.price ASC')
     end
+    if params[:sort_by_rating]
+      @filter = true
+      @offers = @product.offers.joins(:retailer).order('retailers.rating DESC')
+    end
   end
   # def search_show
   #   @product = Product.where(name: params[:query]).first
