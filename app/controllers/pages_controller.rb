@@ -1,4 +1,4 @@
-require "google/cloud/vision"
+# require "google/cloud/vision"
 
 class PagesController < ApplicationController
   def home
