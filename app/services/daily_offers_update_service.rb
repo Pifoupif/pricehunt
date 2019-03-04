@@ -1,16 +1,14 @@
-require 'pry'
 require 'json'
 require 'open-uri'
 require 'nokogiri'
 
 class DailyOffersUpdateService
-
   def initialize(alert)
     @alert = alert
   end
+
   def call(alert)
-  count = 0
- # binding.pry
+    count = 0
     word = alert.product.denich_id
     url_search = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{word}"
     # sleep(rand(0.1..0.2))
@@ -36,15 +34,14 @@ class DailyOffersUpdateService
         offer = Offer.create!(retailer_id: new_retailer.id, product: product)
         puts "offer #(#{offer.id})"
       end
+
       url_path = row.search('.js-ga-event-track').attr('href').value
 
       # Prices
       Price.create!(price: row.search('a.price').last.children.text.gsub(/[^\d]/, '').to_f/100, url: "https://ledenicheur.fr#{url_path}", offer: offer)
     end
-      count += 1
-      puts "#{word}# #{count} created"
-      puts "====================="
-    end
+  count += 1
+  puts "#{word}# #{count} created"
+  puts "====================="
   end
-  puts "FINISHED !"
-  puts "Hmm.. let's drink vodka!!!!!!!"
+end
