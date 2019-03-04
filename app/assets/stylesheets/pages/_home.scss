@@ -2,9 +2,11 @@
 @keyframes slideInFromLeft {
   0% {
     transform: rotate(1deg);
+    opacity:0.3;
   }
   100% {
     transform: rotate(360deg);
+    opacity:1;
   }
 }
 
@@ -18,29 +20,33 @@
 }
 
 
+@keyframes fadetext {
+  0% {
+    opacity:0.3;
+  }
+  100% {
+    opacity:1;
+  }
+}
 
 #lap {
-  /* This section calls the slideInFromLeft animation we defined above */
   animation: 140s ease-out 0s 1 slideInlaptop;
   // padding: 30px;
 }
 
 .fas.fa-mobile-alt, .fas.fa-headphones, .far.fa-keyboard, .fas.fa-gamepad, .fas.fa-tshirt {
-  /* This section calls the slideInFromLeft animation we defined above */
   animation: 150s ease-out 0s 1 slideInFromLeft;
   // padding: 30px;
 }
 
 .illustration-home {
-  /* This section calls the slideInFromLeft animation we defined above */
   animation: 150s ease-out 0s 1 slideInFromLeft;
   // padding: 30px;
 }
 
-
-
-
-
+.text-ban {
+animation: 3s linear 0s 1 fadetext;
+}
 
 .banner {
   // height: 60vh;
@@ -115,8 +121,6 @@ text-align: right;
     font-size: 7.9em;
   }
 }
-
-
 
 .fas.fa-headphones {
   color: white;
