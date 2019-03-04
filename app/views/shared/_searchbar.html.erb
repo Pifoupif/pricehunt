@@ -1,6 +1,6 @@
-<%= form_tag search_products_path(@product), method: :get do %>
+<%= form_tag search_products_path, method: :get do %>
+  <div class="search-flex">
 
-  <div class="search-flex test">
     <%= select_tag :query,
     options_for_select([params[:query]], params[:query]),
     class: "form-control select2 js-data-example-ajax" %>

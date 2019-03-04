@@ -1,14 +1,32 @@
-<ul>
-  <% @results.each do |result| %>
-  <div class="result_product">
-  <li>
-    <p> <%= result[:name] %></p>
-  <%= image_tag "https://cdn.pji.nu/product/standard/280/#{result[:id]}.jpg", alt: "alttext" %>
-  <p>Price: €<%= result[:price][:regular] %></p>
-  <p>Category : <%= result[:category][:name] %> </p>
-<p><%= result %></p>
-</li>
-  </div>
-  <% end %>
-</ul>
 
+<div class="container">
+  <div class="row">
+    <ul>
+      <% @results.each do |result| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="result_product">
+          <li>
+            <div class="result_name">
+              <p> <%= result[:name] %></p>
+            </div>
+
+            <div class="result_picture">
+              <%= image_tag "https://cdn.pji.nu/product/standard/280/#{result[:id]}.jpg", alt: "alttext" %>
+            </div>
+
+            <div class="result_price">
+              <p>Price: €<%= result[:price][:regular] %></p>
+            </div>
+
+            <div class="result_category">
+
+              <p>Category : <%= result[:category][:name] %> </p>
+            </div>
+        <%= link_to "Choose", product_path(result[:id]), class:"btn btn-primary" %>
+          </li>
+        </div>
+      </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
