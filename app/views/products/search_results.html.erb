@@ -1,0 +1,14 @@
+<ul>
+  <% @results.each do |result| %>
+  <div class="result_product">
+  <li>
+    <p> <%= result[:name] %></p>
+  <%= image_tag "https://cdn.pji.nu/product/standard/140/#{result[:id]}.jpg", alt: "alttext" %>
+  <p>Price: €<%= result[:price][:regular] %></p>
+  <p>Category : <%= result[:category][:name] %> </p>
+<p><%= result %></p>
+</li>
+  </div>
+  <% end %>
+</ul>
+
