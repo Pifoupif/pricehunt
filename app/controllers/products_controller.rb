@@ -30,11 +30,7 @@ class ProductsController < ApplicationController
     @alert = Alert.new
     if params[:query]
       @product = Product.find_by(denich_id: params[:query])
-      if @product
-        @product
-      else
-        @product = PricehuntJob.perform_now(params[:query])
-      end
+      @product ||= ScrapeProductService.new(params[:query]).call
     else
       @product = Product.find(params[:id])
     end
