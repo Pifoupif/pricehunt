@@ -25,23 +25,55 @@ class DailyOffersUpdateService
       existing_retailer = Retailer.find_by(name: retail_name)
       product = Product.last
 
-      if existing_retailer
-        offer = Offer.create!(retailer_id: existing_retailer.id, product: product)
-        puts "offer #(#{offer.id})"
-      else
-        puts "* Detect a new retailer! (#{retail_name})"
-        new_retailer = Retailer.create(name: retail_name, rating: rand(1..5), logo: row.children.children.search('img').attr('src').value)
-        offer = Offer.create!(retailer_id: new_retailer.id, product: product)
-        puts "offer #(#{offer.id})"
-      end
+      offer = if existing_retailer
+                Offer.find_or_create_by product: product, retailer: existing_retailer
+              else
+                puts "* Detect a new retailer! (#{retail_name})"
+                new_retailer = Retailer.create(name: retail_name, rating: rand(1..5), logo: row.children.children.search('img').attr('src').value)
+                Offer.create!(retailer: new_retailer, product: product)
+              end
+
+      puts "offer #(#{offer.id})"
 
       url_path = row.search('.js-ga-event-track').attr('href').value
-
-      # Prices
-      Price.create!(price: row.search('a.price').last.children.text.gsub(/[^\d]/, '').to_f/100, url: "https://ledenicheur.fr#{url_path}", offer: offer)
+      create_offer_price(offer, url_path)
     end
-  count += 1
-  puts "#{word}# #{count} created"
-  puts "====================="
+    count += 1
+    puts "#{word}# #{count} created"
+    puts "====================="
+
+    update_best_offer(alert, product)
+  end
+
+  def create_offer_price(offer, url_path)
+    Price.create!(
+      price: row.search('a.price').last.children.text.gsub(/[^\d]/, '').to_f / 100,
+      url: "https://ledenicheur.fr#{url_path}",
+      offer: offer
+    )
+  end
+
+  def update_best_price(alert, product)
+    today_last_prices = []
+    product.offers.each do |offer|
+      next if offer_invalid?(offer)
+
+      today_last_prices << offer.prices.last
+    end
+
+    today_lowest_price = today_last_prices&.min_by { |price| price.price }
+
+    add_lowest_price(alert, today_lowest_price)
+  end
+
+  def offer_invalid?(offer)
+    # si le dernier prix n'a pas été créé aujourd'hui, ça veut dire que l'offre n'est plus valable
+    offer.prices.last.created_at.to_date < Date.current
+  end
+
+  def add_lowest_price(alert, today_lowest_price)
+    return unless today_lowest_price
+
+    LowestPrice.create alert: alert, price: today_lowest_price
   end
 end
