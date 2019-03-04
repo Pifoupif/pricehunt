@@ -19,7 +19,7 @@ gem 'devise'
 gem 'faker'
 gem "letter_opener", group: :development
 gem 'postmark-rails'
-
+gem "google-cloud-vision"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
