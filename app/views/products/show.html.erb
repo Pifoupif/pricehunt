@@ -9,6 +9,8 @@
 </defs>
 </svg>
 
+<div class="prend-place"></div>
+
 <!-- Modal alert -->
 <div class="modal fade" id="alert-creation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -76,11 +78,10 @@
         </div>
             <!-- Button trigger modal -->
         <div class="bottom-prod">
-          <p>Not satisfied with these offers?</p>
           <% if user_signed_in? %>
-            <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
+            <button type="button" class='btn btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
           <% else %>
-            <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
+            <button type="button" class='btn btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> SSet an alert</button>
           <% end %>
         </div>
       </div>
@@ -88,10 +89,32 @@
   </div>
 
   <div class ="left-list">
-    <div class="my-row tab active">
-      <% @offers.each do |offer| %>
+
+    <div class="my-row">
+      <% nb_of_offers = @offers.count %>
+      <div class="offers_first">
+        <div class="">
+          <img src="<%= @offers.first.retailer.logo %>" alt="">
+        </div>
+        <div class="">
+          <% @offers.first.retailer.rating.floor.times do %>
+            <i class="fas fa-star gold"></i>
+          <% end %>
+          <% (5 - @offers.first.retailer.rating.floor).times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+        <div class="price-shopping">
+          <%= @offers.first.prices.last.price %>€
+        </div>
+        <div class="go-shopping-first">
+          <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping first-button hunt-link"><i class="fas fa-arrow-circle-right link-shopping"></i>Hunt</a>
+        </div>
+      </div>
+      <% @offers[1..nb_of_offers].each do |offer| %>
+
         <div class="offers">
-          <div class="">
+          <div class="logo-pic">
             <img src="<%= offer.retailer.logo %>" alt="">
           </div>
           <div class="">
@@ -105,9 +128,8 @@
           <div class="price-shopping">
             <%= offer.prices.last.price %>€
           </div>
-          <div go-shopping class="btn btn-primary button-shopping">
-            <i class="fas fa-arrow-circle-right link-shopping"></i>
-            <a href=<%= offer.prices.last.url %> target="_blank", class="hunt-link">Hunt</a>
+          <div class="go-shopping">
+            <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping hunt-link">Hunt</a>
           </div>
         </div>
       <% end %>
