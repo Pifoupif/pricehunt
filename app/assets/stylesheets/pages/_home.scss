@@ -51,7 +51,6 @@ animation: 3s linear 0s 1 fadetext;
 .banner {
   // height: 60vh;
   background:#3aebba linear-gradient(45deg,#3c82ff,#3aebba);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   transition: all 0.4s ease-in;
   z-index: 0;
 }

@@ -1,7 +1,7 @@
 <div class="results_picture_search">
   <% @items[0..3].each do |item| %>
-<div class="API-repository">
-<%= link_to "LINK", product_path(item["id"]) %>
+  <div class="API-repository">
+    <%= link_to "LINK", product_path(item["id"]) %>
     <div class="API-result-photo">
       <%= image_tag "https://cdn.pji.nu/product/standard/140/#{item["id"]}.jpg", alt: "alttext" %>
     </div>
@@ -14,5 +14,5 @@
     </div>
   </div>
 </div>
-  <% end %>
+<% end %>
 </div>
