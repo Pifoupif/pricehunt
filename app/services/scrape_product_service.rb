@@ -42,12 +42,12 @@ class ScrapeProductService
       product = Product.last
 
       if existing_retailer
-        offer = Offer.create!(retailer_id: existing_retailer.id, product: product)
+        offer = Offer.create!(retailer: existing_retailer, product: product)
         puts "offer #(#{offer.id})"
       else
         puts "* Detect a new retailer! (#{retail_name})"
         new_retailer = Retailer.create(name: retail_name, rating: rand(1..5), logo: row.children.children.search('img').attr('src').value)
-        offer = Offer.create!(retailer_id: new_retailer.id, product: product)
+        offer = Offer.create!(retailer: new_retailer, product: product)
         puts "offer #(#{offer.id})"
       end
       url_path = row.search('.js-ga-event-track').attr('href').value
