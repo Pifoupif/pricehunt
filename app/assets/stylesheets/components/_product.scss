@@ -1,25 +1,39 @@
+.product-banner-wrapper{
+  width: 500px;
+  margin-left: 30px;
+}
+
 .product-banner {
   display: flex;
   background-color: white;
-  width: 40vw;
   height: 70vh;
   justify-content: space-around;
   align-items: start;
-  margin-top: 10px;
+  padding: 0 40px;
   position: fixed;
   border-radius: 4px;
-  margin-left: 80px;
-  padding-right: 10px;
-  margin-right: 5px;
-  width: 35%;
   filter: drop-shadow(4px 4px 20px rgba(0,0,0,0.25));
+}
+
+.inside-banner {
+  flex-direction: column;
+  width: 500px;
 }
 
 .product-desc {
   align-items: center;
-  font-size: 32px;
-  font-family: Roboto Slab;
   margin-right: 48px;
+}
+
+.product-desc h4 {
+  font-size: 32px;
+  font-family: "Roboto", sans-serif;
+}
+
+.contenu {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
 }
 
 .offers {
@@ -92,13 +106,8 @@
 
 }
 
-.product-photo {
-}
-
-.product-photo img {
-  height: 300px;
-  width: 300px;
-  margin-left: 100px;
+.p-photo {
+  text-align: center;
 }
 
 .flex {
@@ -106,9 +115,10 @@
 }
 
 .left-list {
-  width: 55vw;
-  position: absolute;
-  right: 15px;
+  width: 700px;
+  // width: 55vw;
+  // position: absolute;
+  // right: 15px;
 }
 
 .bottom-prod {
@@ -120,21 +130,15 @@ margin-left: 60px;
 background: rgb(60,130,255);
 }
 
-.column {
-  flex-direction: column;
-}
-
-
 .category {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.my-row {
-  margin-right: 35px;
-  padding-right: 20px;
-}
-
+// .my-row {
+//   margin-right: 35px;
+//   padding-right: 20px;
+// }
 
 .go-shopping a{
 text-decoration: none !important;

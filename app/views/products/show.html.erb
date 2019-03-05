@@ -41,7 +41,6 @@
 
 <!-- show -->
 
-<div class="contenu">
   <div class="filter-prod">
     <div>
       <% css1_code = @filter ? "selected" : "" %>
@@ -53,37 +52,40 @@
     </div>
   </div>
 
-  <div class="product-banner">
-    <div class="column">
-      <div class="product-desc">
-        <h4><%= @product.name %></h4>
-      </div>
-      <div class="category">
-        <p><%= @product.category.name %></p>
-      </div>
-      <div class="product-photo">
-        <img src="<%= @product.photo %>" alt="" height="180" width="180">
-      </div>
-          <!-- Button trigger modal -->
-      <div class="bottom-prod">
-        <p>Not satisfied with these offers?</p>
+<div class="contenu">
+  <div class="product-banner-wrapper">
+    <div class="product-banner">
+      <div class="inside-banner">
+        <div class="product-desc">
+          <h4><%= @product.name %></h4>
+        </div>
+        <div class="category">
+          <p><%= @product.category.name %></p>
+        </div>
+        <div class="p-photo">
+          <img src="<%= @product.photo %>" alt="" height="280" width="280">
+        </div>
+            <!-- Button trigger modal -->
+        <div class="bottom-prod">
+          <p>Not satisfied with these offers?</p>
           <% if user_signed_in? %>
             <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
           <% else %>
             <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
           <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class ="container left-list">
+  <div class ="left-list">
     <div class="my-row">
       <% @offers.each do |offer| %>
         <div class="offers">
           <div class="">
             <img src="<%= offer.retailer.logo %>" alt="">
           </div>
-          <div>
+          <div class="">
             <% offer.retailer.rating.floor.times do %>
               <i class="fas fa-star gold"></i>
             <% end %>
