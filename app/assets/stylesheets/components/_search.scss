@@ -1,7 +1,5 @@
 .select2-result-repository {
   display: flex;
-  position: top;
-  background-color: rgba(255,255,255,0);
 }
 
 .select2-result-name {
@@ -10,17 +8,31 @@
 }
 
 .select2-result-photo img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+}
+
+.select2-name-price {
+  background-color: white;
+  width: 369.26px;
 }
 
 .select2-container--default .select2-results > .select2-results__options {
-  max-height: 600px !important;
+  max-height: 500px !important;
 }
 
 .select2-results {
   height: 300px;
   width: 500px;
+  background-color: rgba(0,0,0,0) !important;
+}
+
+.select2-dropdown {
+  background-color: rgba(0,0,0,0);
+}
+
+.select2-dropdown.select2-dropdown--above {
+  background-color: rgba(0,0,0,0);
 }
 
 .searchbar-position {
@@ -37,4 +49,9 @@
   top: 0 !important;
   position: relative !important;
   width: 500px !important;
+}
+
+
+.select2-results__option.select2-results__message {
+  display: none;
 }

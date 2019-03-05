@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
     else
       @product = ScrapeProductService.new(@denich_id).call
     end
+
     @offers = @product.offers
     filter
   end

@@ -33,9 +33,6 @@ const initSelect2 = () => {
   $('.js-data-example-ajax').on('select2:select', function () {
     $("#btn-successor").trigger('click');
   });
-  $('.select2-container').style.left = "0";
-  $('.select2-container').style.top = "0";
-  $('.select2-container').style.position = "relative";
 };
 
 function formatProduct (product) {
@@ -48,7 +45,7 @@ function formatProduct (product) {
     "<div class='select2-result-photo'><img src='" + 'https://cdn.pji.nu/product/standard/140/' + product.id + '.jpg' + "' /></div>" +
     "<div class='select2-name-price'>" +
       "<div class='select2-result-name'>" + product.name + "</div>" +
-      "<div class='select2-result-name'>" + product.price.regular + "</div>"
+      "<div class='select2-result-price'>" + product.price.regular + "</div>"
     "</div>"
   "</div>";
 
