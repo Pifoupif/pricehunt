@@ -102,5 +102,37 @@
 
 #myModalLabel {
   text-align: center;
+  font-weight: bold;
+  font-size: 34px;
+  font-family: "Roboto Slab", sans-serif;
 }
 
+.login-name-input {
+  font-size: 28px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+#new_user {
+  text-align: center;
+}
+
+.login-input-number {
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.login-bouton {
+  border-radius: 4px;
+  background-color: #F2C94C;
+  border-color: white;
+  color: black;
+  width: 200px;
+  height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
