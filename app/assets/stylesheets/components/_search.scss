@@ -24,34 +24,50 @@
 .select2-results {
   height: 300px;
   width: 500px;
-  background-color: rgba(0,0,0,0) !important;
+  //background-color: rgba(0,0,0,0) !important;
 }
 
-.select2-dropdown {
-  background-color: rgba(0,0,0,0);
+.searchbar-position {
+  .select2-dropdown {
+    background-color: transparent !important;
+  }
 }
+
 
 .select2-dropdown.select2-dropdown--above {
-  background-color: rgba(0,0,0,0);
+  //background-color: rgba(0,0,0,0);
 }
 
 .searchbar-position {
   height: 300px;
   width: 500px;
-  position: absolute;
   right: 10vh;
   top: 20vh;
   z-index: 3;
 }
 
-.select2-container.select2-container--default.select2-container--open {
-  left: 0 !important;
-  top: 0 !important;
-  position: relative !important;
-  width: 500px !important;
-}
+// .select2-container.select2-container--default.select2-container--open {
+//   left: 0 !important;
+//   top: 0 !important;
+//   position: relative !important;
+//   width: 500px !important;
+// }
 
 
 .select2-results__option.select2-results__message {
   display: none;
 }
+
+
+.select2-container--default {
+  .select2-results__option {
+    padding: 0px;
+  }
+  .select2-results__option--highlighted[aria-selected] {
+    color: unset !important;
+    .select2-name-price {
+      background-color: transparent !important;
+    }
+  }
+}
+

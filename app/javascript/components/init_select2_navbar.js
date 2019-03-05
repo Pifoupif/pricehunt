@@ -1,9 +1,9 @@
 import $ from 'jquery';
 import 'select2';
 
-const initSelect2 = () => {
+const initSelect2Nav = () => {
   const search = document.querySelectorAll('.js-data-example-ajax');
-  $('.js-data-example-ajax').select2({
+  $('.js-data-example-ajax').select2({<
     minimumInputLength: 2,
     ajax: {
       url: 'https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12',
@@ -40,11 +40,11 @@ function formatProduct (product) {
   }
 
   var markup =
-  "<div class='select2-result-repository'>" +
-    "<div class='select2-result-photo'><img src='" + 'https://cdn.pji.nu/product/standard/140/' + product.id + '.jpg' + "' /></div>" +
-    "<div class='select2-name-price'>" +
-      "<div class='select2-result-name'>" + product.name + "</div>" +
-      "<div class='select2-result-price'>" + product.price.regular + "</div>"
+  "<div class='select2-result-repository-navbar'>" +
+    "<div class='select2-result-photo2-navbar'><img src='" + 'https://cdn.pji.nu/product/standard/140/' + product.id + '.jpg' + "' /></div>" +
+    "<div class='select2-name-price-navbar'>" +
+      "<div class='select2-result-name-navbar'>" + product.name + "</div>" +
+      "<div class='select2-result-price-navbar'>" + product.price.regular + "</div>"
     "</div>"
   "</div>";
 
@@ -55,6 +55,4 @@ function formatProductSelection (product) {
   return product.name;
 }
 
-export { initSelect2 };
-
-// espace markup et template results
+export { initSelect2Nav };
