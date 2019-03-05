@@ -24,4 +24,20 @@
 
 .container_results{
   // background: linear-gradient(45deg,rgba(60,130,255,0.3),rgba(58,235,186,0.3));
+  box-shadow: 5px 5px 10px grey;
+}
+
+@keyframes petite_rotation {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
+.product-photo {
+  animation: 4s linear 0s 0 petite_rotation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }

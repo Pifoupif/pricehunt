@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_28_170226) do
+ActiveRecord::Schema.define(version: 2019_03_04_170558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_170226) do
     t.datetime "updated_at", null: false
     t.boolean "by_email", default: false
     t.boolean "by_text_message", default: false
+    t.boolean "offer_today", default: false
     t.index ["product_id"], name: "index_alerts_on_product_id"
     t.index ["user_id"], name: "index_alerts_on_user_id"
   end
@@ -31,6 +32,15 @@ ActiveRecord::Schema.define(version: 2019_02_28_170226) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lowest_prices", force: :cascade do |t|
+    t.bigint "price_id"
+    t.bigint "alert_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["alert_id"], name: "index_lowest_prices_on_alert_id"
+    t.index ["price_id"], name: "index_lowest_prices_on_price_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -87,6 +97,8 @@ ActiveRecord::Schema.define(version: 2019_02_28_170226) do
 
   add_foreign_key "alerts", "products"
   add_foreign_key "alerts", "users"
+  add_foreign_key "lowest_prices", "alerts"
+  add_foreign_key "lowest_prices", "prices"
   add_foreign_key "offers", "products"
   add_foreign_key "offers", "retailers"
   add_foreign_key "prices", "offers"
