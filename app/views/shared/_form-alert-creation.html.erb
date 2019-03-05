@@ -1,7 +1,9 @@
 <%= simple_form_for([product, alert], remote: true) do |f| %>
-  <%= f.input :target_price, required: true, error: 'Please specify your target price' %>
-  <%= f.input :by_email, as: :boolean, boolean_style: :inline  %>
-  <%= f.input :by_text_message, as: :boolean, boolean_style: :inline %>
-  <%= f.submit "SAVE", class: "btn btn-success submit-booking" %>
+  <%= f.input :target_price, label: 'What is your budget?', required: true, error: 'Please specify your target price', label_html:{class: "alert-name-input"}, input_html:{class: "alert-input-number"} %>
+  <div class="flex-alert">
+    <%= f.input :by_email, label: 'by email', as: :boolean, boolean_style: :inline, label_html:{class: "checkbox-space"}  %>
+    <%= f.input :by_text_message, label: 'by sms', as: :boolean, boolean_style: :inline, label_html:{class: "checkbox-space"} %>
+  </div>
+  <%= f.submit "Set an alert", class: "btn submit-booking sweet-alert", id: "sweet-alert" %>
 <% end %>
 

@@ -9,29 +9,28 @@
 </defs>
 </svg>
 
+<div class="prend-place"></div>
+
 <!-- Modal alert -->
 <div class="modal fade" id="alert-creation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Please set your Price Alert below</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+        <h4 class="modal-title-alert" id="exampleModalLabel">Set your alert</h4>
 
-      <div class="modal-body">
-        What is your Target Price?
+      <div class="modal-body-alert">
         <div id="price-box">
           <%= render 'shared/form-alert-creation', alert: @alert, product: @product, class: "review-form-show" %>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
     </div>
   </div>
 </div>
+
 
 <!-- Modal sign in-->
 <div class="modal fade" id="sign-in-modal-first" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -39,7 +38,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Oups, you are not logged in, please log in first to set your alert</h4>
+        <h4 class="modal-title" id="myModalLabel">Please log in first to set your alert</h4>
       </div>
       <div class="modal-body">
         <%= render 'shared/form-sign-in' %>
@@ -76,11 +75,10 @@
         </div>
             <!-- Button trigger modal -->
         <div class="bottom-prod">
-          <p>Not satisfied with these offers?</p>
           <% if user_signed_in? %>
-            <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
+            <button type="button" class='btn btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
           <% else %>
-            <button type="button" class='btn btn-primary btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
+            <button type="button" class='btn btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
           <% end %>
         </div>
       </div>
@@ -88,10 +86,32 @@
   </div>
 
   <div class ="left-list">
+
     <div class="my-row">
-      <% @offers.each do |offer| %>
+      <% nb_of_offers = @offers.count %>
+      <div class="offers_first">
+        <div class="">
+          <img src="<%= @offers.first.retailer.logo %>" alt="">
+        </div>
+        <div class="">
+          <% @offers.first.retailer.rating.floor.times do %>
+            <i class="fas fa-star gold"></i>
+          <% end %>
+          <% (5 - @offers.first.retailer.rating.floor).times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+        <div class="price-shopping">
+          <%= @offers.first.prices.last.price %>€
+        </div>
+        <div class="go-shopping-first">
+          <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping first-button hunt-link"><i class="fas fa-arrow-circle-right link-shopping"></i>Hunt</a>
+        </div>
+      </div>
+      <% @offers[1..nb_of_offers].each do |offer| %>
+
         <div class="offers">
-          <div class="">
+          <div class="logo-pic">
             <img src="<%= offer.retailer.logo %>" alt="">
           </div>
           <div class="">
@@ -105,9 +125,8 @@
           <div class="price-shopping">
             <%= offer.prices.last.price %>€
           </div>
-          <div go-shopping class="btn btn-primary button-shopping">
-            <i class="fas fa-arrow-circle-right link-shopping"></i>
-            <a href=<%= offer.prices.last.url %> target="_blank", class="hunt-link">Hunt</a>
+          <div class="go-shopping">
+            <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping hunt-link">Hunt</a>
           </div>
         </div>
       <% end %>
