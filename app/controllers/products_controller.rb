@@ -63,8 +63,7 @@ private
     if params[:sort_by_price]
       @filter = true
       @offers = @product.offers.joins(:prices).order('prices.price ASC')
-    end
-    if params[:sort_by_rating]
+    elsif params[:sort_by_rating]
       @filter = true
       @offers = @product.offers.joins(:retailer).order('retailers.rating DESC')
     end
