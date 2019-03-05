@@ -16,20 +16,16 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Please set your Price Alert below</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+        <h4 class="modal-title-alert" id="exampleModalLabel">Set your alert</h4>
 
-      <div class="modal-body">
-        What is your Target Price?
+      <div class="modal-body-alert">
         <div id="price-box">
           <%= render 'shared/form-alert-creation', alert: @alert, product: @product, class: "review-form-show" %>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
