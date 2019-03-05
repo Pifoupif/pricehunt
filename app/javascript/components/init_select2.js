@@ -28,7 +28,6 @@ const initSelect2 = () => {
     minimumInputLength: 2,
     templateResult: formatProduct,
     templateSelection: formatProductSelection,
-    dropdownParent: $('.searchbar-position')
   });
   $('.js-data-example-ajax').on('select2:select', function () {
     $("#btn-successor").trigger('click');

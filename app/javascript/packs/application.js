@@ -19,5 +19,5 @@ if (document.querySelector(".sort-price")) {
   button_sort();
 }
 
-initSelect2();
 initChart();
+initSelect2();
