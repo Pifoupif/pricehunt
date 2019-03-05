@@ -1,8 +1,11 @@
 .banner {
+  background: #3aebba linear-gradient(45deg, #3c82ff, #3aebba);
   background-size: cover;
-  background-position: center;
   padding: 150px 0;
-  height: 85vh;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  width: 100%;
 }
 
 .form-control {
@@ -15,6 +18,25 @@
 
 
 .main-wrapper{
-  margin-top: 70px;
+  background-color: white;
+  position: relative;
+}
+
+body {
   background: white;
+}
+
+.navbar-bckgrnd {
+  position: absolute;
+  top: 0px;
+}
+
+#main-title h1 {
+  font-size: 40px;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+#sub-title p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: light;
 }

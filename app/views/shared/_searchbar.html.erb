@@ -3,7 +3,7 @@
 
     <%= select_tag :query,
     options_for_select([params[:query]], params[:query]),
-    class: "form-control select2 js-data-example-ajax" %>
+    class: "form-control select2 js-data-example-ajax navbar-search" %>
       <%= submit_tag "HUNT", class: "btn btn-primary", id:"btn-successor" %>
   </div>
 <% end %>
