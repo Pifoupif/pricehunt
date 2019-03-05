@@ -22,7 +22,7 @@ class ScrapeProductService
     thumb_s = results.css('a.img140 img').last.attribute("src").value
     thumb = thumb_s.gsub!('140', '280')
 
-    product = Product.new(
+    product = Product.where(
       photo: thumb,
       name: search_result['message']['product']['items'][0]['name'],
       description: search_result['message']['product']['items'][0]['price']['regular'],
@@ -30,7 +30,7 @@ class ScrapeProductService
       category_id: category.id
     )
 
-    product.save!
+    product.first_or_create!
 
     #***************************************************************************
 
@@ -42,7 +42,7 @@ class ScrapeProductService
       product = Product.last
 
       if existing_retailer
-        offer = Offer.create!(retailer: existing_retailer, product: product)
+        offer = Offer.where(retailer: existing_retailer, product: product).first_or_create!
         puts "offer #(#{offer.id})"
       else
         puts "* Detect a new retailer! (#{retail_name})"
