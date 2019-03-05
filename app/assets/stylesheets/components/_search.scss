@@ -7,6 +7,11 @@
   padding-left: 10px;
 }
 
+.select2-result-price {
+  padding: 6px;
+  padding-left: 10px;
+}
+
 .select2-result-photo img {
   width: 80px;
   height: 80px;
@@ -58,7 +63,6 @@
   display: none;
 }
 
-
 .select2-container--default {
   .select2-results__option {
     padding: 0px;
@@ -70,4 +74,3 @@
     }
   }
 }
-
