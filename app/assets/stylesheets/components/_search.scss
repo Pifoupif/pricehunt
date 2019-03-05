@@ -23,20 +23,44 @@
 
 .select2-result-repository {
   display: flex;
+  position: top;
 }
 
-.select2-result-repository__title {
+.select2-result-name {
   padding: 6px;
   padding-left: 10px;
 }
 
+.select2-result-photo img {
+  width: 100px;
+  height: 100px;
+}
+
 .select2-container--default .select2-results > .select2-results__options {
-  max-height: 300px !important;
+  max-height: 600px !important;
 }
 
 .select2-results {
-  height: 300px;
+  height: 500px;
+  width: 600px;
 }
+
+.searchbar-position {
+  height: 500px;
+  width: 600px;
+  position: absolute;
+  right: 13vh;
+  top: 17vh;
+  z-index: 3;
+}
+
+.select2-container.select2-container--default.select2-container--open {
+  left: 0 !important;
+  top: 0 !important;
+  position: relative !important;
+  width: 600px !important;
+}
+
 
 // .select2 {
 //   border-radius: 30px !important;

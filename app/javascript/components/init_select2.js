@@ -28,8 +28,11 @@ const initSelect2 = () => {
     minimumInputLength: 2,
     templateResult: formatProduct,
     templateSelection: formatProductSelection,
+    dropdownParent: $('.searchbar-position')
   });
-
+  $('.select2-container').style.left = "0";
+  $('.select2-container').style.top = "0";
+  $('.select2-container').style.position = "relative";
   $('.js-data-example-ajax').on('select2:select', function () {
     $("#btn-successor").trigger('click');
   });
@@ -40,10 +43,14 @@ function formatProduct (product) {
     return product.name;
   }
 
-  var markup = "<div class='select2-result-repository clearfix'>" +
-    "<div class='select2-result-repository__avatar'><img src='" + 'https://cdn.pji.nu/product/standard/35/' + product.id + '.jpg' + "' /></div>" +
-    "<div class='select2-result-repository__title'>" + product.name + "</div>" +
-    "</div>";
+  var markup =
+  "<div class='select2-result-repository'>" +
+    "<div class='select2-result-photo'><img src='" + 'https://cdn.pji.nu/product/standard/140/' + product.id + '.jpg' + "' /></div>" +
+    "<div class='select2-name-price'>" +
+      "<div class='select2-result-name'>" + product.name + "</div>" +
+      "<div class='select2-result-name'>" + product.price.regular + "</div>"
+    "</div>"
+  "</div>";
 
   return markup;
 }
