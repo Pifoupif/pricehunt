@@ -4,23 +4,20 @@
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" },
-                error: 'Incorrect login information'
+                error: 'Incorrect login information',
+                label_html: {class: "login-name-input"},
+                input_html:{class: "login-input-number"}
                  %>
     <%= f.input :password,
                 required: false,
-                input_html: { autocomplete: "current-password" } %>
+                input_html: { autocomplete: "current-password" },
+                label_html: {class: "login-name-input"},
+                input_html:{class: "login-input-number"}
+                %>
     <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  <p>No account yet : <%= link_to 'sign up', new_user_registration_path %></p>
-
+    <div class="form-actions">
+      <%= f.button :submit, "Log in", class: 'btn login-bouton' %>
+    </div>
+    <p>No account yet : <%= link_to 'sign up', new_user_registration_path %></p>
   </div>
-
-<%#= render "devise/shared/links", resource_name: 'user' %>
-
-</div>
-<div class="modal-footer">
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
-  </div>
-<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-<button type="button" class="btn btn-primary">Save changes</button> -->
 <% end %>
