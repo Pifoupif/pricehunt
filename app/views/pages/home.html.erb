@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <%= form_tag search_products_path, method: :post, multipart: true do %>
+      <%= form_tag root_path, method: :post, multipart: true, remote: true do %>
       <%= file_field_tag :photo %>
       <%= submit_tag "Submit your photo", class: "btn btn-success", id:"btn-successor" %>
       <% end %>
@@ -27,6 +27,7 @@
   </div>
 
           <div class="searchbar-position"></div>
+          <div id="picture_bar_position"></div>
 
           <div class="illustration-home">
             <i class="fas fa-laptop" id="lap"></i>

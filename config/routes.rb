@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  post '/', to: 'pages#home'
   resources :products, only: [:show] do
     collection do
       post :search

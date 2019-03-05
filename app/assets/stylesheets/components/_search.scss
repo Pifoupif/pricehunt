@@ -1,10 +1,14 @@
 .select2-result-repository {
   display: flex;
   position: top;
-
 }
 
 .select2-result-name {
+  padding: 6px;
+  padding-left: 10px;
+}
+
+.select2-result-price {
   padding: 6px;
   padding-left: 10px;
 }
@@ -37,4 +41,29 @@
   top: 0 !important;
   position: relative !important;
   width: 500px !important;
+}
+
+.API-result-photo img {
+  width: 80px;
+  height: 80px;
+}
+
+.API-result-name {
+  padding: 6px;
+  padding-left: 10px;
+}
+
+.API-result-price {
+  padding: 6px;
+  padding-left: 10px;
+}
+
+.API-repository {
+  display: flex;
+  position: top;
+  border-bottom: 1px solid lightgrey;
+}
+
+.API-repository:hover{
+  border: 2px solid lightgrey;
 }

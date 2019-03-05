@@ -40,3 +40,20 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: light;
 }
+
+.picture_bar_position {
+  height: 300px;
+  width: 500px;
+  position: absolute;
+  right: 10vh;
+  top: 20vh;
+  z-index: 3;
+}
+
+.results_picture_search{
+  background-color: white;
+  z-index: 4;
+  height: 558px;
+  filter: drop-shadow(4px 4px 20px rgba(0,0,0,0.25));
+  padding: 10px;
+}
