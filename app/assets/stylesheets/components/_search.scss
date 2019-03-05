@@ -1,29 +1,7 @@
-// .select2-result-repository {
-//   width: 200px;
-//   line-height: 37px;
-//   text-indent: 0;
-//   padding: 10px;
-//   color: red;
-//   height: 200px;
-// }
-
-// .select2-result-repository__avatar {
-//   line-height: 37px;
-//   text-indent: 0;
-//   color: red;
-//   height: 10px;
-// }
-
-// .message.product.items.name {
-//   line-height: 37px;
-//   text-indent: 0;
-//   color: red;
-//   height: 10px;
-// }
-
 .select2-result-repository {
   display: flex;
   position: top;
+
 }
 
 .select2-result-name {
@@ -60,14 +38,3 @@
   position: relative !important;
   width: 500px !important;
 }
-
-
-// .select2 {
-//   border-radius: 30px !important;
-//   height: 32px !important;
-// }
-
-// .search-bar {
-//   border-radius: 30px !important;
-//   height: 32px !important;
-// }
