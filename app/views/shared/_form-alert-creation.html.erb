@@ -4,6 +4,6 @@
     <%= f.input :by_email, label: 'by email', as: :boolean, boolean_style: :inline, label_html:{class: "checkbox-space"}  %>
     <%= f.input :by_text_message, label: 'by sms', as: :boolean, boolean_style: :inline, label_html:{class: "checkbox-space"} %>
   </div>
-  <%= f.submit "Set an alert", class: "btn submit-booking" %>
+  <%= f.submit "Set an alert", class: "btn submit-booking sweet-alert", id: "sweet-alert" %>
 <% end %>
 
