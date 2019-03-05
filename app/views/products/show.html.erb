@@ -89,6 +89,7 @@
   </div>
 
   <div class ="left-list">
+
     <div class="my-row">
       <% nb_of_offers = @offers.count %>
       <div class="offers_first">
@@ -111,6 +112,7 @@
         </div>
       </div>
       <% @offers[1..nb_of_offers].each do |offer| %>
+
         <div class="offers">
           <div class="logo-pic">
             <img src="<%= offer.retailer.logo %>" alt="">
