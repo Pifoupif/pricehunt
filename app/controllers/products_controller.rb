@@ -27,13 +27,29 @@ class ProductsController < ApplicationController
     @results = params[:items]
   end
 
-  def show
+  # Below is not the proper way to implement the show but it works with filters
+   def show
     @alert = Alert.new
     @denich_id = params[:query]
-    @product = ScrapeProductService.new(@denich_id).call
+    if Product.find_by(denich_id: @denich_id).nil? == false &&
+      Product.find_by(denich_id: @denich_id).updated_at.to_date == Time.zone.today
+      @product = Product.find_by(denich_id: @denich_id)
+    else
+      @product = ScrapeProductService.new(@denich_id).call
+    end
     @offers = @product.offers
     filter
   end
+
+  # Below is the proper way to implement the show but doesn't work with filters
+  # def show
+  #   @alert = Alert.new
+  #   @denich_id = params[:query]
+  #   @product = ScrapeProductService.new(@denich_id).call
+  #   @offers_price = @product.offers
+  #   @offers_rating = @product.offers.joins(:retailer).order('retailers.rating DESC')
+  #   filter
+  # end
 
 private
 
@@ -50,3 +66,4 @@ private
   end
 
 end
+
