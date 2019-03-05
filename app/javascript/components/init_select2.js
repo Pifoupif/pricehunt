@@ -33,9 +33,6 @@ const initSelect2 = () => {
   $('.js-data-example-ajax').on('select2:select', function () {
     $("#btn-successor").trigger('click');
   });
-  $('.select2-container').style.left = "0";
-  $('.select2-container').style.top = "0";
-  $('.select2-container').style.position = "relative";
 };
 
 function formatProduct (product) {
