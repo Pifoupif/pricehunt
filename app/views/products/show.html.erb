@@ -16,24 +16,21 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Please set your Price Alert below</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+        <h4 class="modal-title-alert" id="exampleModalLabel">Set your alert</h4>
 
-      <div class="modal-body">
-        What is your Target Price?
+      <div class="modal-body-alert">
         <div id="price-box">
           <%= render 'shared/form-alert-creation', alert: @alert, product: @product, class: "review-form-show" %>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
     </div>
   </div>
 </div>
+
 
 <!-- Modal sign in-->
 <div class="modal fade" id="sign-in-modal-first" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -81,7 +78,7 @@
           <% if user_signed_in? %>
             <button type="button" class='btn btn-set-alert' data-toggle="modal" data-target="#alert-creation"><i class="fas fa-bell"></i> Set an alert</button>
           <% else %>
-            <button type="button" class='btn btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> SSet an alert</button>
+            <button type="button" class='btn btn-set-alert' data-toggle="modal" data-target="#sign-in-modal-first"><i class="fas fa-bell"></i> Set an alert</button>
           <% end %>
         </div>
       </div>
@@ -89,6 +86,7 @@
   </div>
 
   <div class ="left-list">
+
     <div class="my-row">
       <% nb_of_offers = @offers.count %>
       <div class="offers_first">
@@ -111,6 +109,7 @@
         </div>
       </div>
       <% @offers[1..nb_of_offers].each do |offer| %>
+
         <div class="offers">
           <div class="logo-pic">
             <img src="<%= offer.retailer.logo %>" alt="">
