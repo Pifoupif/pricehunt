@@ -14,6 +14,7 @@
 .navbar-wagon-brand img {
   height: 50px;
   color: white;
+  margin-left: 60px;
 }
 
 /* User Avatar */
@@ -41,6 +42,7 @@
   color: white;
   font-size: 18px;
   font-weight: bold;
+  margin-right: 60px;
 }
 .navbar-wagon-link:hover {
   color: F2C94C;
@@ -140,4 +142,8 @@
 .navbar-bckgrnd {
   position: fixed;
   z-index: 2;
+}
+
+#alerts-link{
+  margin-right:0px;
 }
