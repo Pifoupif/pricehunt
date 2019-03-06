@@ -1,7 +1,7 @@
 <div class="banner">
   <div class="distortion">
     <div class="container">
-      <div class="text-ban">
+      <div class="text-ban" style="margin-left: -50px;">
         <div id="main-title">
           <h1>Best Prices for Busy People!</h1>
         </div>
@@ -17,7 +17,7 @@
       <%= form_tag search_products_path, method: :post, multipart: true do %>
         <%= label_tag :photo, '📸', class: 'upload-photo' %>
         <%= file_field_tag :photo, class: 'hidden' %>
-        <%= submit_tag "Submit your photo", class: "btn btn-success", id:"btn-successor" %>
+        <%= submit_tag "Send", class: "btn btn-success", id:"btn-send" %>
       <% end %>
         </div>
       </div>
