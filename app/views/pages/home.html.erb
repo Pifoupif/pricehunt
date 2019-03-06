@@ -8,46 +8,49 @@
         <div id="sub-title">
           <p>Never overpay your online purchases.
           PriceHunt indexes all the offers for the products you can ever need. </p>
+        </div>
 
+        <div class="group-form">
+          <div class="form-home">
+            <p></p>
+            <%= render 'shared/searchbar'  %>
+          </div>
+          <div class="form-picture">
+            <%= form_tag search_products_path, method: :post, multipart: true do %>
+            <%= label_tag :photo, '📸', class: 'upload-photo' %>
+            <%= file_field_tag :photo, class: 'hidden' %>
+            <%= submit_tag "Submit", class: "btn btn-success", id:"btn-successor" %>
+            <% end %>
+          </div>
         </div>
-        <div class="form-home">
-          <!-- <label class= "label-home" for="keyword">What is your keyword?</label> -->
-          <p></p>
-          <%= render 'shared/searchbar'  %>
-        </div>
+
       </div>
-
-      <%= form_tag search_products_path, method: :post, multipart: true do %>
-        <%= label_tag :photo, '📸', class: 'upload-photo' %>
-        <%= file_field_tag :photo, class: 'hidden' %>
-        <%= submit_tag "Submit your photo", class: "btn btn-success", id:"btn-successor" %>
-      <% end %>
     </div>
   </div>
 
-<div class="shape_bottom_banner">
+  <div class="shape_bottom_banner">
     <svg class="shape-bottom" viewBox="0 0 1440 221" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 221L855.5 149L1440 0V221H0Z" fill="white"/>
     </svg>
+  </div>
 </div>
-  </div>
 
-          <div class="searchbar-position"></div>
+<div class="searchbar-position"></div>
 <!--           <div id="picture_bar_position"></div>
- -->
-          <div class="illustration-home">
-            <i class="fas fa-laptop" id="lap"></i>
-            <i class="fas fa-mobile-alt"></i>
-            <i class="fas fa-headphones"></i>
-            <i class="far fa-keyboard"></i>
-            <i class="fas fa-gamepad"></i>
-            <i class="fas fa-tshirt"></i>
-            <i class="fab fa-android"></i>
-            <i class="fas fa-camera-retro"></i>
-            <%#= image_tag "shoes", alt: "alttext", class: "shoes" %>
-          </div>
+-->
+<div class="illustration-home">
+  <i class="fas fa-laptop" id="lap"></i>
+  <i class="fas fa-mobile-alt"></i>
+  <i class="fas fa-headphones"></i>
+  <i class="far fa-keyboard"></i>
+  <i class="fas fa-gamepad"></i>
+  <i class="fas fa-tshirt"></i>
+  <i class="fab fa-android"></i>
+  <i class="fas fa-camera-retro"></i>
+  <%#= image_tag "shoes", alt: "alttext", class: "shoes" %>
+</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
