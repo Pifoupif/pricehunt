@@ -14,7 +14,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <% if @nb_of_target.nil? %>
+      <% if @nb_of_target == 0 %>
         <%= link_to "Alert", alerts_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
         <%= link_to alerts_path, class: "navbar-wagon-item navbar-wagon-link" do %>
