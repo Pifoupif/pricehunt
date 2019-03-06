@@ -1,6 +1,6 @@
 .select2-result-repository {
   display: flex;
-  max-height: 80px;
+  max-height: 90px;
 }
 
 .select2-result-name {
@@ -15,8 +15,8 @@
 }
 
 .select2-result-photo img {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 .select2-name-price {
@@ -31,17 +31,31 @@
 .select2-results {
   //height: 300px;
   width: 600px;
+
   //background-color: rgba(0,0,0,0) !important;
 }
+
+.select2-search__field {
+  // position: absolute;
+  // top: 0px;
+  // left: 0px;
+}
+
 
 .searchbar-position {
   .select2-dropdown {
     background-color: transparent !important;
+    // position: absolute;
+    // top: 0px;
+    // left: 0px;
   }
 }
 
 
 .select2-dropdown.select2-dropdown--above {
+  // position: absolute;
+  // top: 0px;
+  // left: 0px;
   //max-height: 200px;
 }
 
@@ -63,6 +77,9 @@
 
 .select2-results__option.select2-results__message {
   display: none;
+  // position: absolute;
+  // top: 0px;
+  // left: 0px;
 }
 
 .select2-container--default {
@@ -78,19 +95,24 @@
 }
 
 .select2 {
-  width:500px;
+  width:550px;
   font-size: 1.5em;
 }
 
 #select2-query-container {
   font-size: 0.5em;
 }
+
 .select2-container--default .select2-selection--single {
     background-color: #fff;
     border: 1px solid #aaa;
     height: 50px !important;
     border-radius: 4px;
+    // position: absolute;
+    // top: 0px;
+    // left: 0px;
 }
+
 
 .select2-selection__arrow {
   display: none;
@@ -108,3 +130,4 @@
 .hidden-btn {
   display: none;
 }
+
