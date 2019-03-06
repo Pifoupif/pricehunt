@@ -88,7 +88,7 @@
               <h3 class="text-center">Not enough data...</h3>
               </div>
             <% else %>
-              <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>"></canvas>
+              <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>" data-target-price="<%= alert.target_price %>"></canvas>
             <% end %>
           </div>
                 <div class="lastprice-alert">
