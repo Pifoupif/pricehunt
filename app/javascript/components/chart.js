@@ -43,29 +43,18 @@ const initChart = () => {
                 yAxes: [{
                     ticks: {
                         beginAtZero:true
+                    },
+                gridLines: {
+                display:false
+                }
+              }],
+                yAxes: [{
+                    gridLines: {
+                      display:false
                     }
-                }]
-            },
+                  }]
 
-tooltips: {
-      mode: 'index',
-      intersect: true
-    },
-            annotation: {
-      annotations: [{
-        type: 'line',
-        mode: 'horizontal',
-        scaleID: 'y-axis-0',
-        value: 200,
-        borderColor: '#3FCE8E',
-        borderWidth: 4,
-        label: {
-          enabled: false,
-          content: 'Test label'
-        }
-      }]
-    }
-
+                }
 
 
         }
