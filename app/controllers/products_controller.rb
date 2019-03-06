@@ -31,38 +31,26 @@ class ProductsController < ApplicationController
   # Below is not the proper way to implement the show but it works with filters
    def show
     @alert = Alert.new
-    @denich_id = params[:query]
-    if Product.find_by(denich_id: @denich_id).nil? == false &&
-      Product.find_by(denich_id: @denich_id).updated_at.to_date == Time.zone.today
-      @product = Product.find_by(denich_id: @denich_id)
-    else
+    @denich_id = params[:query] || params[:id]
+    @product = Product.includes(offers: :prices).includes(offers: :retailer).find_by(denich_id: @denich_id)
+    unless @product.present? && @product.updated_at.to_date == Time.zone.today
       @product = ScrapeProductService.new(@denich_id).call
     end
-    @offers = @product.offers
+    @offers = @product.offers.includes(:prices, :retailer)
     filter
   end
-
-  # Below is the proper way to implement the show but doesn't work with filters
-  # def show
-  #   @alert = Alert.new
-  #   @denich_id = params[:query]
-  #   @product = ScrapeProductService.new(@denich_id).call
-  #   @offers_price = @product.offers
-  #   @offers_rating = @product.offers.joins(:retailer).order('retailers.rating DESC')
-  #   filter
-  # end
 
 private
 
   def filter
-    @filter = false
-    if params[:sort_by_price]
-      @filter = true
-      @offers = @product.offers
-    end
     if params[:sort_by_rating]
-      @filter = true
+      @filter = false
       @offers = @product.offers.joins(:retailer).order('retailers.rating DESC')
+    else
+      @filter = true
+      @offers = @offers.sort do |of, fer|
+        of.prices.last.price <=> fer.prices.last.price
+      end
     end
   end
 
