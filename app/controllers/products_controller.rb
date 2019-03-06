@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     denicheur_url = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{keyword}"
     response = open(denicheur_url).read
     data = JSON.parse(response)
-    items = data['message']['product']['items'].first
+    items = data['message']['product']['items'].second
     item = items["id"]
     # redirect_to search_results_products_path(items: items)
     redirect_to product_path(item)
