@@ -44,7 +44,7 @@ function formatProduct (product) {
     "<div class='select2-result-photo'><img src='" + 'https://cdn.pji.nu/product/standard/140/' + product.id + '.jpg' + "' /></div>" +
     "<div class='select2-name-price'>" +
       "<div class='select2-result-name'>" + product.name + "</div>" +
-      "<div class='select2-result-price'>" + product.price.regular + "</div>"
+      "<div class='select2-result-price'>" + product.price.regular + '€' + "</div>"
     "</div>"
   "</div>";
 
