@@ -9,7 +9,7 @@ class AlertsController < ApplicationController
         format.html { redirect_to alerts_path }
         format.js
       end
-      sleep(2)
+      sleep(1.5)
     else
       @product = Product.find(params[:product_id])
       @offers = @product.offers
