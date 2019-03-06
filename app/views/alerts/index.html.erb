@@ -16,17 +16,15 @@
       <div class="inbox">
         <% list_alert = @user_alerts.sort{ |alert| alert.lowest_price.price.to_i <=> alert.target_price.to_i } %>
         <% list_alert.each do |alert| %>
-          <% if alert.lowest_price.nil? %>
+          <% if alert.alert_reach %>
             <% current_price = alert.product.description.to_i %>
           <% else %>
             <% current_price = alert.lowest_price.price.to_i %>
           <% end %>
-
           <% if alert.target_price >= current_price %>
             <div class="col-xs-12 col-md-6">
               <div class="card-index">
                 <div class="card-body card-body-sucess">
-
                   <div class="alert-link">
                     <%= link_to image_tag("delete.png", height:"40px"), alert_path(alert),
                         method: :delete,
@@ -45,9 +43,6 @@
                     <% else %>
                       <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>"></canvas>
                     <% end %>
-                  </div>
-                  <div class="price-reach">
-                    <h2>Product price is below your target!</h2>
                   </div>
                   <div class="box-price">
                     <div class="lastprice-alert target-success">
@@ -92,7 +87,7 @@
                       <h4><%= current_price.round %> €</h4>
                     </div>
                     <div class="buy-btn text-right">
-                      <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product.denich_id), class: "btn btn-set-alert" %>
+                      <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product.denich_id), class: "btn btn-alert-no-target" %>
                     </div>
                   </div>
                 </div>

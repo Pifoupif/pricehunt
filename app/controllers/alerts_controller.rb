@@ -30,7 +30,9 @@ class AlertsController < ApplicationController
 
   def index
     @product = Product.where("name ILIKE ?", "%#{params[:query]}%").first
-    @user_alerts = Alert.where(user: current_user)
+    @user_alerts = Alert.of(current_user)
+    # @nb_of_target = @user_alerts.where(alert_reach: true).count
+    @nb_of_target = Alert.of(current_user).reach.count
     @product = Product.where("name ILIKE ?", "%#{params[:query]}%").first
   end
 

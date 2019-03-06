@@ -66,13 +66,6 @@
   width: 130px;
 }
 
-.price-reach h2 {
-  font-size: 22px;
-  font-weight: bold;
-  color: green;
-  text-align: center;
-}
-
 .alert-link-format{
 font-size: 12px;
 width: 100px;
@@ -122,79 +115,95 @@ background-color: #3aebba;
     margin-left: 6%;
 }
 
+.alert-price {
+    text-align: right;
+    width: 40%;
+    justify-content: center;
+    padding-top: 73px;
+    padding-right: 20px;
+}
 
+.product-banner-card {
+  display:flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  text-align: center;
+}
 
-                                            .alert-price {
-                                                text-align: right;
-                                                width: 40%;
-                                                justify-content: center;
-                                                padding-top: 73px;
-                                                padding-right: 20px;
-                                            }
+.product-banner-card img {
+  margin-top: 23%;
+  // height: 180px;
+  // margin-right: 50px;
+}
+.alert-link {
+    display: flex;
+    text-align: center;
+    position: absolute;
+    top: 4px;
+    right: 9px;
+}
 
+.card-space-top{
+  margin-top:180px;
+}
 
-                              .product-banner-card {
-                                display:flex;
-                                margin: 0 auto;
-                                justify-content: space-around;
-                                text-align: center;
-                              }
+.alert-communication{
+  width: 30%;
+  font-size: 15px;
+  padding-top: 5px;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
 
-                                .product-banner-card img {
-                                  margin-top: 26%;
-                                  // height: 180px;
-                                  // margin-right: 50px;
-                                }
-                                .alert-link {
-                                    display: flex;
-                                    text-align: center;
-                                    position: absolute;
-                                    top: 4px;
-                                    right: 9px;
-                                }
+.card-body {
+  border-radius: 5px;
+  position: relative;
+  height: 630px;
+  margin: 20px;
+  box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.47);
+  transition: opacity 0.5s ease-in;
+  background-color:white;
+}
 
+.card-body .btn-set-alert {
+  border-radius: 4px;
+  background-color: #F2C94C;
+  border-color: white;
+  color: black;
+  width: 180px;
+  height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 6px;
+  margin-right: 7%;
+  padding-top: 16px;
+}
 
-                            .card-space-top{
-                              margin-top:180px;
-                            }
+.card-body .btn-alert-no-target {
+  border-radius: 4px;
+  background-color: white !important;
+  border-color: #F2C94C !important;
+  border-width: 3px;
+  color: black;
+  width: 180px;
+  height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 6px;
+  margin-right: 7%;
+  padding-top: 16px;
+  margin-bottom: 30px;
+}
 
-
-                            .alert-communication{
-                              width: 30%;
-                              font-size: 15px;
-                              padding-top: 5px;
-                              text-align: center;
-                              position: absolute;
-                              bottom: 20px;
-                              right: 30px;
-                            }
-
-                    .card-body {
-                      border-radius: 5px;
-                      position: relative;
-                      height: 660px;
-                      margin: 20px;
-                      box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.47);
-                      transition: opacity 0.5s ease-in;
-                      background-color:white;
-                    }
-
-                    .card-body .btn-set-alert {
-                      border-radius: 4px;
-                      background-color: #F2C94C;
-                      border-color: white;
-                      color: black;
-                      width: 180px;
-                      height: 60px;
-                      text-transform: uppercase;
-                      font-weight: bold;
-                      margin-top: 6px;
-                      margin-right: 7%;
-                      padding-top: 16px;
-                      }
+// .card-body .btn-set-alert .btn-alert-no-target {
+//   background-color: white !important;
+//   border-color: #F2C94C !important;
+// }
 
 .card-body-sucess {
-  box-shadow: 0px 0px 16px -2px rgba(51, 102, 0, 0.9);
+  box-shadow: 0px 0px 60px -2px rgba(51, 102, 0, 0.9);
 }
 
 .lastprice-alert {
@@ -215,16 +224,16 @@ background-color: #3aebba;
 .box-price {
   display: flex;
   justify-content: space-around;
-  position: relative;
-  top: 10px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+
 }
 
 .lastprice-alert h4 {
     margin-top: -7.5px;
     margin-bottom: 9.5px;
 }
-
-
 
 .faux-graph{
   height: 204px;
@@ -292,12 +301,14 @@ padding-right: 25px;
                                   top: 0px;
                                   left: 10%;
                                   width: 80%;
+                                  text-align:center;
                                 }
 
 .alert-avatar h3 {
   font-size: 32px;
   font-family: "Roboto Slab", sans-serif;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .price-font{
@@ -338,11 +349,6 @@ top: -900px;
   margin: 0px;
   padding: 0px;
 }
-
-
-
-
-
 
 .price-alert-infos{
   display: flex;

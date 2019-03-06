@@ -141,3 +141,17 @@
   position: fixed;
   z-index: 2;
 }
+
+.notif {
+  background-color: red;
+  border-radius: 50%;
+  font-size: 10px;
+  height: 13px;
+  width:13px;
+  border-color: red;
+  text-align: center;
+}
+
+.flex-not {
+  display: flex;
+}
