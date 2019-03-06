@@ -12,110 +12,93 @@
 <div class="container">
   <div class="card-space-top">
     <div class="inbox">
-      <% count = 0 %>
       <ul>
       <% @user_alerts.each do |alert| %>
-      <li>
-        <div class="col-xs-12 col-md-6">
-          <div class="card-index">
-            <div class="card-body">
+        <% current_price = alert.product.description.to_i %>
+        <% if alert.target_price > current_price %>
+        <li>
+          <div class="col-xs-12 col-md-6">
+            <div class="card-index">
+              <div class="card-body card-body-sucess">
 
                 <div class="alert-link">
-                  <%= link_to "X", alert_path(alert),
-                  method: :delete %>
+                  <%= link_to image_tag("delete.png", height:"40px"), alert_path(alert),
+                      method: :delete %>
                 </div>
-
-
-
-                <div class="alert-number">
-                  <% count += 1 %>
-                  <p><%= count %></p>
+                <div class="product-banner-card">
+                  <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
                 </div>
-
-                  <div class="product-banner-card">
-                    <%= image_tag alert.product.photo, :crop=>"thumb" %>
-                  </div>
 
                 <div class="alert-avatar">
                   <h3><%= alert.product.name %></h3>
-                  <p><%= alert.product.category.name %></p>
-                  <br>
                 </div>
-
-
-
-                  <div class="card-header">
-                    <div class="alert-price">
-                      <p>Target price </p>
-                      <p class="price-font">€<%= alert.target_price.to_i %> </p>
-                      <br>
-                      <p>Today best offer:</p>
-                      <% if alert.offer_today %>
-                        <p>Retailer: <%= alert.lowest_price_retailer.name %>:</p>
-                        <p class="price-font"> €<%= alert.lowest_price.price %></p>
-                      <% else %>
-                        <% if Date.current == alert.created_at.to_date %>
-                          <p class="price-font">€<%= alert.product.description %></p>
-                        <% else %>
-                          <p class="price-font">No offer today</p>
-                        <% end %>
-                      <% end %>
-                      <% target_price = alert.target_price %>
-                      <% current_price = alert.product.description %>
-                      <% difference = (current_price.to_i - target_price.to_i).to_i %>
-                      <p>Difference </p>
-                      <p class="price-font">€<%= difference %></p>
-                    </div>
-                 </div>
-
-
-
-
-                 <div class="alert-communication">
-                  <ul>
-                    <% if alert.by_email %>
-                    <li><i class="fas fa-at"></i></li>
-                    <% end %>
-                    <% if alert.by_text_message %>
-                    <li><i class="fas fa-sms"></i></li>
-                    <% end %>
-                  </ul>
+                <div class="graph-prix">
+                  <% if alert.lowest_prices.blank? %>
+                    <div class="faux-graph">
+                  <% else %>
+                    <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>"></canvas>
+                  <% end %>
                 </div>
-
-          <div class="graph-prix">
-            <% if alert.lowest_prices.blank? %>
-              <div class="faux-graph">
-              <h3 class="text-center">Not enough data...</h3>
+                <div class="box-price">
+                  <div class="lastprice-alert target-success">
+                    <h5>Current price:</h5>
+                    <h4><%= current_price.round %> €</h4>
+                  </div>
+                  <div class="buy-btn text-right">
+                    <%= link_to '<i class="fas fa-shopping-cart"></i> BUY NOW'.html_safe, product_path(alert.product), class: "btn btn-set-alert" %>
+                  </div>
+                </div>
               </div>
             <% else %>
               <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>" data-target-price="<%= alert.target_price %>"></canvas>
             <% end %>
+            </div>
           </div>
-                <div class="lastprice-alert">
-                <h5>Current price:</h5>
-                <h4><%= current_price %> €</h4>
+        </li>
+
+        <% else %>
+
+        <li>
+          <div class="col-xs-12 col-md-6">
+            <div class="card-index">
+              <div class="card-body">
+
+                <div class="alert-link">
+                  <%= link_to image_tag("delete.png", height:"40px"), alert_path(alert),
+                      method: :delete %>
+                </div>
+                <div class="product-banner-card">
+                  <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
                 </div>
 
-                <div class="buy-btn text-right">
-                  <%= link_to "BUY NOW", root_path,
-                  class: "btn btn-set-alert" %>
+                <div class="alert-avatar">
+                  <h3><%= alert.product.name %></h3>
                 </div>
-
-
-
-
-
+                <div class="graph-prix">
+                  <% if alert.lowest_prices.blank? %>
+                    <div class="faux-graph">
+                  <% else %>
+                     <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>" data-target-price="<%= alert.target_price %>"></canvas>
+                  <% end %>
+                </div>
+                <div class="box-price">
+                  <div class="lastprice-alert">
+                    <h5>Current price:</h5>
+                    <h4><%= current_price.round %> €</h4>
+                  </div>
+                  <div class="buy-btn text-right">
+                    <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product), class: "btn btn-set-alert" %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          </li>
-        <% end %>
+        </li>
+      <% end %>
+      <% end %>
       </ul>
-    </div>
     </div>
   </div>
 </div>
-
 
 

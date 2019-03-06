@@ -17,9 +17,10 @@
         </div>
       </div>
 
-      <%= form_tag root_path, method: :post, multipart: true, remote: true do %>
-      <%= file_field_tag :photo %>
-      <%= submit_tag "Submit your photo", class: "btn btn-success", id:"btn-successor" %>
+      <%= form_tag search_products_path, method: :post, multipart: true do %>
+        <%= label_tag :photo, '📸', class: 'upload-photo' %>
+        <%= file_field_tag :photo, class: 'hidden' %>
+        <%= submit_tag "Submit your photo", class: "btn btn-success", id:"btn-successor" %>
       <% end %>
     </div>
   </div>
@@ -32,8 +33,8 @@
   </div>
 
           <div class="searchbar-position"></div>
-          <div id="picture_bar_position"></div>
-
+<!--           <div id="picture_bar_position"></div>
+ -->
           <div class="illustration-home">
             <i class="fas fa-laptop" id="lap"></i>
             <i class="fas fa-mobile-alt"></i>

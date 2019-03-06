@@ -18,9 +18,10 @@ class ProductsController < ApplicationController
     denicheur_url = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{keyword}"
     response = open(denicheur_url).read
     data = JSON.parse(response)
-    items = data['message']['product']['items']
-    # redirect_to product_path(@product, query: item['id'])
-    redirect_to search_results_products_path(items: items)
+    items = data['message']['product']['items'].second
+    item = items["id"]
+    # redirect_to search_results_products_path(items: items)
+    redirect_to product_path(item)
   end
 
   def search_results
@@ -30,38 +31,26 @@ class ProductsController < ApplicationController
   # Below is not the proper way to implement the show but it works with filters
    def show
     @alert = Alert.new
-    @denich_id = params[:query]
-    if Product.find_by(denich_id: @denich_id).nil? == false &&
-      Product.find_by(denich_id: @denich_id).updated_at.to_date == Time.zone.today
-      @product = Product.find_by(denich_id: @denich_id)
-    else
+    @denich_id = params[:query] || params[:id]
+    @product = Product.includes(offers: :prices).includes(offers: :retailer).find_by(denich_id: @denich_id)
+    unless @product.present? && @product.updated_at.to_date == Time.zone.today
       @product = ScrapeProductService.new(@denich_id).call
     end
-    @offers = @product.offers
+    @offers = @product.offers.includes(:prices, :retailer)
     filter
   end
-
-  # Below is the proper way to implement the show but doesn't work with filters
-  # def show
-  #   @alert = Alert.new
-  #   @denich_id = params[:query]
-  #   @product = ScrapeProductService.new(@denich_id).call
-  #   @offers_price = @product.offers
-  #   @offers_rating = @product.offers.joins(:retailer).order('retailers.rating DESC')
-  #   filter
-  # end
 
 private
 
   def filter
-    @filter = false
-    if params[:sort_by_price]
-      @filter = true
-      @offers = @product.offers
-    end
     if params[:sort_by_rating]
-      @filter = true
+      @filter = false
       @offers = @product.offers.joins(:retailer).order('retailers.rating DESC')
+    else
+      @filter = true
+      @offers = @offers.sort do |of, fer|
+        of.prices.last.price <=> fer.prices.last.price
+      end
     end
   end
 
