@@ -51,12 +51,12 @@
 
   <div class="filter-prod">
     <div>
-      <% css1_code = @filter ? "selected" : "" %>
-      <%= link_to 'Filter by price', product_path(@product.denich_id), class: "btn btn-infos filter_price #{css1_code}" %>
-    </div>
-    <div>
       <% css2_code = !@filter ? "selected" : "" %>
       <%= link_to 'Filter by rating', product_path(@product.denich_id, sort_by_rating: true), class: "btn btn-infos sort_rating filter_rating #{css2_code}" %>
+    </div>
+    <div>
+      <% css1_code = @filter ? "selected" : "" %>
+      <%= link_to 'Filter by price', product_path(@product.denich_id), class: "btn btn-infos filter_price #{css1_code}" %>
     </div>
   </div>
 
@@ -102,7 +102,7 @@
           <%= @offers.first.prices.last.price %>€
         </div>
         <div class="go-shopping-first">
-          <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping first-button hunt-link"><i class="fas fa-arrow-circle-right link-shopping"></i>Hunt</a>
+          <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping first-button hunt-link">Hunt<i class="fas fa-arrow-circle-right link-shopping"></i></a>
         </div>
       </div>
       <% @offers[1..nb_of_offers].each do |offer| %>
@@ -123,7 +123,8 @@
             <%= offer.prices.last.price %>€
           </div>
           <div class="go-shopping">
-            <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping hunt-link">Hunt</a>
+            <a href=<%= offer.prices.last.url %> target="_blank", class="button button-shopping hunt-link">Hunt<i class="fas fa-arrow-circle-right link-shopping"></i></a>
+
           </div>
         </div>
       <% end %>

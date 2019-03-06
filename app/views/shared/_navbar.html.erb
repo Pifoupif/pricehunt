@@ -15,9 +15,9 @@
 
       <!-- Links when logged in -->
       <% if @nb_of_target == 0 %>
-        <%= link_to "Alert", alerts_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Alert", alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link"%>
       <% else %>
-        <%= link_to alerts_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= link_to alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" do %>
           <div class="flex-not">
             <div class="not-al"> Alerts </div>
             <div class="notif"><%= @nb_of_target %></div>
@@ -25,6 +25,9 @@
         <% end %>
       <% end %>
       <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+
 
     <% else %>
 

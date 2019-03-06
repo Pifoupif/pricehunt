@@ -381,4 +381,15 @@ top: -900px;
   margin: 10px;
 }
 
+.button-delete{
+  font-size: 32px;
+  color: lightgrey;
+  position: absolute;
+  top: 6px;
+  right: 3px
+}
+
+.button-delete:hover{
+  color: red;
+}
 

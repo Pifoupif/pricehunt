@@ -26,9 +26,11 @@
               <div class="card-index">
                 <div class="card-body card-body-sucess">
                   <div class="alert-link">
-                    <%= link_to image_tag("delete.png", height:"40px"), alert_path(alert),
+                    <%= link_to alert_path(alert),
                         method: :delete,
-                        data: { confirm: "Are you sure?" } %>
+                        data: { confirm: "Do you want to stop hunting this product?" } do %>
+                    <i class="far fa-times-circle button-delete"></i>
+                  <% end %>
                   </div>
                   <div class="product-banner-card">
                     <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
@@ -63,9 +65,11 @@
                 <div class="card-body">
 
                   <div class="alert-link">
-                    <%= link_to image_tag("delete.png", height:"40px"), alert_path(alert),
+                    <%= link_to alert_path(alert),
                         method: :delete,
-                        data: { confirm: "Are you sure?" } %>
+                        data: { confirm: "Do you want to stop hunting this product?" } do %>
+                    <i class="far fa-times-circle button-delete"></i>
+                  <% end %>
                   </div>
                   <div class="product-banner-card">
                     <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
