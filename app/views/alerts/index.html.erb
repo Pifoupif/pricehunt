@@ -13,8 +13,13 @@
   <div class="card-space-top">
     <div class="inbox">
       <ul>
-      <% @user_alerts.each do |alert| %>
-        <% current_price = alert.product.description.to_i %>
+      <% list_alert = @user_alerts.sort{ |alert| alert.lowest_price.price.to_i <=> alert.target_price.to_i } %>
+      <% list_alert.each do |alert| %>
+        <% if alert.lowest_price.nil? %>
+          <% current_price = alert.product.description.to_i %>
+        <% else %>
+          <% current_price = alert.lowest_price.price.to_i %>
+        <% end %>
         <% if alert.target_price > current_price %>
         <li>
           <div class="col-xs-12 col-md-6">
@@ -23,7 +28,8 @@
 
                 <div class="alert-link">
                   <%= link_to image_tag("delete.png", height:"40px"), alert_path(alert),
-                      method: :delete %>
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
                 </div>
                 <div class="product-banner-card">
                   <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
@@ -45,7 +51,7 @@
                     <h4><%= current_price.round %> €</h4>
                   </div>
                   <div class="buy-btn text-right">
-                    <%= link_to '<i class="fas fa-shopping-cart"></i> BUY NOW'.html_safe, product_path(alert.product), class: "btn btn-set-alert" %>
+                    <%= link_to '<i class="fas fa-shopping-cart"></i> BUY NOW'.html_safe, product_path(alert.product.denich_id), class: "btn btn-set-alert" %>
                   </div>
                 </div>
               </div>
@@ -65,7 +71,8 @@
 
                 <div class="alert-link">
                   <%= link_to image_tag("delete.png", height:"40px"), alert_path(alert),
-                      method: :delete %>
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
                 </div>
                 <div class="product-banner-card">
                   <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
@@ -87,7 +94,7 @@
                     <h4><%= current_price.round %> €</h4>
                   </div>
                   <div class="buy-btn text-right">
-                    <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product), class: "btn btn-set-alert" %>
+                    <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product.denich_id), class: "btn btn-set-alert" %>
                   </div>
                 </div>
               </div>
