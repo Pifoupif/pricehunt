@@ -1,6 +1,5 @@
 .select2-result-repository {
   display: flex;
-  border-bottom: 0.5px black;
   max-height: 80px;
 }
 
@@ -98,3 +97,6 @@
 }
 
 
+.hidden-btn {
+  display: none;
+}
