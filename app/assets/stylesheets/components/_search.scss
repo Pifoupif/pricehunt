@@ -31,9 +31,7 @@
 .select2-results {
   //height: 300px;
   width: 600px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+
   //background-color: rgba(0,0,0,0) !important;
 }
 
@@ -133,10 +131,3 @@
   display: none;
 }
 
-#search-form {
-  position: relative;
-}
-
-.search-flex {
-  position: relative;
-}
