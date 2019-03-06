@@ -10,7 +10,16 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Alerts", alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" %>
+      <% if @nb_of_target.nil? %>
+        <%= link_to "Alert", alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" %>
+      <% else %>
+        <%= link_to alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" do %>
+          <div class="flex-not">
+            <div class="not-al"> Alerts </div>
+            <div class="notif"><%= @nb_of_target %></div>
+          </div>
+        <% end %>
+      <% end %>
       <%= link_to "Log out", destroy_user_session_path, :method => :delete, data: { :confirm => "Are you sure?"}, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% else %>

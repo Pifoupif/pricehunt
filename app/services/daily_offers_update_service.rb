@@ -7,9 +7,9 @@ class DailyOffersUpdateService
     @alert = alert
   end
 
-  def call(alert)
+  def call
     count = 0
-    word = alert.product.denich_id
+    word = @alert.product.denich_id
     url_search = "https://search.ledenicheur.fr/classic?class=Search_Supersearch&method=search&market=fr&skip_login=1&modes=product,raw_sorted,raw&limit=12&q=#{word}"
     # sleep(rand(0.1..0.2))
     search = open(url_search).read
@@ -18,7 +18,7 @@ class DailyOffersUpdateService
 
     results = Nokogiri::HTML(open(url_vers_show))
 
-    product = alert.product
+    product = @alert.product
 
     results.search('.v-centered').each do |row|
       retail_name = row.search('.drg-sidebar img').last&.values&.last
@@ -45,7 +45,7 @@ class DailyOffersUpdateService
     puts "#{word}# #{count} created"
     puts "====================="
 
-    update_alert_with_lowest_price(alert, product)
+    update_alert_with_lowest_price(product)
   end
 
   def create_offer_price(offer, price, url_path)
@@ -56,7 +56,7 @@ class DailyOffersUpdateService
     )
   end
 
-  def update_alert_with_lowest_price(alert, product)
+  def update_alert_with_lowest_price(product)
     today_last_prices = []
     product.offers.each do |offer|
       next if offer_invalid?(offer)
@@ -66,7 +66,8 @@ class DailyOffersUpdateService
 
     today_lowest_price = today_last_prices&.min_by { |price| price.price }
 
-    add_lowest_price(alert, today_lowest_price)
+    add_lowest_price(today_lowest_price)
+    update_alert_reach
   end
 
   def offer_invalid?(offer)
@@ -74,12 +75,16 @@ class DailyOffersUpdateService
     offer.prices.last.created_at.to_date < Date.current
   end
 
-  def add_lowest_price(alert, today_lowest_price)
+  def add_lowest_price(today_lowest_price)
     if today_lowest_price
-      alert.update offer_today: true
-      LowestPrice.create alert: alert, price: today_lowest_price
+      @alert.update offer_today: true
+      LowestPrice.create alert: @alert, price: today_lowest_price
     else
       alert.update offer_today: false
     end
+  end
+
+  def update_alert_reach
+    @alert.update alert_reach: true if @alert.target_price >= @alert.lowest_price.price.to_i
   end
 end
