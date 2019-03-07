@@ -39,7 +39,7 @@ class ScrapeProductService
       retail_name = row.search('.drg-sidebar img').last&.values&.last
       next if retail_name.nil?
       existing_retailer = Retailer.find_by(name: retail_name)
-      product = Product.last
+      product = Product.find_by(denich_id: @denich_id)
 
       if existing_retailer
         offer = Offer.where(retailer: existing_retailer, product: product).first_or_create!
