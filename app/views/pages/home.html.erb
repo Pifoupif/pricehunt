@@ -14,10 +14,10 @@
           <!-- <label class= "label-home" for="keyword">What is your keyword?</label> -->
           <p></p>
           <%= render 'shared/searchbar'  %>
-      <%= form_tag search_products_path, method: :post, multipart: true do %>
+      <%= form_tag search_products_path, method: :post, multipart: true, id: "photo-form" do %>
         <%= label_tag :photo, '📸', class: 'upload-photo' %>
         <%= file_field_tag :photo, class: 'hidden' %>
-        <%= submit_tag "Send", class: "btn btn-success", id:"btn-send" %>
+        <%= submit_tag "Send", id:"hidden-btn" %>
       <% end %>
         </div>
       </div>
