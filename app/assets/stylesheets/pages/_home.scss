@@ -30,17 +30,17 @@
 }
 
 #lap {
-  animation: 140s ease-out 0s 1 slideInlaptop;
+  animation: 140s ease-out 0s infinite slideInlaptop;
   // padding: 30px;
 }
 
 .fas.fa-mobile-alt, .fas.fa-headphones, .far.fa-keyboard, .fas.fa-gamepad, .fas.fa-tshirt {
-  animation: 150s ease-out 0s 1 slideInFromLeft;
+  animation: 150s ease-out 0s infinite slideInFromLeft;
   // padding: 30px;
 }
 
 .illustration-home {
-  animation: 150s ease-out 0s 1 slideInFromLeft;
+  animation: 150s ease-out 0s infinite slideInFromLeft;
   // padding: 30px;
 }
 
@@ -200,7 +200,7 @@ text-align: right;
   }
 }
 
-.far.fa-keyboard {
+.fas.fa-guitar {
     color: white;
     font-size: 3em;
     right: 93%;
