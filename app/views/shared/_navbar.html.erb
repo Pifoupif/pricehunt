@@ -19,15 +19,14 @@
       <% else %>
         <%= link_to alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" do %>
           <div class="flex-not">
-            <div class="not-al"> Alerts </div>
+            <div class="not-al"><i class="fas fa-bell"></i> Alerts </div>
             <div class="notif"><%= @nb_of_target %></div>
           </div>
         <% end %>
       <% end %>
-      <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: "navbar-wagon-item navbar-wagon-link" %>
-
-
-
+      <%= link_to destroy_user_session_path, :method => :delete, data: { :confirm => "Are you sure?"}, class: "navbar-wagon-item navbar-wagon-link" do %>
+        Log out <i class="fas fa-sign-out-alt"></i>
+      <% end %>
 
     <% else %>
 
