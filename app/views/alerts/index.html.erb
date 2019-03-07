@@ -16,7 +16,7 @@
     <% if @user_alerts.nil? %>
     <% else %>
       <div class="inbox">
-        <h1 class="title_success">Successfull alerts: <strong>ready to buy</strong></h1>
+        <h1 class="title_success">Successful alerts: <strong>ready to buy</strong></h1>
         <div class="box-target-atteint">
           <% @user_alerts.each do |alert| %>
           <% current_price = alert.lowest_price.price %>
@@ -34,7 +34,7 @@
                     <% if alert.lowest_prices.blank? %>
                       <div class="faux-graph"></div>
                     <% else %>
-                      <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>"></canvas>
+                      <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>" data-target-price="<%= alert.target_price %>"></canvas>
                     <% end %>
                     <%= render 'shared/label_alert_graph'%>
                   </div>
