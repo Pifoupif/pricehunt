@@ -80,7 +80,7 @@
   width: 55vw;
   justify-content: space-around;
   position: absolute;
-  left: 36px;
+  left: -21px;
 }
 
 
@@ -90,4 +90,8 @@
 
 .hidden-btn {
   display: none !important;
+}
+
+#photo-form{
+  margin-left: -74px;
 }
