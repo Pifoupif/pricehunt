@@ -23,7 +23,6 @@ const initSelect2 = () => {
         };
       },
     },
-    placeholder: 'Search for a product',
     escapeMarkup: function (markup) { return markup; },
     minimumInputLength: 2,
     templateResult: formatProduct,
@@ -52,7 +51,7 @@ function formatProduct (product) {
 }
 
 function formatProductSelection (product) {
-  return product.name;
+  return 'Search your product here';
 }
 
 export { initSelect2 };
