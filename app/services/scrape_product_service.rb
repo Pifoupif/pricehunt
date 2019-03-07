@@ -46,7 +46,7 @@ class ScrapeProductService
         puts "offer #(#{offer.id})"
       else
         puts "* Detect a new retailer! (#{retail_name})"
-        new_retailer = Retailer.create(name: retail_name, rating: rand(1..5), logo: row.children.children.search('img').attr('src').value)
+        new_retailer = Retailer.create(name: retail_name, rating: rand(3..5), logo: row.children.children.search('img').attr('src').value)
         offer = Offer.create!(retailer: new_retailer, product: product)
         puts "offer #(#{offer.id})"
       end
