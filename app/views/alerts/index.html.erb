@@ -39,7 +39,7 @@
                     <%= render 'shared/label_alert_graph'%>
                   </div>
                   <div class="alert-link">
-                    <%= link_to alerts_path,
+                    <%= link_to alert_path(alert),
                         method: :delete,
                         data: { confirm: "Do you want to stop hunting this product?" } do %>
                     <div class="flex-not">
@@ -92,7 +92,7 @@
               <%= render 'shared/label_alert_graph'%>
                 </div>
                 <div class="alert-link">
-                  <%= link_to alerts_path,
+                  <%= link_to alert_path(alert),
                       method: :delete,
                       data: { confirm: "Do you want to stop hunting this product?" } do %>
                   <i class="fas fa-trash-alt button-delete"></i>
