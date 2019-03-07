@@ -34,7 +34,7 @@
   // padding: 30px;
 }
 
-.fas.fa-mobile-alt, .fas.fa-headphones, .far.fa-keyboard, .fas.fa-gamepad, .fas.fa-tshirt {
+.fas.fa-mobile-alt, .fas.fa-headphones, .fas.fa-guitar, .fas.fa-gamepad, .fas.fa-tshirt {
   animation: 150s ease-out 0s infinite slideInFromLeft;
   // padding: 30px;
 }
@@ -202,14 +202,14 @@ text-align: right;
 
 .fas.fa-guitar {
     color: white;
-    font-size: 3em;
+    font-size: 5em;
     right: 93%;
     top: 80%;
     position: absolute;
     transition: all 0.9s ease-in;
    &:hover {
     transform: rotate(-5deg);
-    font-size: 4.3em;
+    font-size: 5.3em;
   }
 }
 
