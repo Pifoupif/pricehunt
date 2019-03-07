@@ -33,7 +33,8 @@ data: {
     label: "Target price",
     borderColor: "#4FB6FF",
     pointRadius: 0,
-    borderWidth: 2,
+    borderWidth: 3,
+    backgroundColor: "rgba(79,182,255,0.2)"
   }]
 },
 
@@ -57,7 +58,7 @@ options: {
       padding:{left:15,right:15,top:5,bottom:5}
     },
   scales: {
-    yAxes: [{
+    xAxes: [{
       ticks: {
         beginAtZero:false
       },
@@ -66,6 +67,9 @@ options: {
       }
     }],
     yAxes: [{
+      ticks: {
+        beginAtZero:true
+      },
       gridLines: {
         display:false
       }
