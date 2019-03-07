@@ -34,7 +34,7 @@
                     <% if alert.lowest_prices.blank? %>
                       <div class="faux-graph"></div>
                     <% else %>
-                      <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>"></canvas>
+                      <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>" data-target-price="<%= alert.target_price %>"></canvas>
                     <% end %>
                     <%= render 'shared/label_alert_graph'%>
                   </div>
