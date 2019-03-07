@@ -107,11 +107,9 @@ background-color: #3aebba;
 }
 
 .graph-prix {
-   // position: absolute;
-    bottom: 5px;
+    position: absolute;
+    bottom: 5%;
     width: 90%;
-    // border-top: 1px solid grey;
-    // border-bottom: 1px solid grey;
     margin-left: 6%;
 }
 
@@ -126,8 +124,9 @@ background-color: #3aebba;
 .product-banner-card {
   display:flex;
   margin: 0 auto;
-  justify-content: space-around;
-  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 5%;
 }
 
 .product-banner-card img {
@@ -135,12 +134,8 @@ background-color: #3aebba;
   // height: 180px;
   // margin-right: 50px;
 }
+
 .alert-link {
-    display: flex;
-    text-align: center;
-    position: absolute;
-    top: 4px;
-    right: 9px;
 }
 
 .card-space-top{
@@ -160,7 +155,7 @@ background-color: #3aebba;
 .card-body {
   border-radius: 5px;
   position: relative;
-  height: 560px;
+  height: 490px;
   margin: 20px;
   width: 40vw;
   box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.47);
@@ -222,11 +217,12 @@ background-color: #3aebba;
 }
 
 .box-price {
-  display: flex;
   justify-content: space-around;
   position: absolute;
   bottom: 0px;
-  width: 100%;
+  top: 0px;
+  width: 30%;
+  right: 5%
 
 }
 
@@ -278,11 +274,6 @@ padding-right: 25px;
   font-size: 30px;
 }
 
-
-
-
-
-
                                   .alert-communication {
                                       /* width: 30%; */
                                       /* font-size: 5px; */
@@ -295,13 +286,11 @@ padding-right: 25px;
                                   }
 
 
-
                                 .alert-avatar {
                                   position: absolute;
                                   top: 0px;
-                                  left: 10%;
-                                  width: 80%;
-                                  text-align:center;
+                                  left: 5%;
+                                  width: 70%;
                                 }
 
 .alert-avatar h3 {
@@ -384,9 +373,6 @@ top: -900px;
 .button-delete{
   font-size: 32px;
   color: lightgrey;
-  position: absolute;
-  top: 6px;
-  right: 3px
 }
 
 .button-delete:hover{
