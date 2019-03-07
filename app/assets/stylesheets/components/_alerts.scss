@@ -193,6 +193,14 @@ background-color: #3aebba;
   margin-bottom: 30px;
 }
 
+// .card-body .btn-set-alert .btn-alert-no-target {
+//   background-color: white !important;
+//   border-color: #F2C94C !important;
+// }
+
+.card-body-sucess {
+}
+
 .lastprice-alert {
     font-weight: bold;
     // position: absolute;
@@ -378,10 +386,35 @@ top: -900px;
 .box-target-atteint {
   overflow-x: scroll;
   display: flex;
+  background-color: rgba(242,201,75,0.4);
 }
 
 .box-target-price-non-atteint{
   overflow-x: scroll;
   display: flex;
+  background-color: lightgrey;
 }
 
+.title_success{
+  background-color: #F2C94C;
+  width: 42%;
+  font-size: 28px;
+  font-weight: lighter;
+  padding: 6px 6px;
+  text-align: center;
+  border-radius: 4px;
+  margin-left: 30%;
+  color: black;
+}
+
+.title_pending{
+  background-color: lightgrey;
+  width: 42%;
+  font-size: 28px;
+  font-weight: lighter;
+  padding: 6px 6px;
+  text-align: center;
+  border-radius: 4px;
+  margin-left: 30%;
+  color: black;
+}
