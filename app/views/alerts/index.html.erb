@@ -16,7 +16,7 @@
     <% if @user_alerts.nil? %>
     <% else %>
       <div class="inbox">
-        <h1 class="title_success">Successfull alerts: <strong>ready to buy</strong></h1>
+        <h1 class="title_success">Successful alerts: <strong>ready to buy</strong></h1>
         <div class="box-target-atteint">
           <% @user_alerts.each do |alert| %>
           <% current_price = alert.lowest_price.price %>
