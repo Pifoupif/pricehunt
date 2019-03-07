@@ -1,7 +1,7 @@
 class LowestPrice < ApplicationRecord
   belongs_to :price
   belongs_to :alert
-  # after_commit :check_alert_reach_status
+  after_save :check_alert_reach_status
 
   private
 
