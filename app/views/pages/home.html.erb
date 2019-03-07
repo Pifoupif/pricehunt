@@ -15,9 +15,11 @@
           <p></p>
           <%= render 'shared/searchbar'  %>
       <%= form_tag search_products_path, method: :post, multipart: true, id: "photo-form" do %>
-        <%= label_tag :photo, '📸', class: 'upload-photo' %>
+        <%= label_tag :photo, class: 'upload-photo' do %>
+        <i class="fas fa-camera"></i>
+        <% end %>
         <%= file_field_tag :photo, class: 'hidden' %>
-        <%= submit_tag "Send", id:"hidden-btn" %>
+        <%= submit_tag "Send", id:"hidden-btn"%>
       <% end %>
         </div>
       </div>

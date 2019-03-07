@@ -27,3 +27,13 @@
 #btn-send:hover {
   opacity: 0.9;
 }
+
+
+@keyframes turn {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
+
+.fa-spinner {
+  animation: turn 1s infinite;
+}

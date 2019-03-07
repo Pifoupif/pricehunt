@@ -13,6 +13,12 @@ initSweetalert('#sweet-alert', {
   buttons: false,
 });
 
+// initSweetalert('#sweet-photo-alert', {
+//   title: "Photo Uploaded!",
+//   text: "Wait while we are analysing it",
+//   icon: "success",
+// });
+
 // [...]
 
 if (document.querySelector(".sort-price")) {

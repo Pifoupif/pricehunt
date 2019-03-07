@@ -3,6 +3,8 @@ function submitOnChange() {
 };
 
 function submitForm(event) {
+  const photoUploader = document.querySelector('.upload-photo');
+  photoUploader.innerHTML = '<i class="fas fa-spinner"></i>';
   document.forms["photo-form"].submit()
 };
 
