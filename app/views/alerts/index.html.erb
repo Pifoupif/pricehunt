@@ -24,7 +24,7 @@
               <div class="card-index">
                 <div class="card-body card-body-sucess">
                   <div class="product-banner-card">
-                    <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
+                    <%= image_tag alert.product.photo, width: "220px", height: "220px" %>
                   </div>
 
                   <div class="alert-avatar">
@@ -38,25 +38,26 @@
                     <% end %>
                     <%= render 'shared/label_alert_graph'%>
                   </div>
+                  <div class="alert-link">
+                    <%= link_to alert_path(alert),
+                        method: :delete,
+                        data: { confirm: "Do you want to stop hunting this product?" } do %>
+                    <div class="flex-not">
+                      <div><i class="fas fa-trash-alt button-delete"></i></div>
+                    </div>
+                  <% end %>
+                  </div>
                   <div class="box-price">
                     <div class="lastprice-alert">
-                      <h5>Target price:</h5>
+                      <h6>Target price:</h6>
                       <h4><%= alert.target_price.round %> €</h4>
                     </div>
                     <div class="cadrer-buy">
-                      <div class="lastprice-alert">
-                        <h5><%= current_price.round  %> €</h5>
+                      <div class="lastprice-alert middleman">
+                        <h5>Current price: <%= current_price.round  %> €</h5>
                       </div>
                       <div class="buy-btn text-right">
                         <%= link_to '<i class="fas fa-shopping-cart"></i> BUY NOW'.html_safe, product_path(alert.product.denich_id), class: "btn btn-set-alert" %>
-                      </div>
-                      <div class="alert-link">
-                        <%= link_to alert_path(alert),
-                            method: :delete,
-                            data: { confirm: "Do you want to stop hunting this product?" } do %>
-                        <i class="fas fa-trash-alt button-delete"></i>
-                        Delete this alert
-                      <% end %>
                       </div>
                     </div>
                   </div>
@@ -74,16 +75,9 @@
           <% if alert.alert_reach == false %>
             <div class="card-index">
               <div class="card-body">
-                <div class="alert-link">
-                  <%= link_to alert_path(alert),
-                      method: :delete,
-                      data: { confirm: "Do you want to stop hunting this product?" } do %>
-                  <i class="far fa-times-circle button-delete"></i>
-                <% end %>
-                </div>
 
                 <div class="product-banner-card">
-                  <%= image_tag alert.product.photo, width: "150px", height: "150px" %>
+                  <%= image_tag alert.product.photo, width: "220px", height: "220px" %>
                 </div>
 
                 <div class="alert-avatar">
@@ -97,22 +91,27 @@
                   <% end %>
               <%= render 'shared/label_alert_graph'%>
                 </div>
-                <div class="box-price">
-                  <div class="lastprice-alert">
-                    <h5>Current price:</h5>
-                    <h4><%= current_price.round %> €</h4>
-                  </div>
-                  <div class="buy-btn text-right">
-                    <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product.denich_id), class: "btn btn-alert-no-target" %>
-                  </div>
-                  <div class="alert-link">
-                    <%= link_to alert_path(alert),
-                        method: :delete,
-                        data: { confirm: "Do you want to stop hunting this product?" } do %>
-                    <i class="far fa-times-circle button-delete"></i>
-                  <% end %>
-                  </div>
+                <div class="alert-link">
+                  <%= link_to alert_path(alert),
+                      method: :delete,
+                      data: { confirm: "Do you want to stop hunting this product?" } do %>
+                  <i class="fas fa-trash-alt button-delete"></i>
+                <% end %>
                 </div>
+                  <div class="box-price">
+                    <div class="lastprice-alert">
+                      <h6>Target price:</h6>
+                      <h4><%= alert.target_price.round %> €</h4>
+                    </div>
+                    <div class="cadrer-buy">
+                      <div class="lastprice-alert middleman">
+                        <h5>Current price: <%= current_price.round  %> €</h5>
+                      </div>
+                      <div class="buy-btn text-right">
+                        <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product.denich_id), class: "btn btn-set-alert btn-alert-no-target" %>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
           <% end %>

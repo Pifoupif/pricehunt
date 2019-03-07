@@ -130,12 +130,13 @@ background-color: #3aebba;
 }
 
 .product-banner-card img {
-  margin-top: 23%;
-  // height: 180px;
-  // margin-right: 50px;
+  margin-top: 10%;
 }
 
 .alert-link {
+  position: absolute;
+  top: 10px;
+  right: 5%;
 }
 
 .card-space-top{
@@ -168,7 +169,7 @@ background-color: #3aebba;
   background-color: #F2C94C;
   border-color: white;
   color: black;
-  width: 180px;
+  width: 100%;
   height: 60px;
   text-transform: uppercase;
   font-weight: bold;
@@ -205,10 +206,12 @@ background-color: #3aebba;
     font-weight: bold;
     // position: absolute;
     // margin-top: -5px;
-    margin-left: 7%;
+    margin-left: 6px;
+    margin-right: 6px;
     text-align: center;
     font-family: "Open Sans", sans-serif;
     font-size: 24px;
+    margin-top: 10px;
 }
 
 .target-success {
@@ -220,15 +223,30 @@ background-color: #3aebba;
   justify-content: space-around;
   position: absolute;
   bottom: 0px;
-  top: 0px;
+  top: 10%;
   width: 30%;
   right: 5%
 
 }
 
+.lastprice-alert {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+}
+
 .lastprice-alert h4 {
-    margin-top: -7.5px;
-    margin-bottom: 9.5px;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.lastprice-alert h5 {
+    font-size: 14px;
+}
+
+.lastprice-alert h6 {
+    font-size: 14px;
 }
 
 .faux-graph{
@@ -290,11 +308,11 @@ padding-right: 25px;
                                   position: absolute;
                                   top: 0px;
                                   left: 5%;
-                                  width: 70%;
+                                  width: 67%;
                                 }
 
 .alert-avatar h3 {
-  font-size: 32px;
+  font-size: 25px;
   font-family: "Roboto Slab", sans-serif;
   font-weight: bold;
   margin-top: 10px;
@@ -417,4 +435,24 @@ top: -900px;
   border-radius: 4px;
   margin-left: 30%;
   color: black;
+}
+
+.cadrer-buy {
+}
+
+.info-delete {
+  color: #333333;
+  font-size: 14px;
+  font-family: "Open sans", sans-serif;
+  text-align: center;
+  margin: auto;
+}
+
+.info-delete :hover{
+  text-decoration: none;
+}
+
+.middleman {
+  margin-top: 15px;
+  margin-bottom: 40px;
 }
