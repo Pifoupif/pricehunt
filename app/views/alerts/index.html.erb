@@ -14,6 +14,7 @@
     <% if @user_alerts.nil? %>
     <% else %>
       <div class="inbox">
+        <h1 class="title_success">Successfull alerts: <strong>ready to buy</strong></h1>
         <div class="box-target-atteint">
           <% @user_alerts.each do |alert| %>
           <% current_price = alert.lowest_price.price %>
@@ -55,13 +56,15 @@
             <% end %>
           <% end %>
         </div>
+        <br>
+        <br>
+        <h1 class="title_pending">Peding alerts: <strong>still on the hunt</strong></h1>
       <div class="box-target-price-non-atteint">
         <% @user_alerts.each do |alert| %>
         <% current_price = alert.lowest_price.price %>
           <% if alert.alert_reach == false %>
             <div class="card-index">
               <div class="card-body">
-
                 <div class="alert-link">
                   <%= link_to alert_path(alert),
                       method: :delete,
