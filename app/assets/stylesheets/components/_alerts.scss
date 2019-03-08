@@ -1,7 +1,7 @@
 .inbox {
-  padding: 10px 20px;
-  list-style: none;
-  margin: 4px;
+  // padding: 10px 20px;
+  // list-style: none;
+  // margin: 4px;
 }
 
 .alert-cont {
@@ -110,7 +110,8 @@ background-color: #3aebba;
     position: absolute;
     bottom: 5%;
     width: 90%;
-    margin-left: 6%;
+    margin-left: 2%;
+    padding-bottom: 8px;
 }
 
 .alert-price {
@@ -156,9 +157,9 @@ background-color: #3aebba;
 .card-body {
   border-radius: 5px;
   position: relative;
-  height: 490px;
-  margin: 20px;
-  width: 40vw;
+  height: 63vh;
+  margin: 20px 10px;
+  width: 34vw;
   box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.47);
   transition: opacity 0.5s ease-in;
   background-color:white;
@@ -180,18 +181,21 @@ background-color: #3aebba;
 
 .card-body .btn-alert-no-target {
   border-radius: 4px;
-  background-color: white !important;
-  border-color: #F2C94C !important;
+  background-color: lightgray !important;
+  border-color: lightgray !important;
   border-width: 3px;
   color: black;
-  width: 180px;
+  width: 100%;
   height: 60px;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 14px;
   margin-top: 6px;
   margin-right: 7%;
   padding-top: 16px;
   margin-bottom: 30px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 // .card-body .btn-set-alert .btn-alert-no-target {
@@ -211,7 +215,7 @@ background-color: #3aebba;
     text-align: center;
     font-family: "Open Sans", sans-serif;
     font-size: 24px;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .target-success {
@@ -411,6 +415,7 @@ top: -900px;
   overflow-x: scroll;
   display: flex;
   background-color: rgba(211,211,211,0.3);
+  margin-bottom: 20px;
 }
 
 .title_success{
@@ -453,6 +458,6 @@ top: -900px;
 }
 
 .middleman {
-  margin-top: 15px;
-  margin-bottom: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

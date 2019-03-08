@@ -1,55 +1,51 @@
 <div class="banner">
-  <div class="distortion">
-    <div class="container">
-      <div class="text-ban" style="margin-left: -4%">
-        <div id="main-title">
-          <h1>Best Prices for Busy People!</h1>
-        </div>
-        <div id="sub-title">
-          <p>Never overpay your online purchases.
-          PriceHunt finds all the offers for the products you can ever need. </p>
-
-        </div>
-        <div class="form-home">
-          <!-- <label class= "label-home" for="keyword">What is your keyword?</label> -->
-          <p></p>
-          <%= render 'shared/searchbar'  %>
-      <%= form_tag search_products_path, method: :post, multipart: true, id: "photo-form" do %>
-        <%= label_tag :photo, class: 'upload-photo' do %>
-        <i class="fas fa-camera"></i>
-        <% end %>
-        <%= file_field_tag :photo, class: 'hidden' %>
-        <%= submit_tag "Send", id:"hidden-btn"%>
-      <% end %>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-<div class="shape_bottom_banner">
-    <svg class="shape-bottom" viewBox="0 0 1440 221" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 221L855.5 149L1440 0V221H0Z" fill="white"/>
-    </svg>
-</div>
-  </div>
-
-          <div class="searchbar-position"></div>
-<!--           <div id="picture_bar_position"></div>
- -->
-          <div class="illustration-home">
-            <i class="fas fa-laptop" id="lap"></i>
-            <i class="fas fa-mobile-alt"></i>
-            <i class="fas fa-headphones"></i>
-            <i class="fas fa-guitar"></i>
-            <i class="fas fa-gamepad"></i>
-            <i class="fas fa-tshirt"></i>
-            <i class="fab fa-android"></i>
-            <i class="fas fa-camera-retro"></i>
-            <%#= image_tag "shoes", alt: "alttext", class: "shoes" %>
+  <div class="container">
+<!--     <div class="distortion">
+      <div class="container"> -->
+        <div class="text-ban">
+          <div id="main-title">
+            <h1>Best Prices for Busy People!</h1>
           </div>
-
+          <div id="sub-title">
+            <p>Never overpay your online purchases.
+            PriceHunt finds all the offers <br>for the products you can ever need. </p>
+          </div>
+          <div class="form-home">
+            <!-- <label class= "label-home" for="keyword">What is your keyword?</label> -->
+            <p></p>
+            <%= render 'shared/searchbar'  %>
+            <div>OR</div>
+            <%= form_tag search_products_path, method: :post, multipart: true, id: "photo-form" do %>
+              <%= label_tag :photo, class: 'upload-photo' do %>
+              <i class="fas fa-camera"></i>
+              <% end %>
+              <%= file_field_tag :photo, class: 'hidden' %>
+              <%= submit_tag "Send", id:"hidden-btn"%>
+            <% end %>
+          </div>
         </div>
-      </div>
+<!--       </div>
+    </div> -->
+    <div class="shape_bottom_banner">
+      <svg class="shape-bottom" viewBox="0 0 1440 221" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 221L855.5 149L1440 0V221H0Z" fill="white"/>
+      </svg>
     </div>
   </div>
+  <div class="illustration-home">
+    <i class="fas fa-laptop" id="lap"></i>
+    <i class="fas fa-mobile-alt"></i>
+    <i class="fas fa-headphones"></i>
+    <i class="fas fa-guitar"></i>
+    <i class="fas fa-gamepad"></i>
+    <i class="fas fa-tshirt"></i>
+    <i class="fab fa-android"></i>
+    <i class="fas fa-camera-retro"></i>
+    <%#= image_tag "shoes", alt: "alttext", class: "shoes" %>
+  </div>
+
+<!--           </div>
+        </div>
+      </div>
+    </div> -->
+</div>

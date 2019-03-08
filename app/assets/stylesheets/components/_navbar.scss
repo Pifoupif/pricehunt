@@ -3,7 +3,7 @@
   opacity: 1;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  // padding: 0px 30px;
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -14,7 +14,8 @@
 .navbar-wagon-brand img {
   height: 50px;
   color: white;
-  margin-left: 60px;
+  // margin-left: 60px;
+  margin-left: -13px;
 }
 
 /* User Avatar */
@@ -42,7 +43,7 @@
   color: white;
   font-size: 18px;
   font-weight: bold;
-  margin-right: 60px;
+  // margin-right: 60px;
 }
 .navbar-wagon-link:hover {
   text-decoration: none;
