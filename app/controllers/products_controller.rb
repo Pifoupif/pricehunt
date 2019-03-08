@@ -36,7 +36,11 @@ class ProductsController < ApplicationController
     unless @product.present? && @product.updated_at.to_date == Time.zone.today
       @product = ScrapeProductService.new(@denich_id).call
     end
-    @offers = @product.offers.includes(:prices, :retailer)
+    @offers = @product.is_a?(Product) ? @product.offers.includes(:prices, :retailer) : []
+    if @offers.empty?
+      flash[:alert] = "Sorry,this product is not on sales at the moment"
+      redirect_to root_path
+    end
     filter
   end
 

@@ -83,9 +83,8 @@
         </div>
       </div>
     </div>
-
-    <div class ="left-list">
-
+  <div class ="left-list">
+    <% unless @offers.blank? %>
       <div class="my-row">
         <% nb_of_offers = @offers.count %>
         <div class="offers_first">
@@ -132,5 +131,6 @@
         <% end %>
       </div>
     </div>
+    <% end %>
   </div>
 </div>

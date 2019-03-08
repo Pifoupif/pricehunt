@@ -7,10 +7,11 @@ const initChart = () => {
     const lowestPrices = JSON.parse(alertChart.dataset.lowestPrices);
     const targetPrice = alertChart.dataset.targetPrice;
     let targetPrices = [];
+    let toZero = [];
     lowestPrices.forEach((_price) =>{
       targetPrices.push(targetPrice);
+      toZero.push(targetPrices / 1.25);
     });
-
     const labels = ["d-6", "d-5", "d-4", "d-3", "d-2", "d-1", "Today"];
     var ctx = alertChart.getContext('2d');
     var myChart = new Chart(ctx, {
@@ -35,6 +36,13 @@ data: {
     pointRadius: 0,
     borderWidth: 3,
     backgroundColor: "rgba(79,182,255,0.2)"
+  }, {
+    data: toZero,
+    label: "setToZero",
+    borderColor: "rgba(255,255,255,0)",
+    pointRadius: 0,
+    borderWidth: 3,
+    backgroundColor: "rgba(255,255,255,0)"
   }]
 },
 
@@ -68,7 +76,7 @@ options: {
     }],
     yAxes: [{
       ticks: {
-        beginAtZero:true
+        beginAtZero:false
       },
       gridLines: {
         display:false
