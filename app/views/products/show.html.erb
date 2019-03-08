@@ -83,54 +83,54 @@
         </div>
       </div>
     </div>
-  <div class ="left-list">
-    <% unless @offers.blank? %>
-      <div class="my-row">
-        <% nb_of_offers = @offers.count %>
-        <div class="offers_first">
-          <div class="">
-            <img src="<%= @offers.first.retailer.logo %>" alt="">
-          </div>
-          <div class="">
-            <% @offers.first.retailer.rating.floor.times do %>
-              <i class="fas fa-star gold"></i>
-            <% end %>
-            <% (5 - @offers.first.retailer.rating.floor).times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-          </div>
-          <div class="price-shopping">
-            <%= @offers.first.prices.last.price %>€
-          </div>
-          <div class="go-shopping-first">
-            <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping first-button hunt-link">Hunt<i class="fas fa-arrow-circle-right link-shopping"></i></a>
-          </div>
-        </div>
-        <% @offers[1..nb_of_offers].each do |offer| %>
-
-          <div class="offers">
-            <div class="logo-pic">
-              <img src="<%= offer.retailer.logo %>" alt="">
+    <div class ="left-list">
+      <% unless @offers.blank? %>
+        <div class="my-row">
+          <% nb_of_offers = @offers.count %>
+          <div class="offers_first">
+            <div class="">
+              <img src="<%= @offers.first.retailer.logo %>" alt="">
             </div>
             <div class="">
-              <% offer.retailer.rating.floor.times do %>
+              <% @offers.first.retailer.rating.floor.times do %>
                 <i class="fas fa-star gold"></i>
               <% end %>
-              <% (5 - offer.retailer.rating.floor).times do %>
+              <% (5 - @offers.first.retailer.rating.floor).times do %>
                 <i class="fas fa-star"></i>
               <% end %>
             </div>
             <div class="price-shopping">
-              <%= offer.prices.last.price %>€
+              <%= @offers.first.prices.last.price %>€
             </div>
-            <div class="go-shopping">
-              <a href=<%= offer.prices.last.url %> target="_blank", class="button button-shopping hunt-link">Hunt<i class="fas fa-arrow-circle-right link-shopping"></i></a>
-
+            <div class="go-shopping-first">
+              <a href=<%= @offers.first.prices.last.url %> target="_blank", class="button button-shopping first-button hunt-link">Hunt<i class="fas fa-arrow-circle-right link-shopping"></i></a>
             </div>
           </div>
-        <% end %>
+          <% @offers[1..nb_of_offers].each do |offer| %>
+
+            <div class="offers">
+              <div class="logo-pic">
+                <img src="<%= offer.retailer.logo %>" alt="">
+              </div>
+              <div class="">
+                <% offer.retailer.rating.floor.times do %>
+                  <i class="fas fa-star gold"></i>
+                <% end %>
+                <% (5 - offer.retailer.rating.floor).times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+              </div>
+              <div class="price-shopping">
+                <%= offer.prices.last.price %>€
+              </div>
+              <div class="go-shopping">
+                <a href=<%= offer.prices.last.url %> target="_blank", class="button button-shopping hunt-link">Hunt<i class="fas fa-arrow-circle-right link-shopping"></i></a>
+
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
     <% end %>
   </div>
 </div>
