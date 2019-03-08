@@ -1,53 +1,54 @@
-<div class="navbar-wagon sticky-nav">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.gif", height: 50 %>
-  <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <% if @nb_of_target == 0 %>
-        <%= link_to "Alert", alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" %>
-      <% else %>
-        <%= link_to alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" do %>
-          <div class="flex-not">
-            <div class="not-al"> <i class="fas fa-bell"></i> Alerts </div>
-            <div class="notif"><%= @nb_of_target %></div>
-          </div>
-        <% end %>
-      <% end %>
-      <%= link_to destroy_user_session_path, :method => :delete, data: { :confirm => "Are you sure?"}, class: "navbar-wagon-item navbar-wagon-link" do %>
-        Log out <i class="fas fa-sign-out-alt"></i>
-      <% end %>
-
-    <% else %>
-
-      <!-- Login link (when logged out) -->
-
-      <%= link_to "Login", '#', class: "navbar-wagon-item navbar-wagon-link", data: {target: '#sign-in-modal', toggle: 'modal'} %>
+<div class="container sticky-nav">
+  <div class="navbar-wagon ">
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.gif", height: 50 %>
     <% end %>
-  </div>
 
- <!-- Button trigger modal -->
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <% if user_signed_in? %>
+
+        <!-- Links when logged in -->
+        <% if @nb_of_target == 0 %>
+          <%= link_to "Alert", alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" %>
+        <% else %>
+          <%= link_to alerts_path, class: "navbar-wagon-item navbar-wagon-link", id:"alerts-link" do %>
+            <div class="flex-not">
+              <div class="not-al"> <i class="fas fa-bell"></i> Alerts </div>
+              <div class="notif"><%= @nb_of_target %></div>
+            </div>
+          <% end %>
+        <% end %>
+        <%= link_to destroy_user_session_path, :method => :delete, data: { :confirm => "Are you sure?"}, class: "navbar-wagon-item navbar-wagon-link" do %>
+          Log out <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+
+      <% else %>
+
+        <!-- Login link (when logged out) -->
+
+        <%= link_to "Login", '#', class: "navbar-wagon-item navbar-wagon-link", data: {target: '#sign-in-modal', toggle: 'modal'} %>
+      <% end %>
+    </div>
+
+   <!-- Button trigger modal -->
+  </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        <h4 class="modal-title" id="myModalLabel">Welcome back!</h4>
-        <%= render 'shared/form-sign-in' %>
+  <!-- Modal -->
+  <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title" id="myModalLabel">Welcome back!</h4>
+          <%= render 'shared/form-sign-in' %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 
