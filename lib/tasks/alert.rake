@@ -28,7 +28,7 @@ namespace :alert do
 
   def randomize_prices
     Alert.all.each do |alert|
-      alert.prices.each do |p|
+      alert.prices[0..-2].each do |p|
         old_price = p.price
         new_price = (1-(rand(-1..1) * rand/6))*old_price
         p.update price: new_price
