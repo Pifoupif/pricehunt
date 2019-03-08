@@ -20,7 +20,7 @@
   position: fixed;
   border-radius: 4px;
   filter: drop-shadow(4px 4px 20px rgba(0,0,0,0.25));
-  width: 33%;
+  width: 34%;
 }
 
 .product-desc {
@@ -136,10 +136,10 @@
   background-color: #F2C94C;
 }
 
-// .my-row {
-//   margin-right: 35px;
-//   padding-right: 20px;
-// }
+.my-row {
+  margin-left: 40px;
+  // padding-right: 20px;
+}
 
 .go-shopping-first a{
   text-decoration: none !important;
