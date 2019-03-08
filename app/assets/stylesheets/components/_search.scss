@@ -78,10 +78,16 @@
 
 .form-home {
   display: flex;
-  width: 55vw;
-  justify-content: space-around;
-  position: absolute;
-  margin-left: -9%;
+  // width: 55vw;
+  // justify-content: space-around;
+  // position: absolute;
+  // margin-left: -9%;
+  > div {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    color: white;
+  }
 }
 
 
@@ -94,5 +100,6 @@
 }
 
 #photo-form{
-  margin-left: -74px;
+  // margin-left: -74px;
+  z-index: 3;
 }

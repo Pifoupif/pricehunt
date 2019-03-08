@@ -9,8 +9,7 @@
 </svg>
 
 
-
-<div class="contient">
+<div class="container contient">
   <div class="card-space-top"></div>
 
     <% if @user_alerts.nil? %>
@@ -24,7 +23,7 @@
               <div class="card-index">
                 <div class="card-body card-body-sucess">
                   <div class="product-banner-card">
-                    <%= image_tag alert.product.photo, width: "220px", height: "220px" %>
+                    <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
                   </div>
 
                   <div class="alert-avatar">
@@ -34,7 +33,7 @@
                     <% if alert.lowest_prices.blank? %>
                       <div class="faux-graph"></div>
                     <% else %>
-                      <canvas class="alert-chart" width="300" height="150" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>" data-target-price="<%= alert.target_price %>"></canvas>
+                      <canvas class="alert-chart" width="300" height="140" data-lowest-prices="<%= alert.lowest_prices.order(:created_at).limit(7).map { |lowest_price| lowest_price.price.price }.to_json %>" data-target-price="<%= alert.target_price %>"></canvas>
                     <% end %>
                     <%= render 'shared/label_alert_graph'%>
                   </div>
@@ -49,12 +48,12 @@
                   </div>
                   <div class="box-price">
                     <div class="lastprice-alert">
-                      <h6>Target price:</h6>
+                      <h6>Target:</h6>
                       <h4><%= alert.target_price.round %> €</h4>
                     </div>
                     <div class="cadrer-buy">
                       <div class="lastprice-alert middleman">
-                        <h5>Current price: <%= current_price.round  %> €</h5>
+                        <h5>Current: <%= current_price.round  %> €</h5>
                       </div>
                       <div class="buy-btn text-right">
                         <%= link_to '<i class="fas fa-shopping-cart"></i> BUY NOW'.html_safe, product_path(alert.product.denich_id), class: "btn btn-set-alert" %>
@@ -77,7 +76,7 @@
               <div class="card-body">
 
                 <div class="product-banner-card">
-                  <%= image_tag alert.product.photo, width: "220px", height: "220px" %>
+                  <%= image_tag alert.product.photo, width: "180px", height: "180px" %>
                 </div>
 
                 <div class="alert-avatar">
@@ -100,12 +99,12 @@
                 </div>
                   <div class="box-price">
                     <div class="lastprice-alert">
-                      <h6>Target price:</h6>
+                      <h6>Target:</h6>
                       <h4><%= alert.target_price.round %> €</h4>
                     </div>
                     <div class="cadrer-buy">
                       <div class="lastprice-alert middleman">
-                        <h5>Current price: <%= current_price.round  %> €</h5>
+                        <h5>Current: <%= current_price.round  %> €</h5>
                       </div>
                       <div class="buy-btn text-right">
                         <%= link_to 'SEE ALL PRICES'.html_safe, product_path(alert.product.denich_id), class: "btn btn-set-alert btn-alert-no-target" %>
